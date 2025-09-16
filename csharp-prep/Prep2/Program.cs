@@ -12,13 +12,24 @@ class Program
             string score = Console.ReadLine();
             int letter = int.Parse(score);
             string grade = " ";
-            string plus = "+"; // stretch challenge
-            string minus = "-"; // I am going to try
+            
             int lastDigit = letter % 10;
             if (letter >= 90) // I made two mistakes here first I used numbers to  compare instead of letter
             {
                 grade = "A"; //second I didn't remember how to comment and used # instead of //
+
+                if (lastDigit >= 7) // I tried to be specific with the numbers and did (letter =87 && lastDigit >= 7)
+                {
+                grade += "+";
+
             }
+            else if (lastDigit <= 3) // didn't realize I only needed two
+                {
+                grade += "-";
+
+                }
+            }
+
             else if (letter >= 80) // I inquired the web with how to comment in c+
             {
                 grade = "B"; //Then asked chatGPT to teach me what I did wrong on the first if statement.
