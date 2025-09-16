@@ -11,25 +11,25 @@ class Program
         Console.Write("Please enter your test score:");
         string score = Console.ReadLine();
         int letter = int.Parse(score);
-        if (letter > 90) // I made two mistakes here first I used numbers to  compare instead of letter 
+        if (90 > letter) // I made two mistakes here first I used numbers to  compare instead of letter
         {
             Console.Write("A"); //second I didn't remember how to comment and used # instead of //
         }
-        else if (letter > 80) // I inquired the web with how to comment in c+
+        else if (80 > letter) // I inquired the web with how to comment in c+
         {
             Console.Write("B"); //Then asked chatGPT to teach me what I did wrong on the first if statement.
         }
-        else if (letter > 70)
+        else if (70 > letter)
         {
             Console.Write("C");
         }
-        else if (letter > 60)
+        else if (60 > letter)
         {
             Console.Write("D");
         }
         else
         {
-            Console.Write("F");
+            Console.Write("F"); // I also saw I used score instead of the word letter.I updated that.
         }
         Console.WriteLine($"Your Letter Grade is {letter}."); //Prints letter grade.
             
