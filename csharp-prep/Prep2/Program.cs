@@ -11,7 +11,7 @@ class Program
         Console.Write("Please enter your test score:");
         string score = Console.ReadLine();
         int letter = int.Parse(score);
-        if (90 > letter) // I made two mistakes here first I used numbers to  compare instead of letter
+        if (letter > 90) // I made two mistakes here first I used numbers to  compare instead of letter
         {
             Console.Write("A"); //second I didn't remember how to comment and used # instead of //
         }
