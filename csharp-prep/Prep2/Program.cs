@@ -48,36 +48,7 @@ class Program
                 grade += "-";
 
             }
-            else if (lastDigit >= 7)
-            {
-                grade += "+";
 
-            }
-            else if (lastDigit <= 3)
-            {
-                grade = "-";
-
-            }
-            else if (lastDigit >= 7)
-            {
-                grade += "+";
-
-            }
-            else if (lastDigit <= 3)
-            {
-                grade += "-";
-
-            }
-            else if (lastDigit >= 7)
-            {
-                grade += "+";
-
-            }
-            else if (lastDigit <= 3)
-            {
-                grade += "-";
-
-            }
-            Console.WriteLine($"Your Letter grade is {grade}")
+            Console.WriteLine($"Your Letter grade is {grade}");
     }
 }
