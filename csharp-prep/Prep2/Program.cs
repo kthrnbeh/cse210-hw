@@ -40,7 +40,17 @@ class Program
             //Stretch Challenge
             if (lastDigit >= 7) // I tried to be specific with the numbers and did (letter =87 && lastDigit >= 7)
             {
-                grade = "+";
+                grade += "+";
+
+            }
+            else if (lastDigit <= 3)
+            {
+                grade += "-";
+
+            }
+            else if (lastDigit >= 7)
+            {
+                grade += "+";
 
             }
             else if (lastDigit <= 3)
@@ -50,32 +60,22 @@ class Program
             }
             else if (lastDigit >= 7)
             {
-                grade = "+";
+                grade += "+";
 
             }
             else if (lastDigit <= 3)
             {
-                grade = "-";
+                grade += "-";
 
             }
             else if (lastDigit >= 7)
             {
-                grade = "+";
+                grade += "+";
 
             }
             else if (lastDigit <= 3)
             {
-                grade = "-";
-
-            }
-            else if (lastDigit >= 7)
-            {
-                grade = "+";
-
-            }
-            else if (lastDigit <= 3)
-            {
-                grade = "-";
+                grade += "-";
 
             }
             Console.WriteLine($"Your Letter grade is {grade}")
