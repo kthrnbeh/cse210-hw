@@ -12,6 +12,9 @@ class Program
             string score = Console.ReadLine();
             int letter = int.Parse(score);
             string grade = " ";
+            string plus = "+"; // stretch challenge
+            string minus = "-"; // I am going to try
+            int lastDigit = letter % 10;
             if (letter >= 90) // I made two mistakes here first I used numbers to  compare instead of letter
             {
                 grade = "A"; //second I didn't remember how to comment and used # instead of //
@@ -33,9 +36,47 @@ class Program
                 grade = "F"; // I also saw I used score instead of the word letter.I updated that.
             }
             Console.WriteLine($"Your Letter Grade is {grade}."); //Prints letter grade.
-                                                                 // my statement kept printing the score  not grade. I had to look up what I did wrong. I asked to be taught what to do. 
-                                                                // After I was like "Oh yeah I learned that in python... I just forgot." 
-        }
-        
+            // After I was like "Oh yeah I learned that in python... I just forgot." 
+            //Stretch Challenge
+            if (letter == 97 && lastDigit >= 7)
+            {
+                grade = "+";
+
+            }
+            else if (letter == 93 && lastDigit <= 3)
+            {
+                grade = "-";
+
+            }
+            else if (letter == 87 && lastDigit >= 7)
+            {
+                grade = "+";
+
+            }
+            else if (letter == 83 && lastDigit <= 3)
+            {
+                grade = "-";
+
+            }
+            else if (letter == 77 && lastDigit >= 7)
+            {
+                grade = "+";
+
+            }
+            else if (letter == 73 && lastDigit <= 3)
+            {
+                grade = "-";
+
+            }
+            else if (letter == 67 && lastDigit >= 7)
+            {
+                grade = "+";
+
+            }
+             else if (letter == 63 && lastDigit <= 3)
+            {
+                grade = "-";
+
+            }
     }
 }
