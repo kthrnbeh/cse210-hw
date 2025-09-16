@@ -38,42 +38,42 @@ class Program
             Console.WriteLine($"Your Letter Grade is {grade}."); //Prints letter grade.
             // After I was like "Oh yeah I learned that in python... I just forgot." 
             //Stretch Challenge
-            if (letter == 97 && lastDigit >= 7)
+            if (lastDigit >= 7)
             {
                 grade = "+";
 
             }
-            else if (letter == 93 && lastDigit <= 3)
+            else if ( lastDigit <= 3)
             {
                 grade = "-";
 
             }
-            else if (letter == 87 && lastDigit >= 7)
+            else if ( lastDigit >= 7)
             {
                 grade = "+";
 
             }
-            else if (letter == 83 && lastDigit <= 3)
+            else if ( lastDigit <= 3)
             {
                 grade = "-";
 
             }
-            else if (letter == 77 && lastDigit >= 7)
+            else if ( lastDigit >= 7)
             {
                 grade = "+";
 
             }
-            else if (letter == 73 && lastDigit <= 3)
+            else if ( lastDigit <= 3)
             {
                 grade = "-";
 
             }
-            else if (letter == 67 && lastDigit >= 7)
+            else if ( lastDigit >= 7)
             {
                 grade = "+";
 
             }
-             else if (letter == 63 && lastDigit <= 3)
+             else if ( lastDigit <= 3)
             {
                 grade = "-";
 
