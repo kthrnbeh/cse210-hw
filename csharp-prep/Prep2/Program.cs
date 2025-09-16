@@ -19,15 +19,15 @@ class Program
                 grade = "A"; //second I didn't remember how to comment and used # instead of //
 
                 if (lastDigit >= 7) // I tried to be specific with the numbers and did (letter =87 && lastDigit >= 7)
-                {
+            {
                 grade += "+";
 
             }
             else if (lastDigit <= 3) // didn't realize I only needed two
-                {
+            {
                 grade += "-";
 
-                }
+            }
             }
 
             else if (letter >= 80) // I inquired the web with how to comment in c+
@@ -51,12 +51,12 @@ class Program
             //Stretch Challenge
             if (lastDigit >= 7) // I tried to be specific with the numbers and did (letter =87 && lastDigit >= 7)
             {
-                plus += "+";
+                grade += "+";
 
             }
             else if (lastDigit <= 3) // didn't realize I only needed two
             {
-                minus += "-";
+                grade += "-";
 
             }
 
