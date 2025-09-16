@@ -43,7 +43,7 @@ class Program
                 grade += "+";
 
             }
-            else if (lastDigit <= 3)
+            else if (lastDigit <= 3) // didn't realize I only needed two
             {
                 grade += "-";
 
