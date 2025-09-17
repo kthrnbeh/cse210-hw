@@ -9,10 +9,10 @@ class Program
         //Console.Write("What is the magic number?");
         //int magicNumber = int.Parse(Console.ReadLine()); //Part 1 ask user what the magic number is
         Random randomGenerator = new Random();
-        int magicNumber = randomGenerator.Next(1, 100); //Part three random number generator.
-        int userGuess = int.Parse(Console.ReadLine());//Part 2 ask user what their guess is.
+        int magicNumber = randomGenerator.Next(1, 101); //Part three random number generator.
         int guessCount = 1; //stretch keep track of the users number of guesses.
         Console.Write("What is your guess?");
+        int userGuess = int.Parse(Console.ReadLine());
         guessCount++; //Stretch count the first guess.
 
         while (userGuess != magicNumber) // Part two add while look. //Updated from user guess to random
