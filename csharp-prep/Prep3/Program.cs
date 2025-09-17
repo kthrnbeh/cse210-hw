@@ -10,12 +10,14 @@ class Program
         //int magicNumber = int.Parse(Console.ReadLine()); //Part 1 ask user what the magic number is
         Random randomGenerator = new Random();
         int magicNumber = randomGenerator.Next(1, 101); //Part three random number generator.
-        int guessCount = 1; //stretch keep track of the users number of guesses.
+        int guessCount = 0; //stretch keep track of the users number of guesses.
         Console.Write("What is your guess?");
         int userGuess = int.Parse(Console.ReadLine());
         guessCount++; //Stretch count the first guess.
+        string response;     //Stretch task two ask user if they want to play again.
 
-        while (userGuess != magicNumber) // Part two add while look. //Updated from user guess to random
+        
+        do (userGuess != magicNumber) // Part two add while look. //Updated from user guess to random
         {
             if (userGuess < magicNumber) // Part 1 ask until get the proper answer. //updated to random 
             {
@@ -25,14 +27,17 @@ class Program
             else
             {
                 Console.WriteLine("Lower");
-                guessCount++;             }
+                guessCount++;
+            }
             Console.Write("What is your guess?");
             userGuess = int.Parse(Console.ReadLine());
         }
         Console.WriteLine("You guessed it!");
                  guessCount++; //Stretch count the final guess.
         Console.WriteLine($"It took you {guessCount} guesses."); //Stretch print the number of guesses.
-        
+         Console.Write("Do you want to continue? ");
+    response = Console.ReadLine();
+    
 
-    }
+    } while (response == "yes");
 }
