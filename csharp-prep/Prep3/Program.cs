@@ -52,5 +52,5 @@ class Program
     } while (response == "yes");
         
 
-    } 
+    } //It took so much help for the strech part so if I don't get credit for that makes sense. I now learned though how to do it and am glad to save it!
 }
