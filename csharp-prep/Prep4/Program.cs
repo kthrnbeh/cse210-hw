@@ -19,28 +19,37 @@ class Program
         {
             Console.Write("Enter number: (0 quits)");
             userInput = int.Parse(Console.ReadLine());
-            if (userInput != -1)
+            if (userInput != 0)// right zero means quit so I don't need lower. 
             {
                 numbers.Add (userInput); //append new numbers to the list from the user
                 sum += userInput; //I want to add number together as they get added.
-                Console.WriteLine($"The sum is: {sum}");
+               
 
             }
             
             
-            average = (float)sum / numbers.Count; // average I have a bit of a harder time with this ones code.
-            Console.WriteLine($"The average is: {average}");
-           int maxNum = numbers[0];
-           for (int i = 1; i < numbers.Count; i++) {
-               if (numbers[i] > maxNum) {
-                   maxNum = numbers[i]; // Had to google this one.// it took me almost an hour to figure this one.. 
-                   Console.WriteLine($"The largest number is: {maxNum}");
-               }
+            if (numbers.count > 0)
+                {
+                    average = (float)sum / numbers.Count;
+                    max = numbers[0]; //assume first number is the largest for now.
+                    foreach (int num in numbers)
+                    {
+                        if (num > max)
+                        {
+                            max = num;
+                        }
+                    }
+                }
+
+
+               Console.WriteLine($"The sum is: {sum}");
+               Console.WriteLine($"The average is: {average}");
+               Console.WriteLine($"The largest number is: {maxNum}");
 
         }
 
         
-        ;
+        
     }
 
 }
