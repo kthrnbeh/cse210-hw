@@ -9,32 +9,38 @@ class Program
         // For this prep 4 Ask the user for a series of numbers, and append each one to a list. Stop when they enter 0.
         // ask user for a number 
         Console.Write("Enter a list of numbers, type 0 when finished.");
-        Console.Write("Enter number: ");
-        int userInput = int.Parse(Console.ReadLine()); // For a sec I forgot to add this. Good thing I checked the assignment.
         //Create list to hold numbers 
         List<int> numbers = new List<int>();
-        //Now I need to append a series of numbesrs to the list until they enter 0.
-        //Compute the sum, or total, of the numbers in the list.
-        int sum = 0;
-        //Compute the average of the numbers in the list.
-        float average = 0.0f;
-        //Find the maximum, or largest, number in the list.
-        int max = int.List<int>.Max();
-        //Create while Loop and then get results to all the above.
+        int sum = 0; // I guess I do need to declare sum outside the loop first.
+        float average = 0.0f; // As well as average
+        int max = int.MinValue; // I had to google this one.
+        int userInput = -1; 
         while (userInput != 0)
         {
-            numbers.Add(userInput); //append new numbers to list from user
-            Console.Write("Enter number:");
+            Console.Write("Enter number: (0 quits)");
             userInput = int.Parse(Console.ReadLine());
-            sum += userInput; //I want to add number together as they get added. 
+            if (userInput != -1)
+            {
+                numbers.Add (userInput); //append new numbers to the list from the user
+                sum += userInput; //I want to add number together as they get added.
+                Console.WriteLine($"The sum is: {sum}");
+
+            }
+            
+            
             average = (float)sum / numbers.Count; // average I have a bit of a harder time with this ones code.
-            max = Math.Max(max, userInput); // Had to google this one. 
+            Console.WriteLine($"The average is: {average}");
+           int maxNum = numbers[0];
+           for (int i = 1; i < numbers.Count; i++) {
+               if (numbers[i] > maxNum) {
+                   maxNum = numbers[i]; // Had to google this one.// it took me almost an hour to figure this one.. 
+                   Console.WriteLine($"The largest number is: {maxNum}");
+               }
 
         }
 
-        Console.WriteLine($"The sum is: {sum}");
-        Console.WriteLine($"The average is: {average}");
-        Console.WriteLine($"The largest number is: {max}");
+        
+        ;
     }
 
 }
