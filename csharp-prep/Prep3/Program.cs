@@ -12,7 +12,7 @@ class Program
         int userGuess = int.Parse(Console.ReadLine());//Part 2 ask user what their guess is.
         while (userGuess != magicNumber) // Part two add while look. 
         {
-            if (userGuess < magicNumber) //Make if statement to see if guess correct or needs to be higher or lower.
+            if (userGuess < magicNumber)
             {
                 Console.WriteLine("Higher");
             }
@@ -23,6 +23,18 @@ class Program
             Console.Write("What is your guess?");
             userGuess = int.Parse(Console.ReadLine());
         }
-        Console.WriteLine("You guesssed it!");
+        if (userGuess == magicNumber) 
+            {
+                Console.WriteLine("You Guessed It!");
+            }
+            else if (userGuess < magicNumber)
+            {
+                Console.WriteLine("Higher");
+            }
+            else
+            {
+                Console.WriteLine("Lower");
+            }
+
     }
 }
