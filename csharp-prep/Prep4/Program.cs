@@ -28,7 +28,7 @@ class Program
             userInput = int.Parse(Console.ReadLine());
             sum += userInput; //I want to add number together as they get added. 
             average = (float)sum / numbers.Count; // average I have a bit of a harder time with this ones code.
-            max = numbers.Max(); //I hope this is how you do it?
+            max = Math.Max(max, userInput); // Had to google this one. 
 
         }
 
