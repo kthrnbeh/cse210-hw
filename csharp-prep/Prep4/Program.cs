@@ -32,8 +32,7 @@ class Program
             foreach (int num in numbers) //I couldn't full figure it out "my way" so after many hours I looked at the sample I see why. 
             {
                 sum += num;
-                count++;
-                average = (float)sum / count;
+                average = (float)sum / numbers.Count;
             }
             
                 Console.WriteLine($"The sum is: {sum}");
