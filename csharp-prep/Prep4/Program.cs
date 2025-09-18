@@ -33,9 +33,9 @@ class Program
         
         if (numbers.Count > 0)
         {
-            int sum = 0;
+            float sum = 0;
             float average = 0f;
-            int Largest = numbers[0];
+            float Largest = numbers[0]; // apparently if I want to do a decimal answer I need to add the word float here
 
             foreach (int n in numbers)
             {
@@ -57,4 +57,5 @@ class Program
         {
             Console.WriteLine("No numbers were entered.");
         }   
-}
+  } // closes Main
+} // closes Pro
