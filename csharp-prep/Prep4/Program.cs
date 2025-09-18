@@ -17,6 +17,7 @@ class Program
         {
             Console.Write("Enter a number:");
             userNumber = int.Parse(Console.ReadLine());
+            
             if (userNumber == 0) // what happens if the user puts 0 I need it to check that first! ok. Figuring it out.
             {
                 break;  
@@ -41,7 +42,7 @@ class Program
                 }
             }
             average = (float)sum / numbers.Count;
-            Largest = numbers[0];
+            
            
                     
                 }
