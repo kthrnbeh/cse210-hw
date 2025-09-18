@@ -32,9 +32,7 @@ class Program
             {
                 Console.WriteLine($"The sum is: {sum}");
                 Console.WriteLine($"The average is: {average}");
-                break; //This will stop the loop when the user inputs 0
-            }
-            if (number > Largest) //if the number is the biggest I want it to print out as the max.
+               if (number > Largest) //if the number is the biggest I want it to print out as the max.
             {
                 Largest = number;
                 Console.WriteLine($"The largest number is: {Largest}"); 
