@@ -12,11 +12,11 @@ class Program
         //Once you have a list, have your program do the following:
         List<int> numbers = new List<int>();
         //Declaring the variables above the loop that I will need, I forgot.
+        int userNumber = -1;
         int sum = 0;
         int count = 0;
         float average = 0f;
-        int Largest = int.MinValue; 
-        int userNumber; // The user won't put a negative number so it can keep going until 0
+        int Largest; 
         while (userNumber != 0) //while the user number is not 0 the user will keep inputting
         {
             Console.Write("Enter a number:");
@@ -29,25 +29,28 @@ class Program
             {
                 numbers.Add(userNumber); // I was adding the number to the list before checking if it was 0. Opps! 
             }
-            foreach (int num in numbers) //I couldn't full figure it out "my way" so after many hours I looked at the sample I see why. 
+            if (userNumber != 0)
             {
-                sum += num;
+                foreach (int n in numbers)
+                {
+
+                    sum += n;
+                }
                 average = (float)sum / numbers.Count;
-            }
-            
-                Console.WriteLine($"The sum is: {sum}");
-                Console.WriteLine($"The average is: {average}");
-            if (numbers.Count > 0)
-            {
                 Largest = numbers[0];
                 foreach (int num in numbers)
                 {
                     if (num > Largest)
                     {
-                        Largest = n;
+                        Largest = num;
+                        Console.WriteLine($"The Largest number is: {Largest}"); //finding tips from the example
                     }
                 }
-                Console.WriteLine($"The largest number is: {Largest}");
+            
+            
+                Console.WriteLine($"The sum is: {sum}");
+                Console.WriteLine($"The average is: {average}");
+            
             }
         }
 
