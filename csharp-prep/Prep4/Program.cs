@@ -13,10 +13,6 @@ class Program
         List<int> numbers = new List<int>();
         //Declaring the variables above the loop that I will need, I forgot.
         int userNumber = -1;
-        int sum = 0;
-        int count = 0;
-        float average = 0f;
-        int Largest; 
         while (userNumber != 0) //while the user number is not 0 the user will keep inputting
         {
             Console.Write("Enter a number:");
