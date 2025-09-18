@@ -43,7 +43,7 @@ class Program
         {
             Console.WriteLine($"Hey! {name}, favorite square number is{squaredNumber}.");
             int ageThisYear = 2025 - birthYear;
-            Console.WriteLine($"Your age this year is:"{ ageThisYear});
+            Console.WriteLine($"Your age this year is:{ ageThisYear}");
         }
     }
 }
