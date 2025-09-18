@@ -53,5 +53,8 @@ class Program
             Console.WriteLine($"The average is: {average}");//add float incase I get a user decimal. or decimal answer
             Console.WriteLine($"The Largest number is: {Largest}"); // finding tips from the example 
         }
-        
+        else
+        {
+            Console.WriteLine("No numbers were entered.");
+        }   
 }
