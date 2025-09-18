@@ -20,15 +20,12 @@ class Program
         while (userNumber != 0) //while the user number is not 0 the user will keep inputting
         {
             Console.Write("Enter a number:");
-            int userNumber = int.Parse(Console.ReadLine());
+            userNumber = int.Parse(Console.ReadLine());
             if (userNumber != 0) // what happens if the user puts 0 I need it to check that first! ok. Figuring it out.
             {
-                numbers.Add(userNumber); // I was adding the number to the list before checking if it was 0. Opps! 
+                break;  
             }
-            else
-            {
-                break; // stop if the user puts 0 breaks are the same as in python! 
-            }
+            numbers.Add(userNumber);// I was adding the number to the list before checking if it was 0. Opps! 
             if (userNumber >= 1) // I want it to add it to the list of things to sum and average. 
             {
                 sum += userNumber;
