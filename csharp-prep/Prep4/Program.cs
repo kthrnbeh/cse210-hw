@@ -22,13 +22,13 @@ class Program
             Console.Write("Enter a number:");
             int number = int.Parse(Console.ReadLine());
             numbers.Add(number); //We need to add the numbers to the list. 
-            if (number > 0) // I want it to add it to the list of things to sum and average. 
+            if (number >= 1) // I want it to add it to the list of things to sum and average. 
             {
-                sum ++= number;
-                count ++ number;
-                average = sum / count;
+                sum += number;
+                count += 1; 
+                average = (float) sum / count; // add float incase we get a decimal.
             }
-            else if (number < 0) //I want it to stop then print out the total sum and average.
+            else if (number <= 0) //I want it to stop then print out the total sum and average.
             {
                 Console.WriteLine($"The sum is: {sum}");
                 Console.WriteLine($"The average is: {average}");
