@@ -5,6 +5,13 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Prep5 World!");
+        DisplayWelcome(); //I wrote all the functions first and I forgot that you need to call them first in the main functions.
+        string userName = PromptUserName(); // Just like we did in python.
+        int userNumber = PromptUserNumber(); //I think the issues I had with buyi last year has made me rusty.
+        int userBirthYear = 0;
+        PromptUserBirthYear(out userBirthYear); // I didn't see an example of the calling the functions in main.
+        int squaredNumber = SquareNumber(userNumber);
+        DisplayResult(userName, squaredNumber, userBirthYear); //but I am recognizing it from python.
         //DisplayWelcome - Displays the message, "Welcome to the Program!"
         static void DisplayWelcome()
         {
@@ -27,7 +34,7 @@ class Program
         //PromtUserBirthYear - Accepts out integer parameter and prompts the user for
         //  the year they were born. The out parameter is set to their birth year. This function does not return a value. 
         // The user's birth year is given back from the function via the out parameter.
-        static void PromtUserBirthYear(out int birthYear)
+        static void PromptUserBirthYear(out int birthYear)
         {
             Console.Write("Please enter the year you were born:");
             birthYear = int.Parse(Console.ReadLine());
@@ -41,9 +48,9 @@ class Program
         // Calculate hold many years old they will turn this year and display that.
         static void DisplayResult(string name, int squaredNumber, int birthYear)
         {
-            Console.WriteLine($"Hey! {name}, favorite square number is{squaredNumber}.");
+            Console.WriteLine($"Hey! {name}, your favorite number squared is: {squaredNumber}.");
             int ageThisYear = 2025 - birthYear;
-            Console.WriteLine($"Your age this year is:{ ageThisYear}");
+            Console.WriteLine($"Your age this year is: {ageThisYear}");
         }
     }
 }
