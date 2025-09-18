@@ -52,11 +52,11 @@ class Program
                 
                 
             
-            }
         }
+            
+    }        
 
 
         
         
-  } // closes Main
 } // closes Pro
