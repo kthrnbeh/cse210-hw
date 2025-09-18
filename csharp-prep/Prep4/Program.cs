@@ -29,23 +29,25 @@ class Program
             {
                 numbers.Add(userNumber); // I was adding the number to the list before checking if it was 0. Opps! 
             }
-            if (userNumber != 0)
+        if (numbers.Count > 0)
+        {
+            int sum = 0;
+            float average = 0f;
+            int Largest = numbers[0];
+            foreach (int n in numbers)
             {
-                foreach (int n in numbers)
-                {
+                sum += n;
 
-                    sum += n;
-                    
-                }
-                average = (float)sum / numbers.Count;
-                Largest = numbers[0];
-                foreach (int num in numbers)
+                if (n > Largest)
                 {
-                    if (num > Largest)
-                    {
-                        Largest = num;
-                        
-                    }
+                    Largest = n;
+
+                }
+            }
+            average = (float)sum / numbers.Count;
+            Largest = numbers[0];
+           
+                    
                 }
                 Console.WriteLine($"The sum is: {sum}");
                 Console.WriteLine($"The average is: {average}"); //I had to cast sum to a float to get the decimal answer.
