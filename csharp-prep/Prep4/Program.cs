@@ -17,6 +17,23 @@ class Program
             Console.Write("Enter a number:");
             int number = int.Parse(Console.ReadLine());
             numbers.Add(number); //We need to add the numbers to the list. 
+            if (number > 0) // I want it to add it to the list of things to sum and average. 
+            {
+                sum ++= number;
+                count ++ number;
+                average = sum / count;
+            }
+            else if (number < 0) //I want it to stop then print out the total sum and average.
+            {
+                Console.WriteLine($"The sum is: {sum}");
+                Console.WriteLine($"The average is: {average}");
+                break; //This will stop the loop when the user inputs 0
+            }
+            if (number > Largest) //if the number is the biggest I want it to print out as the max.
+            {
+                Largest = number;
+                Console.WriteLine($"The largest number is: {Largest}"); 
+            }
         }
 
 
