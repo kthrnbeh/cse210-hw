@@ -29,18 +29,15 @@ class Program
             {
                 numbers.Add(userNumber); // I was adding the number to the list before checking if it was 0. Opps! 
             }
-            if (numbers.Count >= 0) // I want it to add it to the list of things to sum and average. 
+            foreach (int num in numbers) //I couldn't full figure it out "my way" so after many hours I looked at the sample I see why. 
             {
-                
-                sum += userNumber; // sum = sum + userNumber
-                count++; // count = count + 1
-                average = (float)sum / count; // I want it to print out the average as a float.
+                sum += num;
+                count++;
+                average = (float)sum / count;
             }
-            else if (numbers <= 0) //I want it to stop then print out the total sum and average.
-            {
+            
                 Console.WriteLine($"The sum is: {sum}");
                 Console.WriteLine($"The average is: {average}");
-            }
             if (numbers.Count > 0)
             {
                 Largest = numbers[0];
