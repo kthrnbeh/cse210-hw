@@ -20,21 +20,22 @@ class Program
         while (userNumber != 0) //while the user number is not 0 the user will keep inputting
         {
             Console.Write("Enter a number:");
-            int number = int.Parse(Console.ReadLine());
-            numbers.Add(number); //We need to add the numbers to the list. 
-            if (number >= 1) // I want it to add it to the list of things to sum and average. 
+            int userNumber = int.Parse(Console.ReadLine());
+            if (userNumber >= 1) // I want it to add it to the list of things to sum and average. 
             {
-                sum += number;
+                numbers.Add(userNumber); // I was adding the number to the list before checking if it was 0. Opps! 
+                sum += userNumber;
                 count += 1; 
                 average = (float) sum / count; // add float incase we get a decimal.
             }
-            else if (number <= 0) //I want it to stop then print out the total sum and average.
+            else if (userNumber <= 0) //I want it to stop then print out the total sum and average.
             {
                 Console.WriteLine($"The sum is: {sum}");
                 Console.WriteLine($"The average is: {average}");
-               if (number > Largest) //if the number is the biggest I want it to print out as the max.
+            }
+            if (userNumber > Largest) //if the number is the biggest I want it to print out as the max.
             {
-                Largest = number;
+                Largest = userNumber;
                 Console.WriteLine($"The largest number is: {Largest}"); 
             }
         }
