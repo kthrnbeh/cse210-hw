@@ -16,31 +16,42 @@ class Program
         int count = 0;
         float average = 0f;
         int Largest = int.MinValue; 
-        int userNumber = -1; // The user won't put a negative number so it can keep going until 0
+        int userNumber; // The user won't put a negative number so it can keep going until 0
         while (userNumber != 0) //while the user number is not 0 the user will keep inputting
         {
             Console.Write("Enter a number:");
             userNumber = int.Parse(Console.ReadLine());
-            if (userNumber != 0) // what happens if the user puts 0 I need it to check that first! ok. Figuring it out.
+            if (userNumber == 0) // what happens if the user puts 0 I need it to check that first! ok. Figuring it out.
             {
                 break;  
             }
-            numbers.Add(userNumber);// I was adding the number to the list before checking if it was 0. Opps! 
-            if (userNumber >= 1) // I want it to add it to the list of things to sum and average. 
+            else
             {
-                sum += userNumber;
-                count += 1; 
-                average = (float) sum / count; // add float incase we get a decimal.
+                numbers.Add(userNumber); // I was adding the number to the list before checking if it was 0. Opps! 
             }
-            else if (userNumber <= 0) //I want it to stop then print out the total sum and average.
+            if (numbers.Count >= 0) // I want it to add it to the list of things to sum and average. 
+            {
+                
+                sum += userNumber; // sum = sum + userNumber
+                count++; // count = count + 1
+                average = (float)sum / count; // I want it to print out the average as a float.
+            }
+            else if (numbers <= 0) //I want it to stop then print out the total sum and average.
             {
                 Console.WriteLine($"The sum is: {sum}");
                 Console.WriteLine($"The average is: {average}");
             }
-            if (userNumber > Largest) //if the number is the biggest I want it to print out as the max.
+            if (numbers.Count > 0)
             {
-                Largest = userNumber;
-                Console.WriteLine($"The largest number is: {Largest}"); 
+                Largest = numbers[0];
+                foreach (int num in numbers)
+                {
+                    if (num > Largest)
+                    {
+                        Largest = n;
+                    }
+                }
+                Console.WriteLine($"The largest number is: {Largest}");
             }
         }
 
