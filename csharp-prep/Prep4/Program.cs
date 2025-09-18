@@ -11,8 +11,13 @@ class Program
         Console.WriteLine("Hello User, Enter a list of numbers, type 0 when finished.");
         //Once you have a list, have your program do the following:
         List<int> numbers = new List<int>();
+        //Declaring the variables above the loop that I will need, I forgot.
+        int sum = 0;
+        int count = 0;
+        float average = 0f;
+        int Largest = int.MinValue; 
         int userNumber = -1; // The user won't put a negative number so it can keep going until 0
-        while (userNumber !=0) //while the user number is not 0 the user will keep inputting
+        while (userNumber != 0) //while the user number is not 0 the user will keep inputting
         {
             Console.Write("Enter a number:");
             int number = int.Parse(Console.ReadLine());
