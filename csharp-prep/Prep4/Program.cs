@@ -35,6 +35,7 @@ class Program
                 {
 
                     sum += n;
+                    Console.WriteLine($"The sum is: {sum}");
                 }
                 average = (float)sum / numbers.Count;
                 Largest = numbers[0];
@@ -46,10 +47,11 @@ class Program
                         Console.WriteLine($"The Largest number is: {Largest}"); //finding tips from the example
                     }
                 }
+                Console.WriteLine($"The average is: {average}"); //I had to cast sum to a float to get the decimal answer.
             
             
-                Console.WriteLine($"The sum is: {sum}");
-                Console.WriteLine($"The average is: {average}");
+                
+                
             
             }
         }
