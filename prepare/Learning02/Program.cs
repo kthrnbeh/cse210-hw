@@ -7,10 +7,12 @@ class Program
         Console.WriteLine("Hello Learning02 World!");
     }
 }
+//Step 1: You program should contain two classes one for a Job and one for the Resume itself
 public class Job
 {
     _name: string;
     _jobs: List<Job>;
+    Display(): void
 }
 public class Resume
 {
