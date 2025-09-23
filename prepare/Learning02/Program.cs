@@ -34,8 +34,8 @@ class Program
         //especially to learn how to make my code more simple.
         Resume personalResume = new Resume();
         personalResume._name = "Adam Magistri"; //Red line means that I missed ;
-        myResume._jobs.Add(job1);
-        myResume._jobs.Add(job2);
+        personalResume._jobs.Add(job1); // calls the previous variable
+        personalResume._jobs.Add(job2);
 
         personalResume.Display();
       
