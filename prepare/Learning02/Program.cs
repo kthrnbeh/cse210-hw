@@ -34,7 +34,8 @@ class Program
         //especially to learn how to make my code more simple.
         Resume personalResume = new Resume
         personalResume._name = "Adam Magistri"
-        myResume.Display();
+        myResume.Display(job1);
+        myResume.Display(job2);
     }
 }
 
