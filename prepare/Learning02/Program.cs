@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+
 
 //Restarting again after rereading the Activity overview again. //I was confused byt the step 2 _jobTitle
 // I need to figure out how to make that work... 
@@ -17,7 +19,6 @@ class Program
         job1._company = "Red Cat Holdings";
         job1._startYear = 2025;
         job1._endYear = 2065;
-
         job1.Display();
 
         Job job2 = new Job();
@@ -25,7 +26,6 @@ class Program
         job2._company = "Amazon";
         job2._startYear = 2027;
         job2._endYear = 2070;
-
         job2.Display();
 
         // apperently my job2 and two were outside the main method so I deleted them. So I can figure out what to do. 
