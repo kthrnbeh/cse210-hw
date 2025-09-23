@@ -10,12 +10,13 @@ class Program
     {
         // shown in Classes and instances from the reading 
         Console.WriteLine("Hello Learning02 World!");
+
         Job job1 = new Job(); //Thought I was done but wouldn't run so compared to example to see what I did wrong.
         job1._jobTitle = "Head Hunter";
         job1._company = "Red Cat Holdings";
         job1._startYear = 2025;
         job1._endYear = 2065;
-        job1._name = "Adam Magistri";
+
         job1.Display();
 
         Job job2 = new Job();
@@ -23,35 +24,18 @@ class Program
         job2._company = "Amazon";
         job2._startYear = 2027;
         job2._endYear = 2070;
-        jpb2._name = "Katherine Magistri";
-        job2.Display();
-    }
-}
-class Job //When you create classes, you are really creating a new custom data type.
-{
-    public string _jobTitle; 
-    public string _company;
-    public int _startYear;
-    public int _endYear;
-    Display() : void
-    {
-        Console.WriteLine($"{_jobTitle} at {_company} from {_startYear} to {_endYear}");
-    }
 
-}
-Job job1 = new Job();
-Job job2 = new Job();
-class Resume
-{
-    public string _name;
-    public List<Job> _jobs = new List<Job>(); //It only becomes useful when an instance is created and assigned to a variable in your program.
-    Display() : void
-    {
-        Console.WriteLine($"{_name}");
-        Console.WriteLine("Jobs:");
-        foreach (Job job in _jobs)
-        {
-            job.Display();
-        }
+        job2.Display();
+
+        // apperently my job2 and two were outside the main method so I deleted them. So I can figure out what to do. 
+        //Following your simple answer for the Resume 
+        //I asked the internet why your code works and what to explain each aspect so I can relate it to the reading. I truly want to learn this stuff. 
+        //especially to learn how to make my code more simple.
+        Resume personalResume = new Resume
+        personalResume._name = "Adam Magistri"
+        myResume.Display();
     }
+}
+
+
 }
