@@ -9,6 +9,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        // shown in Classes and instances from the reading 
         Console.WriteLine("Hello Learning02 World!");
         job1._jobTitle = "Head Hunter";
         job1._company = "Red Cat Holdings";
@@ -23,13 +24,31 @@ class Program
         job2.Display();
     }
 }
-class Job
+class Job //When you create classes, you are really creating a new custom data type.
 {
-    public string _jobTitle;
+    public string _jobTitle; 
     public string _company;
     public int _startYear;
     public int _endYear;
-    
+    Display() : void
+    {
+        Console.WriteLine($"{_jobTitle} at {_company} from {_startYear} to {_endYear}");
+    }
 
-
+}
+Job job1 = new Job();
+Job job2 = new Job();
+class Resume
+{
+    public string _name;
+    public List<Job> _jobs = new List<Job>();
+    Display() : void
+    {
+        Console.WriteLine($"{_name}");
+        Console.WriteLine("Jobs:");
+        foreach (Job job in _jobs)
+        {
+            job.Display();
+        }
+    }
 }
