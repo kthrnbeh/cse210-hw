@@ -15,12 +15,14 @@ class Program
         job1._company = "Red Cat Holdings";
         job1._startYear = 2025;
         job1._endYear = 2065;
+        job1._name = "Adam Magistri";
         job1.Display();
 
         job2._jobTitle = "Software Engineer";
         job2._company = "Amazon";
         job2._startYear = 2027;
         job2._endYear = 2070;
+        jpb2._name = "Katherine Magistri";
         job2.Display();
     }
 }
@@ -41,7 +43,7 @@ Job job2 = new Job();
 class Resume
 {
     public string _name;
-    public List<Job> _jobs = new List<Job>();
+    public List<Job> _jobs = new List<Job>(); //It only becomes useful when an instance is created and assigned to a variable in your program.
     Display() : void
     {
         Console.WriteLine($"{_name}");
