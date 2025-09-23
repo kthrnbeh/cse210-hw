@@ -22,14 +22,14 @@ class Job
         Startyear = startYear;
         Endyear = endYear;
     }
-    // Ugh thi
+
+} class Resume
+  // Resume is supposed to be its whole own thing apparently. 
     public class Resume(string name, List<Job> jobs)
     {
         Name = name;
         Jobs = jobs;
      }
-        
-}
 class Program
 {
     static void Main(string[] args)
