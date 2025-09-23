@@ -6,7 +6,8 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main(string[] args)   //void = means it doesn’t return anything.
+    //string[] args = an array of strings you could pass in from the command line (you don’t need it now, but it’s required by convention).
     {
         // shown in Classes and instances from the reading 
         Console.WriteLine("Hello Learning02 World!");
