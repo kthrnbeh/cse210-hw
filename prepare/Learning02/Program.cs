@@ -1,6 +1,5 @@
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.Threading.Tasks.Dataflow;
+
 //Restarting again after rereading the Activity overview again. //I was confused byt the step 2 _jobTitle
 // I need to figure out how to make that work... 
 // I was trying to follow the first sample from the reading to help me but it didn;t work.
@@ -11,6 +10,7 @@ class Program
     {
         // shown in Classes and instances from the reading 
         Console.WriteLine("Hello Learning02 World!");
+        Job job1 = new Job(); //Thought I was done but wouldn't run so compared to example to see what I did wrong.
         job1._jobTitle = "Head Hunter";
         job1._company = "Red Cat Holdings";
         job1._startYear = 2025;
@@ -18,6 +18,7 @@ class Program
         job1._name = "Adam Magistri";
         job1.Display();
 
+        Job job2 = new Job();
         job2._jobTitle = "Software Engineer";
         job2._company = "Amazon";
         job2._startYear = 2027;
