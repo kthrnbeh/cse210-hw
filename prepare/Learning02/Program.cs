@@ -33,7 +33,7 @@ class Program
         //I asked the internet why your code works and what to explain each aspect so I can relate it to the reading. I truly want to learn this stuff. 
         //especially to learn how to make my code more simple.
         Resume personalResume = new Resume();
-        personalResume._name = "Adam Magistri"
+        personalResume._name = "Adam Magistri"; //Red line means that I missed ;
         myResume._jobs.Add(job1);
         myResume._jobs.Add(job2);
 
