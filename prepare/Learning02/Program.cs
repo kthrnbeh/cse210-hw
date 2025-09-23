@@ -1,41 +1,19 @@
 using System;
-using System.Collections.Generic;
-
-
-//Following the instructions from the Abstraction overview //I am trying to create a workin thing hope this is right.
-class Job
-{
-    //Step 3 ? Should these be moved up here? 
-    public string Company;
-    public string Jobtitle;
-    public int Startyear;
-    public int Endyear;
-    public string Name;
-    public List<Job> Jobs;
-
-    //Step 1: You program should contain two classes one for a Job and one for the Resume itself
-    // this is step 3 actually making it public. 
-    public class Job(string company, string jobTitle, int startYear, int endYear) // the second word should be capalized oh yeah. 
-    {
-        Company = company;
-        Jobtitle = jobTitle;
-        Startyear = startYear;
-        Endyear = endYear;
-    }
-
-} class Resume
-  // Resume is supposed to be its whole own thing apparently. 
-    public class Resume(string name, List<Job> jobs)
-    {
-        Name = name;
-        Jobs = jobs;
-     }
+using System.Threading.Tasks.Dataflow;
+//Restarting again after rereading the Activity overview again. //I was confused byt the step 2 _jobTitle
+// I need to figure out how to make that work... 
 class Program
 {
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Learning02 World!");
-        job1._jobTitle = "Software Engineer";
+        job1._jobTitle = "Head Hunter";
+        job1._company = "Red Cat Holdings";
+        job1._startYear = 2025;
+        job1._endYear = 2065;
+        job1.Display();
+
+        job2_jobTitle =""
     }
 }
 
