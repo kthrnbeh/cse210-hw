@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography.X509Certificates;
 
 class Program
@@ -29,19 +30,19 @@ class Program
             Console.WriteLine("What would your like to do?");
             string userInput = Console.ReadLine();
             int number = int.Parse(userInput);
-            if (userNumber == 1)
+            if (userInput == 1)
             {
 
             }
-            else if (userNumber == 2)
+            else if (userInput == 2)
             {
 
             }
-            else if (userNumber == 3)
+            else if (userInput == 3)
             {
 
             }
-            else if (userNumber == 4)
+            else if (userInput == 4)
             {
 
             }
@@ -74,6 +75,12 @@ class Program
         public string dateText;
         public string prompt;
         public string response;
+
+        void public Display()
+        {
+            Console.WriteLine($"{dateText}-{prompt}"); // suggestion
+            Console.WriteLine($"What would you like to do?{response}")
+        }
 
 
 
