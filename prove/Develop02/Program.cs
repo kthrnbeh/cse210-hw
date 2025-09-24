@@ -11,21 +11,24 @@ class Program
         //Looks like first thing I need to do is make a menu
         // I thought about what a menu would look like in python as they can do similar things but in a different method
         //ok I need to make a couple classes , Entry and Jornal
-        int menunumber = -1;
-        
+        int menuNumber = -1;
+        while (menuNumber != 5) ;
+        {
+            Console.WriteLine("Please select one of the following choices:");
+            if (menuNumber == 1) ;
+            {
+                Console.WriteLine("1. Write");
+                Console.WriteLine("2. Display");
+                Console.WriteLine("3. Load");
+                Console.WriteLine("4. Save");
+                Console.WriteLine("5. Quit");
+             }
 
     }
     public class Entry
     {
         static void prompt(string self, string words, int num);
-        while (menunumber > 0) ;
-        {
-            Console.WriteLine("Please select one of the following choices:");
-            if (menunumber == 1) ;
-            {
-                Console.WriteLine("1.Write");
-                
-             }
+        
             
         }
 
