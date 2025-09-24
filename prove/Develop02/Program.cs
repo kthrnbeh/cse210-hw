@@ -20,27 +20,27 @@ class Program
         string save;
 
         int menuNumber = -1;
-        while (menuNumber != 5) 
+        while (menuNumber != 5)
         {
             //my idea is to write a menu and have it keep going until it gets the number 5
             Console.WriteLine("Please select one of the following choices:");
             //By removing the if this should make the program always give the menu
-            
+
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
             Console.WriteLine("5. Quit");
             Console.WriteLine("What would your like to do?");
-            int userAnswer = Console.ReadLine(int.Parse(userAnswer));
-            
+            string userInput = Console.ReadLine();
+            int number = int.Parse(userInput);
         }    
 
     }
     public class Entry
     {
         static void prompt();
-        
+        {
             
         }
 
