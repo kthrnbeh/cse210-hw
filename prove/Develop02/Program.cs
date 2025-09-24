@@ -11,13 +11,8 @@ class Program
         //Looks like first thing I need to do is make a menu
         // I thought about what a menu would look like in python as they can do similar things but in a different method
         //ok I need to make a couple classes , Entry and Jornal
-        //Need 
-        string prompt;
-        string quit;
-        string write; // looked at reading and it  said this was the right way
-                         // activity prep 2 and I am trying to figure it out with my teacm
-        string load;
-        string save;
+        // help from https://www.w3schools.com/cpp/default.asp
+
 
         int menuNumber = -1;
         while (menuNumber != 5)
@@ -34,19 +29,62 @@ class Program
             Console.WriteLine("What would your like to do?");
             string userInput = Console.ReadLine();
             int number = int.Parse(userInput);
-        }    
+            if (userNumber == 1)
+            {
 
-    }
+            }
+            else if (userNumber == 2)
+            {
+
+            }
+            else if (userNumber == 3)
+            {
+
+            }
+            else if (userNumber == 4)
+            {
+
+            }
+            else
+            {
+                Console.WriteLine("Quit selected. Goodbye!")
+            }
+
+
+        } 
+        
+         string filename = "myFile.txt";
+         string[] lines = System.IO.File.ReadAllLines(filename);
+
+         foreach (string line in lines)
+        {
+            string[] parts = line.Split(",");
+
+            string firstName = parts[0];
+            string lastName = parts[1];   
+
+        }
+        
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = theCurrentTime.ToShortDateString();
+
+
     public class Entry
     {
-        static void prompt();
-        {
-            
-        }
+        public string dateText;
+        public string prompt;
+        public string response;
+
+
 
     }
     public class Journal
     {
-
+        public string newEntry;
+        public string display;
+        public string save;
+        public string load; 
+        
+}
     }
 }
