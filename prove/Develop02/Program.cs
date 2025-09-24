@@ -48,23 +48,13 @@ class Program
             }
             else
             {
-                Console.WriteLine("Quit selected. Goodbye!")
+                Console.WriteLine("Quit selected. Goodbye!");
             }
 
 
         } 
         
-         string filename = "myFile.txt";
-         string[] lines = System.IO.File.ReadAllLines(filename);
-
-         foreach (string line in lines)
-        {
-            string[] parts = line.Split(",");
-
-            string firstName = parts[0];
-            string lastName = parts[1];   
-
-        }
+         
         
         DateTime theCurrentTime = DateTime.Now;
         string dateText = theCurrentTime.ToShortDateString();
@@ -79,7 +69,7 @@ class Program
         void public Display()
         {
             Console.WriteLine($"{dateText}-{prompt}"); // suggestion
-            Console.WriteLine($"What would you like to do?{response}")
+            Console.WriteLine($"What would you like to do?{response}");
         }
 
 
@@ -91,6 +81,19 @@ class Program
         public string display;
         public string save;
         public string load; 
+        {
+            string filename = "myFile.txt";
+            string[] lines = System.IO.File.ReadAllLines(filename);
+
+             foreach (string line in lines)
+            {
+            string[] parts = line.Split(",");
+
+            string firstName = parts[0];
+            string lastName = parts[1];   
+
+            }
+        }
         
 }
     }
