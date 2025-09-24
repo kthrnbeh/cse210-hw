@@ -14,6 +14,7 @@ class Program
         int menuNumber = -1;
         while (menuNumber != 5) ;
         {
+            //my idea is to write a menu and have it keep going until it gets the number 5
             Console.WriteLine("Please select one of the following choices:");
             if (menuNumber == 1) ;
             {
@@ -22,12 +23,13 @@ class Program
                 Console.WriteLine("3. Load");
                 Console.WriteLine("4. Save");
                 Console.WriteLine("5. Quit");
-             }
+            }
+        }    
 
     }
     public class Entry
     {
-        static void prompt(string self, string words, int num);
+        static void prompt();
         
             
         }
