@@ -13,7 +13,7 @@ class Program
         // I thought about what a menu would look like in python as they can do similar things but in a different method
         //ok I need to make a couple classes , Entry and Jornal
         // help from https://www.w3schools.com/cpp/default.asp
-
+        list<string> prompt;
 
         int menuNumber = -1;
         while (menuNumber != 5)
@@ -32,19 +32,19 @@ class Program
             int number = int.Parse(userInput);
             if (userInput == 1)
             {
-
+                Journal.add(newEntry);
             }
             else if (userInput == 2)
             {
-
+                Journal.add(display);
             }
             else if (userInput == 3)
             {
-
+                Journal.add(load);
             }
             else if (userInput == 4)
             {
-
+                Journal.add(save)
             }
             else
             {
@@ -52,14 +52,14 @@ class Program
             }
 
 
-        } 
-        
-         
-        
+        }
+
+
+
         DateTime theCurrentTime = DateTime.Now;
         string dateText = theCurrentTime.ToShortDateString();
 
-
+    }
     public class Entry
     {
         public string dateText;
@@ -79,22 +79,21 @@ class Program
     {
         public string newEntry;
         public string display;
-        public string save;
-        public string load; 
         {
-            string filename = "myFile.txt";
-            string[] lines = System.IO.File.ReadAllLines(filename);
-
-             foreach (string line in lines)
-            {
-            string[] parts = line.Split(",");
-
-            string firstName = parts[0];
-            string lastName = parts[1];   
-
-            }
+            Entry.add(dateTxt)
+            Entry.add(propmt)
+            Entry.add(response)
+        // make list to add dates, prompt,resonse happen? right? 
+        }
+         public string save;
+        public string load; // I want to load this text or previous files //follow video
+        {
+            //create txt file to load 
         }
         
-}
+           
     }
+    }
+        
 }
+    
