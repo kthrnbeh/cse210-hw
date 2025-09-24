@@ -11,6 +11,14 @@ class Program
         //Looks like first thing I need to do is make a menu
         // I thought about what a menu would look like in python as they can do similar things but in a different method
         //ok I need to make a couple classes , Entry and Jornal
+        //Need 
+        _string prompt;
+        _string quit;
+        _string write;
+        _int menuNumber;
+        _string load;
+        _string save;
+
         int menuNumber = -1;
         while (menuNumber != 5) ;
         {
