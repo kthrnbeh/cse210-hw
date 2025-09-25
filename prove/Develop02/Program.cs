@@ -15,10 +15,7 @@ class Program
         //ok I need to make a couple classes , Entry and Jornal// help from https://www.w3schools.com/cpp/default.asp
         //https://chatgpt.com/share/68d46af7-953c-8002-9fc8-8fd62fd20bf8 // watched the how the journal is supposed to work a couple times. stil confusing. 
 
-        List<string>prompt; // to call the text file like the video said and with help.
-        Entry e = new Entry();
-        e.dateText = DateTime.Now.ToShortDateString(); // your instructions show just do it simple?
-        Journal newJournal = new Journal ()
+        static List<Entry> journalEntries = new List<Entry>();
         int menuNumber = 0;
         while (menuNumber != 5)
         {
@@ -86,19 +83,37 @@ class Program
         JournalEntries.add(newEntry);
 
     }
-    static void Display
-    public class Journal
+    static void DisplayEntry
     {
-        public string newEntry;
-        public string display;
+        foreach(Entry entry in journalEntries)
+        Console.WriteLine($"Date: {entry.date} - Prompt: {entry.prompt}");
+        Console.WriteLine($"Response: {entry.response}");
+    }
+
+
+   static void SaveFile()
+{
+    Console.Write("Filename");
+    string filename = Console.ReadLine();
+    List<string> lines = new List<string>();
+    foreach (Entry entry in journalEntries)
+        lines.Add($"{entry.date}{entry.prompt{entry.response}}")
+    
+    }
+        File.WriteAllLines(filename, lines);
+Console.WriteLine("Saved.");
+
+{
+    public string newEntry;
+    public string display;
         {
-            Entry.add(dateTxt)
-            Entry.add(propmt)
+        Entry.add(dateTxt)
+        Entry.add(propmt)
             Entry.add(response)
         // make list to add dates, prompt,resonse happen? right? 
     }
          public string save;
-        public string load; // I want to load this text or previous files //follow video
+    public string load; // I want to load this text or previous files //follow video
         {
             //create txt file to load 
         }       
