@@ -9,11 +9,14 @@ class Program
         Console.WriteLine("Hello Develop02 World!");
         // Working with my team to develope a journal prompt 
         //https://www.youtube.com/watch?v=3bBiQ1G7BOU Watched this to help me with ideas of what to do.
-        //Looks like first thing I need to do is make a menu
-        // I thought about what a menu would look like in python as they can do similar things but in a different method
-        //ok I need to make a couple classes , Entry and Jornal
-        // help from https://www.w3schools.com/cpp/default.asp
-        list<string> prompt;
+        //Looks like first thing I need to do is make a menu// I thought about what a menu would look like in python as they can do similar things but in a different method
+        //ok I need to make a couple classes , Entry and Jornal// help from https://www.w3schools.com/cpp/default.asp
+        //https://chatgpt.com/share/68d46af7-953c-8002-9fc8-8fd62fd20bf8 // watched the how the journal is supposed to work a couple times. stil confusing. 
+
+        list<string> prompt = ["  Who was the most interesting person I interacted with today?",
+        "What was the best part of my day?","How did I see the hand of the Lord in my life today?",
+        "What was the strongest emotion I felt today?",
+        "If I had one thing I could do over today, what would it be?"];
 
         int menuNumber = -1;
         while (menuNumber != 5)
