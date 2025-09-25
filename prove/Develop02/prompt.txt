@@ -1,0 +1,9 @@
+Who was the most interesting person I interacted with today?",
+"What was the best part of my day?",
+"How did I see the hand of the Lord in my life today?",
+"What was the strongest emotion I felt today?",
+"If I had one thing I could do over today, what would it be?",
+"If you could talk to one person who would it be?",
+"What is your favorite sent and why?",
+"What would you do with unlimited money?",
+"What's your favorite simple thing that brings you joy and why?" 

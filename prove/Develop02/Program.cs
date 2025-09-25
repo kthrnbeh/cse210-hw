@@ -1,6 +1,8 @@
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.Security.Cryptography.X509Certificates;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+
 
 class Program
 {
@@ -13,12 +15,11 @@ class Program
         //ok I need to make a couple classes , Entry and Jornal// help from https://www.w3schools.com/cpp/default.asp
         //https://chatgpt.com/share/68d46af7-953c-8002-9fc8-8fd62fd20bf8 // watched the how the journal is supposed to work a couple times. stil confusing. 
 
-        list<string> prompt = ["  Who was the most interesting person I interacted with today?",
-        "What was the best part of my day?","How did I see the hand of the Lord in my life today?",
-        "What was the strongest emotion I felt today?",
-        "If I had one thing I could do over today, what would it be?"];
-
-        int menuNumber = -1;
+        List<string>prompt; // to call the text file like the video said and with help.
+        Entry e = new Entry();
+        e.dateText = DateTime.Now.ToShortDateString(); // your instructions show just do it simple?
+        Journal newJournal = new Journal ()
+        int menuNumber = 0;
         while (menuNumber != 5)
         {
             //my idea is to write a menu and have it keep going until it gets the number 5
@@ -28,56 +29,64 @@ class Program
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
-            Console.WriteLine("4. Save");
             Console.WriteLine("5. Quit");
             Console.WriteLine("What would your like to do?");
             string userInput = Console.ReadLine();
             int number = int.Parse(userInput);
             if (userInput == 1)
             {
-                Journal.add(newEntry);
+                    WriteEntry(); //Each of these go to the classes
             }
             else if (userInput == 2)
             {
-                Journal.add(display);
+                DisplayAllEntries;
             }
             else if (userInput == 3)
             {
-                Journal.add(load);
+                LoadFromFile();
             }
             else if (userInput == 4)
             {
-                Journal.add(save)
+                SaveToFile();
             }
-            else
+            else if (userInput = 5)
             {
                 Console.WriteLine("Quit selected. Goodbye!");
             }
+            else
+            {
+                Console.WriteLine("Invalid Choice")
+            }
 
 
         }
 
 
 
-        DateTime theCurrentTime = DateTime.Now;
-        string dateText = theCurrentTime.ToShortDateString();
+
 
     }
-    public class Entry
+    static void WriteEntry
     {
-        public string dateText;
-        public string prompt;
-        public string response;
+        string filename = "prompt.txt" //looked up how to get a prompt.txt
+        Random random = new Random(); // the team I am apart of helped here
+        int index = random.Next(prompts.Length);// c++ is not the same as python but both do index
+        string prompt = prompt[index];
 
-        void public Display()
-        {
-            Console.WriteLine($"{dateText}-{prompt}"); // suggestion
-            Console.WriteLine($"What would you like to do?{response}");
-        }
+        Console.WritLine(prompt);
+        Console.Write(",");
+        string response = Console.ReadLine();
 
+        // I saw that I needed to add this to one of the classes not main
+        Entry newEntry = New Entry();
+        newEntry.date = DateOnly.Time.Now.ToShortDateString();
+        new.Entry = prompt;
+        new.Entry = response;
 
+        JournalEntries.add(newEntry);
 
     }
+    static void Display
     public class Journal
     {
         public string newEntry;
@@ -87,16 +96,18 @@ class Program
             Entry.add(propmt)
             Entry.add(response)
         // make list to add dates, prompt,resonse happen? right? 
-        }
+    }
          public string save;
         public string load; // I want to load this text or previous files //follow video
         {
             //create txt file to load 
-        }
+        }       
+    
+    }
+    public class Save
+{
         
-           
-    }
-    }
+}
         
 }
     
