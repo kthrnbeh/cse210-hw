@@ -9,5 +9,5 @@ class Program
         Console.WriteLine("Hello Learning03 World!");
     }
     // do I call the fraction class here? I will try and see if it works
-    Fraction f = new Fraction();
+    Fractions f = new Fractions();
 }
