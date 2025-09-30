@@ -10,12 +10,12 @@ class Program
         Fraction f = new Fraction();
         Fraction f2 = new Fraction(5);
         Fraction f3 = new Fraction(6, 7);
-        f2.SetTopBottom(3)
-        f3.SetTopBottom(0.70)
+        f2.SetTopBottom(3,8);
+        f3.SetTopBottom(10,7);
         Console.WriteLine(f);
-
+        
         Console.WriteLine(f2.GetDecimalValue());
-        Console.WriteLine(f2.GetDecimalValue());
+        Console.WriteLine(f3.GetDecimalValue());
 
 
     }

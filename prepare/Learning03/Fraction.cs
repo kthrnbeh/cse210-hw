@@ -18,24 +18,27 @@ public class Fraction// doesn't need para...
     public Fraction(int top, int bottom)
     {
         _top = top;
-        _top = bottom;
+        _bottom = bottom; // oops
     }
     public int GetTopBottom()
     {
         return _top;
         
     }
-    public void SetTopBottom(int top)
+    public void SetTopBottom(int top, int bottom)
     {
         _top = top;
+        _bottom =bottom;
+        
 
     }
-    public GetFractionString()
+    public string GetFractionString()
     {
-        return _top;
+        return $"{_top}/{_bottom}";
+    
     }
-    public GetDecimalValue(int top) //looked at the reference from learn activity
+    public double GetDecimalValue() //looked at the reference from learn activity
     {
-       return(double) _top = top;
+        return (double)_top / _bottom;
     }
 }
