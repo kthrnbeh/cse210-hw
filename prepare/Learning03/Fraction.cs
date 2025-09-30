@@ -10,7 +10,7 @@ public class Fraction// doesn't need para...
         _bottom = 1; // apparently integers don't need quotes
 
     }
-    public Fraction(int top )
+    public Fraction(int top)
     {
         _top = top;
         _bottom = 1;
@@ -19,5 +19,23 @@ public class Fraction// doesn't need para...
     {
         _top = top;
         _top = bottom;
+    }
+    public int GetTopBottom()
+    {
+        return _top;
+        
+    }
+    public void SetTopBottom(int top)
+    {
+        _top = top;
+
+    }
+    public GetFractionString()
+    {
+        return _top;
+    }
+    public GetDecimalValue(int top) //looked at the reference from learn activity
+    {
+       return(double) _top = top;
     }
 }

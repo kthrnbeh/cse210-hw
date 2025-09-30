@@ -10,20 +10,16 @@ class Program
         Fraction f = new Fraction();
         Fraction f2 = new Fraction(5);
         Fraction f3 = new Fraction(6, 7);
-        Fraction f = new Fraction()
-        Console.WriteLine(f.GetFractionString());
-        Console.WriteLine(f.GetDecimalValue());
+        f2.SetTopBottom(3)
+        f3.SetTopBottom(0.70)
+        Console.WriteLine(f);
+
+        Console.WriteLine(f2.GetDecimalValue());
+        Console.WriteLine(f2.GetDecimalValue());
+
 
     }
     // do I call the fraction class here? I will try and see if it works
-    public GetFractionString()
-    {
-        return _top;
-    }
-    public GetDecimalValue(int top) //looked at the reference from learn activity
-    {
-        _top = top;
-    }
     // Now it wants me to do something like this
     //Person p = new Person();
     //p.SetFirstName("Peter");
