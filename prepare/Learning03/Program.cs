@@ -7,7 +7,12 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Learning03 World!");
+        Fraction f = new Fraction();
+        Fraction f2 = new Fraction(5);
+        Fraction f3 = new Fraction(6, 7);
+        
     }
     // do I call the fraction class here? I will try and see if it works
-    Fractions f = new Fractions();
+    
+    
 }
