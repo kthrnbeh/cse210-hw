@@ -19,20 +19,24 @@ public class Scripture
         return _reference.Label() + "\n" + string.Join("", parts);
     }
 
-    public HideDisplay(int gone, Random remain) //The one makes a certian number stay and the other makes them remain.
+    public HideRandomWords(int gone, Random remain) //The one makes a certian number stay and the other makes them remain.
     {
-        for (int g = 0; g < gone; g++) //loop funs how many times it counts
+        if (_words.Count == 0) //loop funs how many times it counts
         {
-            int index = remain.Next(0, _words.Count);
-            _words[index].Hide(); // grabs the word sets it to true
+            return;
+            for (int g = 0; g< gone; g++)
+            {
+                int index = remain.Next(0, _words.Count);
+                _words[index].Hide(); // grabs the word sets it to true
+            }
         }
 
 
     }
-    public bool HideScripture(); //check to see if scripture is fully gone
+    public bool AllHide(); //check to see if scripture is fully gone
     {
-        foreach (var in word in _words)
-            if (! word in _words)
+        foreach (var word in _words)
+            if (!word.isHidden)
             {
                 return false; 
             }
