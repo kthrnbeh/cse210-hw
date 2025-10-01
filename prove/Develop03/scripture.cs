@@ -38,7 +38,7 @@ public class Scripture
         return true;
     }
 }
-    }
+    
 
   
 
@@ -46,7 +46,7 @@ public class Scripture
 }
    
     
-}
+
 
 
 
