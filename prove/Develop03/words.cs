@@ -17,7 +17,15 @@ public class Words
         _hidden = false; //Checks to see if the word is hidden
     }
     public string Present()
-    {
-        if (!_hidden) return _text; //ok this is making sense now if its not hidden then show the word. 
+    {//https://byui-cse.github.io/cse210-course-2023/unit01/csharp-2.html
+        if (!_hidden)
+        {
+            return _text; //ok this is making sense now if its not hidden then show the word. 
+        }
+        else
+        {
+            return new string("_", _text.Length);  // the length key is what makes the __ the same length as the missing text
+        }
     }
+
 }
