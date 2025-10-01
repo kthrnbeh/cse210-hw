@@ -2,6 +2,7 @@
 
 public class Reference
 {
+
     private string _book; // was instructed that I shouldn't have ()
     private int _chapter;
     private int _startVerse;
@@ -26,14 +27,14 @@ public class Reference
 {
     if (startVerse == endVerse)
     {
-        return $"{book} {chapter} : {startVerse}"; //wow now this is making even more sense when I wrote it. Ok. I see. 
+        return $"{_book} {_chapter} : {_startVerse}"; //wow now this is making even more sense when I wrote it. Ok. I see. 
     }
     else
     {
-        return $"{book} {chapter} : {startVerse} - {endVerse}";
+        return $"{_book} {_chapter} : {_startVerse} - {_endVerse}";
     }
 }
-
+// took me seeing it to reconize the error... so silly. 
 }
 //So if I follow the Encap. https://byui-cse.github.io/cse210-course-2023/unit03/prepare.html
 
