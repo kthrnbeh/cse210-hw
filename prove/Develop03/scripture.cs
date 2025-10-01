@@ -21,11 +21,3 @@ public class Scripture
 
 }
 
-
-//  public Passage(Citation cite, string fullText)
-//    {
-      //  _citation = cite;
-      //  _tokens = new List<Token>();
-      //  foreach (var piece in fullText.Split(' '))
-       //     _tokens.Add(new Token(piece));
-//    }
