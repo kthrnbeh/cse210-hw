@@ -1,8 +1,11 @@
 using System;
+
+using System.IO; //reads files into an ary of strings and prints them. writting to not forget what this does.
+
 //team scripture code
 //looking at the team code we used to get template
 
-class Program
+class Program // calling all the things
 {
     static void Main(string[] args)
     {
