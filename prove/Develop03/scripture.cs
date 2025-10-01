@@ -3,41 +3,48 @@ using System.Collections.Generic;
 public class Scripture
 {
     private _reference();
-    private List<Words>_words; // referencing my two other files 
+    private List<Words> _words; // referencing my two other files 
     public Scripture
-    
-    public Scripture (Scripture script, string FullWord)
+
+    public Scripture(Scripture script, string FullWord)
     {
-         _reference = script;
+        _reference = script;
         _words = new List<Words>();
-         foreach (var piece in FullWord.Split(' '))
-         _words.Add(new Words(piece)); // breaks the scripture into words every space
+        foreach (var piece in FullWord.Split(' '))
+            _words.Add(new Words(piece)); // breaks the scripture into words every space
     }
     public string getDisplay()// oh now I get it I want to take the words and lines and put themtogether into the list.
     {
         var parts = new List<string>();
         foreach (var word in _words) parts.Add(word.View());
-        return _refence.Label() + "\n" + string.Join("" , parts);
+        return _refence.Label() + "\n" + string.Join("", parts);
     }
-    
 
-   
-
-  
-    public HideDisplay()
-
+    public HideDisplay(int gone, Random remain) //The one makes a certian number stay and the other makes them remain.
     {
-    foreach (var word in _words)
-        if (!word.IsMasked())
+        for (int g = 0; g < gone; g++) //loop funs how many times it counts
         {
-            return false:
+            int index = remain.Next(0, _words.Count);
+            _words[index].Hide(); // grabs the word sets it to true
         }
-        else
-        {
-        return true;
-        }
+
+
+    }
+    public bool HideScripture(); //check to see if scripture is fully gone
+    {
+        foreach (var in word in _words)
+            if (! word in _words)
+            {
+                return false; 
+            }
+            else
+            {
+                return true;
+            }
     }
 
-
+    
 }
+
+
 
