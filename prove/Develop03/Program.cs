@@ -1,4 +1,6 @@
 using System;
+//team scripture code
+//looking at the team code we used to get template
 
 class Program
 {
