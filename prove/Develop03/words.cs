@@ -5,7 +5,7 @@ public class Word
     private bool _hidden;
     public void Show(string text)
     {
-        _text = text;
+        
         _hidden = false; // don't want the words to be invisable at first. That is why we put that as false. 
     }
     public void Hide()
@@ -14,7 +14,7 @@ public class Word
     }
     public bool HideStuff()
     {
-        _hidden = false; //Checks to see if the word is hidden
+        return _hidden //Checks to see if the word is hidden
     }
     public string Present()
     {//https://byui-cse.github.io/cse210-course-2023/unit01/csharp-2.html
