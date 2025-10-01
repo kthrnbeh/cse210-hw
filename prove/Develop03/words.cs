@@ -1,8 +1,8 @@
 
 public class Words
 {
-    private string _text()
-    private bool _hidden()
+    private string _text;
+    private bool _hidden;
     public void Hide()
     {
 
@@ -17,6 +17,6 @@ public class Words
     }
     public string _present()
     {
-        
+
     }
 }
