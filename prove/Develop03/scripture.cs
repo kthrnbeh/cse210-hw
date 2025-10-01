@@ -18,34 +18,33 @@ public class Scripture
         foreach (var word in _words) parts.Add(word.Present());
         return _reference.Label() + "\n" + string.Join("", parts);
     }
+    public void HideRandomWords(int count, Random rng)// grabs the word sets it to true
 
-    public HideRandomWords(int gone, Random remain) //The one makes a certian number stay and the other makes them remain.
     {
-        if (_words.Count == 0) //loop funs how many times it counts
+        for (int i = 0; i < count; i++)
         {
-            return;
-            for (int g = 0; g< gone; g++)
+            int index = rng.Next(0, _words.Count);
+            _words[index].Hide();//loop funs how many times it counts
+        }
+        public bool IsFullyHidden()//check to see if scripture is fully gone
+    {
+        for (int i = 0; i < _words.Count; i++)
+        {
+            if (!_words[i].IsHidden())
             {
-                int index = remain.Next(0, _words.Count);
-                _words[index].Hide(); // grabs the word sets it to true
+                return false;
             }
         }
-
-
+        return true;
     }
-    public bool AllHide(); //check to see if scripture is fully gone
-    {
-        foreach (var word in _words)
-            if (!word.isHidden)
-            {
-                return false; 
-            }
-            else
-            {
-                return true;
-            }
+}
     }
 
+  
+
+    
+}
+   
     
 }
 
