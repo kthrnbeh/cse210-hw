@@ -11,7 +11,7 @@ public class Reference
 //So if I follow the Encap. https://byui-cse.github.io/cse210-course-2023/unit03/prepare.html
 
 //specifically constructors
-public Reference
+public Reference (string book, string chapter, int startVerse,int endVerse)// I forgot the arg
 {
     _book = book;
     _chapter = chapter;
