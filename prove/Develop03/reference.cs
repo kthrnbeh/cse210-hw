@@ -14,22 +14,15 @@ public class Reference
         _startVerse = one;
         _endVerse = one;
     }
-//this one gets multiple verses 
-    public Reference (string book, int chapter, int startVerse, int endVerse)// I forgot the arg
+    //this one gets multiple verses 
+    public Reference(string book, int chapter, int startVerse, int endVerse)// I forgot the arg
     {
         _book = book;
         _chapter = chapter;
         _startVerse = startVerse;
         _endVerse = endVerse;
     }
-
-}
-//So if I follow the Encap. https://byui-cse.github.io/cse210-course-2023/unit03/prepare.html
-
-//specifically constructors 
-
-// ok I just learned this method will help the range of pages be correctly displayed
-public string Bookinfo()
+    public string Bookinfo()
 {
     if (startVerse == endVerse)
     {
@@ -40,6 +33,14 @@ public string Bookinfo()
         return $"{book} {chapter} : {startVerse} - {endVerse}";
     }
 }
+
+}
+//So if I follow the Encap. https://byui-cse.github.io/cse210-course-2023/unit03/prepare.html
+
+//specifically constructors 
+
+// ok I just learned this method will help the range of pages be correctly displayed
+
 //wanting to understand. I need to get it so I can do my own codes in the future. 
 //https://chatgpt.com/share/68dd6fa0-24c4-8002-9898-1a5c4e3381c4
 // if I used to much help let me know and i will use less and ask it different kinds of 
