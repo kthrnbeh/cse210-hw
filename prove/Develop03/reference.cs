@@ -6,26 +6,28 @@ public class Reference
     private int _chapter;
     private int _startVerse;
     private int _endVerse;
+    //They weren't in my method! Don't forget to put same names in same method
+    public Reference(string book, int chapter, int one) //this one gets one verse 
+    {
+        _book = book;
+        _chapter = chapter; // its a number. Duh
+        _startVerse = one;
+        _endVerse = one;
+    }
+//this one gets multiple verses 
+    public Reference (string book, int chapter, int startVerse, int endVerse)// I forgot the arg
+    {
+        _book = book;
+        _chapter = chapter;
+        _startVerse = startVerse;
+        _endVerse = endVerse;
+    }
 
 }
 //So if I follow the Encap. https://byui-cse.github.io/cse210-course-2023/unit03/prepare.html
 
 //specifically constructors 
-public Reference(string book, int chapter, int one) //this one gets one verse 
-{
-    _book = book;
-    _chapter = chapter; // its a number. Duh
-    _startVerse = one;
-    _endVerse = one;
-}
-//this one gets multiple verses 
-public Reference (string book, int chapter, int startVerse, int endVerse)// I forgot the arg
-{
-    _book = book;
-    _chapter = chapter;
-    _startVerse = startVerse;
-    _endVerse = endVerse;
-}
+
 // ok I just learned this method will help the range of pages be correctly displayed
 public string Bookinfo()
 {
