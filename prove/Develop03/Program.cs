@@ -13,11 +13,11 @@ class Program
         string path = "scripture.txt";
         // "path" is just a variable that holds the file name we want to use
 
-        if (!File.Exists(path))  // checkingi
+        if (!File.Exists(path))  // checkinging if the scripture file exists. 
         // File.Exists(path) checks if that file really exists on the computer
         // ! means "not", so this runs if the file is missing
         {
-            Console.WriteLine("Could not find " + path); 
+            Console.WriteLine("Could not find " + path); // i got a couple of these when I was trying to get it to work.
             // tell the user the file isn’t there
             return; 
             // stop the program here if we don’t have the file
