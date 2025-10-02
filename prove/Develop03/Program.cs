@@ -22,7 +22,7 @@ class Program
         int verse = 1;
         string text = "I, Nephi, having been born of goodly parents,";
 
-        Console.WriteLine($"{book} {chapter}:{verse}");
+        /*Console.WriteLine($"{book} {chapter}:{verse}");
         Console.WriteLine(text);
         //showed text in same spacing
         var words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
@@ -38,7 +38,7 @@ class Program
         var rng = new Random();
         int idx = PickVisibleIndex(words, rng);
         if (idx != -1) HideOneWord(words, idx);
-        ShowVerse(book, chapter, verse, words);
+        ShowVerse(book, chapter, verse, words);*/
 
         // while loop to pick random until pushed continue
         while (true)
@@ -62,7 +62,7 @@ class Program
 
     }
     // Works with hideoneword in main
-    static void HideOneWord(string[] words, int index)
+    /*static void HideOneWord(string[] words, int index)
     {
         if (index < 0 || index >= words.Length) return;
         words[index] = new string('_', words[index].Length);
@@ -71,7 +71,7 @@ class Program
     {
         Console.WriteLine($"{book} {chapter}:{verse}");
         Console.WriteLine(string.Join(" ", words));
-    }
+    }*/
     //Method to help pick a random word disappear
     static int PickVisibleIndex(string[] words, Random rng)
     {
