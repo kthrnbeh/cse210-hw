@@ -16,13 +16,13 @@ class Program
     {
         Console.WriteLine("Hello Develop04 World!");
         //showed the book, chapter, verse, words
-        string book = "1 Nephi";
-        int chapter = 1;
-        int verse = 1;
-        string text = "I, Nephi, having been born of goodly parents,";
+       // string book = "1 Nephi";
+        //int chapter = 1;
+        //int verse = 1;
+        //string text = "I, Nephi, having been born of goodly parents,";
 
-        Console.WriteLine($"{book} {chapter}:{verse}");
-        Console.WriteLine(text);
+        //Console.WriteLine($"{book} {chapter}:{verse}");
+       // Console.WriteLine(text);
         /*
         //showed text in same spacing
         var words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
@@ -38,7 +38,7 @@ class Program
         var rng = new Random();
         int idx = PickVisibleIndex(words, rng);
         if (idx != -1) HideOneWord(words, idx);
-        ShowVerse(book, chapter, verse, words);*/
+        ShowVerse(book, chapter, verse, words);
 
         // while loop to pick random until pushed continue
         while (true)
@@ -54,39 +54,105 @@ class Program
                 break;
             }
             HideOneWord(words, idx2);
-            ShowVerse(book, chapter, verse, words);
-        }
-
-
-
-
-    }
-    // Works with hideoneword in main
-    /*static void HideOneWord(string[] words, int index)
-    {
-        if (index < 0 || index >= words.Length) return;
-        words[index] = new string('_', words[index].Length);
-    }
-    static void ShowVerse(string book, int chapter, int verse, string[] words)
-    {
-        Console.WriteLine($"{book} {chapter}:{verse}");
-        Console.WriteLine(string.Join(" ", words));
-    }*/
-    //Method to help pick a random word disappear
-    static int PickVisibleIndex(string[] words, Random rng)
-    {
-        // simple scan for any word not already underscores
-        var candidates = new List<int>();
-        for (int i = 0; i < words.Length; i++)
+            ShowVerse(book, chapter, verse, words);*/
+       string path = "scriptures.txt";
+        if (!File.Exists(path))
         {
-            bool allUnderscores = true;
-            foreach (char c in words[i]) if (c != '_') { allUnderscores = false; break; }
-            if (!allUnderscores) candidates.Add(i);
+            Console.WriteLine("Could not find " + path);
+            return;
         }
-        if (candidates.Count == 0) return -1;
-        return candidates[rng.Next(candidates.Count)];
+
+        // read the first valid scripture from file
+        Scripture s = null;
+
+        foreach (var raw in File.ReadAllLines(path))
+        {
+            var line = raw.Trim();
+            if (line.Length == 0) continue;
+
+            // Expect: Book|Chapter|Start|End|Text  (exactly 5 parts)
+            var parts = line.Split('|');
+            if (parts.Length != 5) continue;
+
+            string book = parts[0].Trim();
+
+            int chapter;
+            if (!int.TryParse(parts[1], out chapter)) continue;
+
+            int start;
+            if (!int.TryParse(parts[2], out start)) continue;
+
+            int end;
+            // allow blank/invalid end → treat as single verse
+            if (!int.TryParse(parts[3], out end)) end = start;
+
+            string text = parts[4];
+
+            var reference = (start == end)
+                ? new Reference(book, chapter, start)
+                : new Reference(book, chapter, start, end);
+
+            s = new Scripture(reference, text);
+            break; // use the first valid one
+        }
+
+        if (s == null)
+        {
+            Console.WriteLine("No valid scriptures found in file.");
+            return;
+        }
+
+        var rng = new Random();
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine(s.GetDisplay());
+
+            if (s.IsFullyHidden())   // if your method is named AllHidden(), change this call
+            {
+                Console.WriteLine("\nAll words hidden. Nice work!");
+                return;
+            }
+
+            Console.Write("\nPress Enter to hide 3 words, or type 'quit': ");
+            string input = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(input) &&
+                input.Trim().Equals("quit", StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
+            s.HideRandomWords(3, rng);
+        }
+
+    
+
+        // Works with hideoneword in main
+        /*static void HideOneWord(string[] words, int index)
+        {
+            if (index < 0 || index >= words.Length) return;
+            words[index] = new string('_', words[index].Length);
+        }
+        static void ShowVerse(string book, int chapter, int verse, string[] words)
+        {
+            Console.WriteLine($"{book} {chapter}:{verse}");
+            Console.WriteLine(string.Join(" ", words));
+        }*/
+        //Method to help pick a random word disappear
+       /* static int PickVisibleIndex(string[] words, Random rng)
+        {
+            // simple scan for any word not already underscores
+            var candidates = new List<int>();
+            for (int i = 0; i < words.Length; i++)
+            {
+                bool allUnderscores = true;
+                foreach (char c in words[i]) if (c != '_') { allUnderscores = false; break; }
+                if (!allUnderscores) candidates.Add(i);
+            }
+            if (candidates.Count == 0) return -1;
+          //  return candidates[rng.Next(candidates.Count)];
+       // }*/
     }
-            
 
 
 }
