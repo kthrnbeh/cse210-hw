@@ -5,6 +5,6 @@ public class Scriptures
 
 }
 
-Public hiddingWords()
-Public getDisplay()
-Public completelyHidden()
+public hiddingWords()
+public getDisplay()
+public completelyHidden()

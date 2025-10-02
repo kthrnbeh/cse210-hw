@@ -1,6 +1,6 @@
 private_text(string)
 private_hidden(bool) 
 Public Hide() void
-Public show() void
-Public Hidestuff() bool
-Public present() string
+public show() void
+public Hidestuff() bool
+public present() string
