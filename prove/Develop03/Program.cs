@@ -16,6 +16,7 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Develop04 World!");
+        //showed the book, chapter, verse, words
         string book = "1 Nephi";
         int chapter = 1;
         int verse = 1;
@@ -23,18 +24,50 @@ class Program
 
         Console.WriteLine($"{book} {chapter}:{verse}");
         Console.WriteLine(text);
+        //showed text in same spacing
         var words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
         Console.WriteLine(string.Join(" ", words)); // should match text spacing
+        //made words hide
         HideOneWord(words, 0);
         Console.WriteLine(string.Join(" ", words));
+        // hides words as well
+        ShowVerse(book, chapter, verse, words);
+        HideOneWord(words, 0);
+        ShowVerse(book, chapter, verse, words);
+        //works with random word deleter method
+        var rng = new Random();
+        int idx = PickVisibleIndex(words, rng);
+        if (idx != -1) HideOneWord(words, idx);
+        ShowVerse(book, chapter, verse, words);
 
 
 
     }
-        static void HideOneWord(string[] words, int index)
+    // Works with hideoneword in main
+    static void HideOneWord(string[] words, int index)
+    {
+        if (index < 0 || index >= words.Length) return;
+        words[index] = new string('_', words[index].Length);
+    }
+    static void ShowVerse(string book, int chapter, int verse, string[] words)
+    {
+        Console.WriteLine($"{book} {chapter}:{verse}");
+        Console.WriteLine(string.Join(" ", words));
+    }
+    //Method to help pick a random word disappear
+    static int PickVisibleIndex(string[] words, Random rng)
+    {
+        // simple scan for any word not already underscores
+        var candidates = new List<int>();
+        for (int i = 0; i < words.Length; i++)
         {
-            if (index < 0 || index >= words.Length) return;
-            words[index] = new string('_', words[index].Length);
+            bool allUnderscores = true;
+            foreach (char c in words[i]) if (c != '_') { allUnderscores = false; break; }
+            if (!allUnderscores) candidates.Add(i);
         }
+        if (candidates.Count == 0) return -1;
+        return candidates[rng.Next(candidates.Count)];
+    }
+
 
 }
