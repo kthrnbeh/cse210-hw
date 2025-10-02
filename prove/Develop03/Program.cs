@@ -37,7 +37,7 @@ class Program // calling all the things
         }
 
     }      // Define the Words class
-            public class Words
+    public class Words
     {
         public Scripture ScriptureObj { get; set; }
         public string Text { get; set; }
@@ -48,24 +48,31 @@ class Program // calling all the things
             Text = text;
         }
     }
-            
-            // Define the Scripture class
-            public class Scripture
-            {
-                public string Book { get; set; }
-                public int Chapter { get; set; }
-                public int StartVerse { get; set; }
-                public int EndVerse { get; set; }
-            
-                public Scripture(string book, int chapter, int startVerse, int endVerse)
-                {
-                    Book = book;
-                    Chapter = chapter;
-                    StartVerse = startVerse;
-                    EndVerse = endVerse;
-                }
-            }
+
+    // Define the Scripture class
+    public class Scripture
+    {
+        public string Book { get; set; }
+        public int Chapter { get; set; }
+        public int StartVerse { get; set; }
+        public int EndVerse { get; set; }
+
+        public Scripture(string book, int chapter, int startVerse, int endVerse)
+        {
+            Book = book;
+            Chapter = chapter;
+            StartVerse = startVerse;
+            EndVerse = endVerse;
         }
+    }
+        
+        public static Words PickRandom(List<Words> list)
+        {
+            Random rng = new Random();
+            int index = rng.Next(list.Count);
+            return list[index];
+        }
+}
         // Example usage of PickRandom to avoid unused function error
         
      
