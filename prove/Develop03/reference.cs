@@ -23,9 +23,9 @@ public class Reference
         _startVerse = startVerse;
         _endVerse = endVerse;
     }
-    public string Bookinfo()
+public string Bookinfo()
 {
-    if (startVerse == endVerse)
+    if (_startVerse == _endVerse)
     {
         return $"{_book} {_chapter} : {_startVerse}"; //wow now this is making even more sense when I wrote it. Ok. I see. 
     }
