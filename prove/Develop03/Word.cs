@@ -14,7 +14,6 @@ public class Word
         _hidden = true;
     }
 
-    // Optional helper if you ever want to reveal a word again
     public void Show()
     {
         _hidden = false;
@@ -27,10 +26,6 @@ public class Word
 
     public string Present()
     {
-        // If hidden → return underscores of same length; else the word
-        if (_hidden)
-            return new string('_', _text.Length);
-        else
-            return _text;
+        return _hidden ? new string('_', _text.Length) : _text;
     }
 }

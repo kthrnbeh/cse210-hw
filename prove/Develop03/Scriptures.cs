@@ -24,7 +24,6 @@ public class Scripture
         foreach (var w in _words)
             parts.Add(w.Present());
 
-        // Join with spaces so it reads like a sentence
         return _reference.Bookinfo() + "\n" + string.Join(" ", parts);
     }
 

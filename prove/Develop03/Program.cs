@@ -45,18 +45,32 @@ class Program
     {
         var result = new List<Scripture>();
 
-        // Try working dir first, then the app's output folder.
+        // 1) Working directory (where dotnet run is executed)
         string path1 = Path.GetFullPath(filename);
-        string path2 = Path.Combine(AppContext.BaseDirectory, filename);
-        string path = File.Exists(path1) ? path1 : (File.Exists(path2) ? path2 : path1);
 
-        Console.WriteLine($"Reading file from: {path}");
+        // 2) Build output folder (bin/Debug/netX.Y)
+        string path2 = Path.Combine(AppContext.BaseDirectory, filename);
+
+        // 3) Project folder (…/bin/Debug/netX.Y/../../../filename)
+        string path3 = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, @"..\..\..\", filename));
+
+        bool e1 = File.Exists(path1);
+        bool e2 = File.Exists(path2);
+        bool e3 = File.Exists(path3);
+
+        Console.WriteLine("Probing for scriptures file:");
+        Console.WriteLine($"  1) {path1}  exists={e1}");
+        Console.WriteLine($"  2) {path2}  exists={e2}");
+        Console.WriteLine($"  3) {path3}  exists={e3}");
+
+        string path = e1 ? path1 : e2 ? path2 : e3 ? path3 : path2;
 
         try
         {
             if (!File.Exists(path))
             {
-                Console.WriteLine("File not found. Tip: in VS/VS Code, set 'Copy to Output Directory' on scriptures.txt.");
+                Console.WriteLine("File not found in any probe path.");
+                Console.WriteLine("Tip: keep scriptures.txt in the project folder and/or copy it to the output folder.");
                 return result;
             }
 
@@ -74,7 +88,6 @@ class Program
                     continue;
                 }
 
-                // Trim each field (and rejoin any extra pipes into text)
                 string book = parts[0].Trim();
                 string chStr = parts[1].Trim();
                 string stStr = parts[2].Trim();
