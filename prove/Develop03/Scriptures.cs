@@ -18,7 +18,7 @@ public class Scripture
             }
         }// breaks the scripture into words every space
     }
-    public string getDisplay()// oh now I get it I want to take the words and lines and put themtogether into the list.
+    public string GetDisplay()// oh now I get it I want to take the words and lines and put themtogether into the list.
     {
         var parts = new List<string>();
         foreach (var word in _words)
