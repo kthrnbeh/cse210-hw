@@ -16,13 +16,13 @@ class Program
     {
         Console.WriteLine("Hello Develop03 World!");
         //showed the book, chapter, verse, words
-       // string book = "1 Nephi";
+        // string book = "1 Nephi";
         //int chapter = 1;
         //int verse = 1;
         //string text = "I, Nephi, having been born of goodly parents,";
 
         //Console.WriteLine($"{book} {chapter}:{verse}");
-       // Console.WriteLine(text);
+        // Console.WriteLine(text);
         /*
         //showed text in same spacing
         var words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
@@ -55,14 +55,15 @@ class Program
             }
             HideOneWord(words, idx2);
             ShowVerse(book, chapter, verse, words);*/
-       string path = "scriptures.txt";
+            //uh this made them all repear not slowly disapear
+        string path = "scriptures.txt";
         if (!File.Exists(path))
         {
             Console.WriteLine("Could not find " + path);
             return;
         }
 
-        // read the first valid scripture from file
+            // read the first valid scripture from file
         Scripture s = null;
 
         foreach (var raw in File.ReadAllLines(path))
@@ -86,44 +87,44 @@ class Program
             // allow blank/invalid end → treat as single verse
             if (!int.TryParse(parts[3], out end)) end = start;
 
-            string text = parts[4];
+                string text = parts[4];
 
-            var reference = (start == end)
+                var reference = (start == end)
                 ? new Reference(book, chapter, start)
                 : new Reference(book, chapter, start, end);
 
-            s = new Scripture(reference, text);
-            break; // use the first valid one
-        }
+                s = new Scripture(reference, text);
+                break; // use the first valid one
+            }
 
-        if (s == null)
-        {
-            Console.WriteLine("No valid scriptures found in file.");
-            return;
-        }
-
-        var rng = new Random();
-        while (true)
-        {
-            Console.Clear();
-            Console.WriteLine(s.GetDisplay());
-
-            if (s.IsFullyHidden())   // if your method is named AllHidden(), change this call
+            if (s == null)
             {
-                Console.WriteLine("\nAll words hidden. Nice work!");
+                Console.WriteLine("No valid scriptures found in file.");
                 return;
             }
 
-            Console.Write("\nPress Enter to hide 3 words, or type 'quit': ");
-            string input = Console.ReadLine();
-            if (!string.IsNullOrWhiteSpace(input) &&
-                input.Trim().Equals("quit", StringComparison.OrdinalIgnoreCase))
+            var rng = new Random();
+            while (true)
             {
-                return;
-            }
+                Console.Clear();
+                Console.WriteLine(s.GetDisplay());
 
-            s.HideRandomWords(3, rng);
-        }
+                if (s.IsFullyHidden())   // if your method is named AllHidden(), change this call
+                {
+                    Console.WriteLine("\nAll words hidden. Nice work!");
+                    return;
+                }
+
+                Console.Write("\nPress Enter to hide 3 words, or type 'quit': ");
+                string input = Console.ReadLine();
+                if (!string.IsNullOrWhiteSpace(input) &&
+                    input.Trim().Equals("quit", StringComparison.OrdinalIgnoreCase))
+                {
+                    return;
+                }
+
+                s.HideRandomWords(3, rng);
+            }
 
     
 
