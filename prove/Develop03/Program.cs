@@ -72,5 +72,5 @@ class Program // calling all the things
 // Remove duplicate using statements and keep them at the top of the file
 
 
-
+//no errors but it's not doing what its supposed to. 
 //https://byui-cse.github.io/cse210-course-2023/unit01/csharp-5.html
