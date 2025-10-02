@@ -14,7 +14,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        Console.WriteLine("Hello Develop03 World!");
         //showed the book, chapter, verse, words
        // string book = "1 Nephi";
         //int chapter = 1;
