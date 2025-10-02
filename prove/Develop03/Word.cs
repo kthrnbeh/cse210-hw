@@ -21,7 +21,7 @@ public class Word
     }
     public string Present()
     {//https://byui-cse.github.io/cse210-course-2023/unit01/csharp-2.html
-        if (!_hidden)
+        if (_hidden)
         {
             return new string('_',_text.Length); //ok this is making sense now if its not hidden then show the word. 
         }
