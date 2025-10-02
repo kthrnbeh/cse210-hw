@@ -74,7 +74,81 @@ class Program // calling all the things
         }
     }
         
-    public static Words PickRandom(List<Words>words)
+        using System;
+    using System.Collections.Generic;
+    using System.IO;
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello Develop03 World!");
+            var items = new List<Words>();
+            string path = "scriptures.txt";
+    
+            if (File.Exists(path))
+            {
+                foreach (var lineText in File.ReadAllLines(path))
+                {
+                    var line = lineText.Trim();
+                    if (line.Length == 0) continue;
+    
+                    var parts = line.Split('|');
+                    if (parts.Length != 5) continue;
+    
+                    string book = parts[0];
+                    if (!int.TryParse(parts[1], out int chapter)) continue;
+                    if (!int.TryParse(parts[2], out int verseStart)) continue;
+                    if (!int.TryParse(parts[3], out int endVerse)) continue;
+                    string text = parts[4];
+    
+                    var scriptureObj = new Scripture(book, chapter, verseStart, endVerse);
+                    items.Add(new Words(scriptureObj, text));
+                }
+            }
+    
+            if (items.Count > 0)
+            {
+                Words randomItem = PickRandom(items);
+                Console.WriteLine($"Random scripture: {randomItem.ScriptureObj.Book} {randomItem.ScriptureObj.Chapter}:{randomItem.ScriptureObj.StartVerse}-{randomItem.ScriptureObj.EndVerse} - {randomItem.Text}");
+            }
+        }
+    
+        public static Words PickRandom(List<Words> list)
+        {
+            var rng = new Random();
+            int index = rng.Next(list.Count);
+            return list[index];
+        }
+    }
+    
+    public class Words
+    {
+        public Scripture ScriptureObj { get; set; }
+        public string Text { get; set; }
+    
+        public Words(Scripture scriptureObj, string text)
+        {
+            ScriptureObj = scriptureObj;
+            Text = text;
+        }
+    }
+    
+    public class Scripture
+    {
+        public string Book { get; set; }
+        public int Chapter { get; set; }
+        public int StartVerse { get; set; }
+        public int EndVerse { get; set; }
+    
+        public Scripture(string book, int chapter, int startVerse, int endVerse)
+        {
+            Book = book;
+            Chapter = chapter;
+            StartVerse = startVerse;
+            EndVerse = endVerse;
+        }
+    } static Words PickRandom(List<Words>words)
     {
         Random rng = new Random();
         int index = rng.Next(.Count);
