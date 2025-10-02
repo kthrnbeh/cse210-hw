@@ -37,7 +37,8 @@ public class Reference
         {
             return $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
         }
-        
+
+    }
 }
 // took me seeing it to reconize the error... so silly. 
 
