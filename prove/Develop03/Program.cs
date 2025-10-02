@@ -1,83 +1,103 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.CompilerServices; //reads files into an ary of strings and prints them. writting to not forget what this does.
 
-//team scripture code
-//looking at the team code we used to get template
-
-class Program // calling all the things
+class Program
 {
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Develop03 World!");
-        // list from the scripture.cs 
-        List<Scripture> script = new List<Scripture>();
-        List<Words> items = new List<Words>();
-        string path = "scriptures.txt"; // specify your file name here
-        if (File.Exists(path)) // prevents the file from crashing
+
+        var scriptures = LoadScriptures("scriptures.txt");
+        if (scriptures.Count == 0)
         {
-            foreach (var lineText in File.ReadAllLines(path))
+            Console.WriteLine("No scriptures found. Check messages above and scriptures.txt format.");
+            return;
+        }
+
+        var rng = new Random();
+        var scripture = scriptures[rng.Next(scriptures.Count)];
+
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine(scripture.GetDisplay());
+            Console.WriteLine("\n(Press Enter to hide a few words, or type 'quit' to end)");
+            string input = Console.ReadLine()?.Trim().ToLower();
+
+            if (input == "quit")
+                break;
+
+            scripture.HideRandomWords(3, rng);
+
+            if (scripture.IsFullyHidden())
             {
-                var line = lineText.Trim();
-                if (line.Length == 0) continue;
-
-                var parts = line.Split('|');
-                if (parts.Length != 5) continue;
-
-                string book = parts[0];
-                if (!int.TryParse(parts[1], out int chapter)) continue;
-                if (!int.TryParse(parts[2], out int verseStart)) continue;
-                if (!int.TryParse(parts[3], out int endVerse)) continue;
-                string text = parts[4];
-
-                var scriptureObj = new Scripture(book, chapter, verseStart, endVerse);
-                items.Add(new Words(scriptureObj, text));
+                Console.Clear();
+                Console.WriteLine(scripture.GetDisplay());
+                Console.WriteLine("\nAll words are hidden. Great job!");
+                break;
             }
         }
-
-    }      // Define the Words class
-    public class Words
-    {
-        public Scripture ScriptureObj { get; set; }
-        public string Text { get; set; }
-
-        public Words(Scripture scriptureObj, string text)
-        {
-            ScriptureObj = scriptureObj;
-            Text = text;
-        }
     }
 
-    // Define the Scripture class
-    public class Scripture
+    // === Improved loader ===
+    static List<Scripture> LoadScriptures(string filename)
     {
-        public string Book { get; set; }
-        public int Chapter { get; set; }
-        public int StartVerse { get; set; }
-        public int EndVerse { get; set; }
+        var result = new List<Scripture>();
 
-        public Scripture(string book, int chapter, int startVerse, int endVerse)
+        // Try working dir first, then the app's output folder.
+        string path1 = Path.GetFullPath(filename);
+        string path2 = Path.Combine(AppContext.BaseDirectory, filename);
+        string path = File.Exists(path1) ? path1 : (File.Exists(path2) ? path2 : path1);
+
+        Console.WriteLine($"Reading file from: {path}");
+
+        try
         {
-            Book = book;
-            Chapter = chapter;
-            StartVerse = startVerse;
-            EndVerse = endVerse;
+            if (!File.Exists(path))
+            {
+                Console.WriteLine("File not found. Tip: in VS/VS Code, set 'Copy to Output Directory' on scriptures.txt.");
+                return result;
+            }
+
+            int lineNum = 0;
+            foreach (var raw in File.ReadAllLines(path))
+            {
+                lineNum++;
+                var line = raw.Trim();
+                if (line.Length == 0) { Console.WriteLine($"[skip line {lineNum}] empty"); continue; }
+
+                var parts = line.Split('|');
+                if (parts.Length < 5)
+                {
+                    Console.WriteLine($"[skip line {lineNum}] expected 5 fields, got {parts.Length}: {line}");
+                    continue;
+                }
+
+                // Trim each field (and rejoin any extra pipes into text)
+                string book = parts[0].Trim();
+                string chStr = parts[1].Trim();
+                string stStr = parts[2].Trim();
+                string enStr = parts[3].Trim();
+                string text = string.Join("|", parts, 4, parts.Length - 4).Trim();
+
+                if (book.Length == 0) { Console.WriteLine($"[skip line {lineNum}] empty book"); continue; }
+                if (!int.TryParse(chStr, out int chapter)) { Console.WriteLine($"[skip line {lineNum}] bad chapter: '{chStr}'"); continue; }
+                if (!int.TryParse(stStr, out int start)) { Console.WriteLine($"[skip line {lineNum}] bad start verse: '{stStr}'"); continue; }
+                if (!int.TryParse(enStr, out int end)) { Console.WriteLine($"[skip line {lineNum}] bad end verse: '{enStr}'"); continue; }
+                if (text.Length == 0) { Console.WriteLine($"[skip line {lineNum}] empty text"); continue; }
+
+                var reference = new Reference(book, chapter, start, end);
+                var scripture = new Scripture(reference, text);
+                result.Add(scripture);
+            }
         }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error reading file: {ex.Message}");
+        }
+
+        Console.WriteLine($"Loaded {result.Count} scripture(s).");
+        return result;
     }
-        
-        public static Words PickRandom(List<Words> list)
-        {
-            Random rng = new Random();
-            int index = rng.Next(list.Count);
-            return list[index];
-        }
 }
-        // Example usage of PickRandom to avoid unused function error
-        
-     
-// Remove duplicate using statements and keep them at the top of the file
-
-
-//no errors but it's not doing what its supposed to. 
-//https://byui-cse.github.io/cse210-course-2023/unit01/csharp-5.html
