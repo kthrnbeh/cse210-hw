@@ -24,7 +24,7 @@ public class Scripture
         foreach (var word in _words)
             parts.Add(word.Present());
 
-        return _reference.Bookinfo() + "\n" + string.Join("", parts);
+        return _reference.Bookinfo() + "\n" + string.Join(" ", parts);
     }
     public void HideRandomWords(int count, Random rng)// grabs the word sets it to true
     {
