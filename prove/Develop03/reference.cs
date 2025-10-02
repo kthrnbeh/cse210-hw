@@ -34,9 +34,10 @@ public class Reference
             return $"{_book} {_chapter} : {_startVerse}"; //wow now this is making even more sense when I wrote it. Ok. I see. 
         }
         else
-        }
+        {
             return $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
         }
+        
 }
 // took me seeing it to reconize the error... so silly. 
 
