@@ -10,18 +10,20 @@ using System.Runtime.CompilerServices; //reads files into an ary of strings and 
 Then have it hide a word and test that 
 Then add the loop to hide multiple words 
 Write one step at a time and test as you go. */
-static void Main(string[] args)
+
+class Program
 {
-    Console.WriteLine("Hello Develop03 World!");
-    //Testing
-    string book = "1 Nephi";
-    int chapter = 1;
-    int verse = 1;
-    string text = "I, Nephi, having been born of goodly parents,";
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello Develop04 World!");
+        string book = "1 Nephi";
+        int chapter = 1;
+        int verse = 1;
+        string text = "I, Nephi, having been born of goodly parents,";
 
-    Console.WriteLine($"{book} {chapter}:{verse}");
-    Console.WriteLine(text);
+        Console.WriteLine($"{book} {chapter}:{verse}");
+        Console.WriteLine(text);
 
 
-
+    }
 }
