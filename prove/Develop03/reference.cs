@@ -8,12 +8,12 @@ public class Reference
     private int _startVerse;
     private int _endVerse;
     //They weren't in my method! Don't forget to put same names in same method
-    public Reference(string book, int chapter, int one) //this one gets one verse 
+    public Reference(string book, int chapter, int verse) //this one gets one verse 
     {
         _book = book;
         _chapter = chapter; // its a number. Duh
-        _startVerse = one;
-        _endVerse = one;
+        _startVerse = verse;//relaes more than one 
+        _endVerse = verse;
     }
     //this one gets multiple verses 
     public Reference(string book, int chapter, int startVerse, int endVerse)// I forgot the arg

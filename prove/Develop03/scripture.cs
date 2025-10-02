@@ -3,12 +3,13 @@ using System.Collections.Generic;
 public class Scripture
 {
     private Reference _reference;
-    private List<Words> _words; // referencing my two other files 
+    private List<Word> _words; // referencing my two other files 
 
-    public Scripture(Scripture script, string FullWord)
+    public Scripture(Reference reference, string FullWord) //mixed up which program
     {
         _reference = script;
-        _words = new List<Words>();
+        _words = new List<Word>();
+        string[] pieces = fullText.Split('';)
         foreach (var piece in FullWord.Split(' '))
             _words.Add(new Words(piece)); // breaks the scripture into words every space
     }
