@@ -10,95 +10,91 @@ class Program
         // just a greeting to show the program started
 
         // ------------------- STEP 1: FIND THE FILE -------------------
-        string path = "scripture.txt";
-        // "path" is just a variable that holds the file name we want to use
+        // a variable that stores the name of the file we want to open
+        string path = "scriptures.txt";  
 
-        if (!File.Exists(path))  // checkinging if the scripture file exists. 
-        // File.Exists(path) checks if that file really exists on the computer
-        // ! means "not", so this runs if the file is missing
+        // print out where the program is looking (debug helper)
+        Console.WriteLine("Looking for file in: " + Directory.GetCurrentDirectory());
+
+        // check if the file actually exists
+        if (!File.Exists(path))  
         {
-            Console.WriteLine("Could not find " + path); // i got a couple of these when I was trying to get it to work.
-            // tell the user the file isn’t there
-            return; 
-            // stop the program here if we don’t have the file
+            Console.WriteLine("Could not find " + path);
+            // if the file isn’t found → stop the program
+            return;  
         }
 
         // ------------------- STEP 2: LOAD ONE SCRIPTURE -------------------
         string[] lines = File.ReadAllLines(path);  
-        // ReadAllLines = grab every line in the file and put them into an array
-        // each "line" in this array looks like: Book|Chapter|Start|End|Text
+        // ReadAllLines = function that grabs every line from the file
+        // Each line is stored in the array "lines"
 
         string line = lines[0];  
-        // take the FIRST line only (later we could add random to pick one)
+        // take the FIRST line only (you could later pick a random one)
 
         string[] parts = line.Split('|');  
-        // Split breaks the line into pieces wherever it sees a "|"
-        // now parts[0] is book, parts[1] is chapter, etc.
+        // Split() = method that cuts the line into parts wherever "|" appears
+        // Example: "Moses|1|1|3|And God said..." becomes 5 parts
 
-        string book = parts[0];  
-        int chapter = int.Parse(parts[1]);  //I get why
+        string book = parts[0];  // first part → book name
+        int chapter = int.Parse(parts[1]);  // second part → number
         int startVerse = int.Parse(parts[2]);  
         int endVerse = int.Parse(parts[3]);  
-        string text = parts[4];  
-        // assign each part into the right variable (turning numbers from text into int)
+        string text = parts[4];  // last part → scripture words
 
         // ------------------- STEP 3: BUILD A REFERENCE -------------------
         Reference reference;  
-        // Reference is your custom class that holds the scripture address
-        // (like "1 Nephi 1:1" or "Moses 1:1-3")
+        // Reference is your own CLASS (custom data type)
+        // It knows how to store book, chapter, and verse numbers
 
-        if (startVerse == endVerse)  
+        if (startVerse == endVerse)
         {
-            reference = new Reference(book, chapter, startVerse); 
-            // if start and end are the same → single-verse constructor
+            reference = new Reference(book, chapter, startVerse);
+            // if start and end are the same, we only need one verse
         }
         else
         {
-            reference = new Reference(book, chapter, startVerse, endVerse); 
-            // if different → multiple-verse constructor
+            reference = new Reference(book, chapter, startVerse, endVerse);
+            // if different, we pass both startVerse and endVerse
         }
 
         // ------------------- STEP 4: BUILD A SCRIPTURE -------------------
         Scripture scripture = new Scripture(reference, text);  
-        // Scripture is your custom class that:
-        // - stores the reference
-        // - splits the verse text into Word objects
-        // - knows how to display itself and hide words
+        // Scripture is another CLASS (custom type you made)
+        // It uses the Reference and the text, and then it splits the text into Word objects
 
         Random rng = new Random();  
-        // random number generator (lets Scripture choose random words to hide)
+        // Random = built-in class that helps us pick random numbers
+        // We’ll give it to Scripture to hide random words
 
         // ------------------- STEP 5: LOOP UNTIL SCRIPTURE IS GONE -------------------
-        while (true)  // "forever" loop until we break out
+        while (true)  
         {
             Console.Clear();  
-            // wipe the screen so it looks clean each time
+            // clears the console so it looks clean each round
 
             Console.WriteLine(scripture.GetDisplay());  
-            // ask Scripture to show itself
-            // Scripture calls Word.Present() on every word inside it
+            // Scripture.GetDisplay() is a METHOD
+            // It asks every Word to show itself (hidden or normal)
+            // and combines them into one string for printing
 
             if (scripture.IsFullyHidden())  
-            // ask Scripture: "are ALL words hidden?"
             {
                 Console.WriteLine("\nAll words hidden. Nice work!");
-                break;  // stop the loop if they are
+                break;  // exit the while loop
             }
 
-            Console.Write("\nPress Enter to hide 3 words, or type 'quit': "); 
-            string input = Console.ReadLine();  
-            // wait for user to press a key or type "quit"
+            Console.Write("\nPress Enter to hide 3 words, or type 'quit': ");
+            string input = Console.ReadLine();
 
-            if (input == "quit" || input == "QUIT")  
-            // if user typed quit (uppercase or lowercase)
+            if (input == "quit" || input == "QUIT")
             {
-                break;  // end the loop
+                break;  // end the loop if the user wants to quit
             }
 
             scripture.HideRandomWords(3, rng);  
-            // tell Scripture: "hide 3 random words"
-            // Scripture uses rng.Next(...) to pick which Word objects to hide
-            // Each Word then changes itself (_hidden = true)
+            // tells the Scripture object:
+            // “please pick 3 Word objects and set them to hidden”
         }
     }
 }
