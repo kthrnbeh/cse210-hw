@@ -23,7 +23,18 @@ class Program
 
         Console.WriteLine($"{book} {chapter}:{verse}");
         Console.WriteLine(text);
+        var words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        Console.WriteLine(string.Join(" ", words)); // should match text spacing
+        HideOneWord(words, 0);
+        Console.WriteLine(string.Join(" ", words));
+
 
 
     }
+        static void HideOneWord(string[] words, int index)
+        {
+            if (index < 0 || index >= words.Length) return;
+            words[index] = new string('_', words[index].Length);
+        }
+
 }
