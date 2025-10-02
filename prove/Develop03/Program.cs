@@ -40,6 +40,24 @@ class Program
         if (idx != -1) HideOneWord(words, idx);
         ShowVerse(book, chapter, verse, words);
 
+        // while loop to pick random until pushed continue
+        while (true)
+        {
+            Console.Write("Press ENTER to hide a word (or type 'quit'): ");
+            var input = Console.ReadLine();
+            if (string.Equals(input, "quit", StringComparison.OrdinalIgnoreCase)) break;
+
+            int idx2 = PickVisibleIndex(words, rng);
+            if (idx2 == -1)
+            {
+                Console.WriteLine("All words hidden!");
+                break;
+            }
+            HideOneWord(words, idx2);
+            ShowVerse(book, chapter, verse, words);
+        }
+
+
 
 
     }
@@ -68,6 +86,7 @@ class Program
         if (candidates.Count == 0) return -1;
         return candidates[rng.Next(candidates.Count)];
     }
+            
 
 
 }
