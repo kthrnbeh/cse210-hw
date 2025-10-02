@@ -16,23 +16,23 @@ class Program
     {
         Console.WriteLine("Hello Develop03 World!");
         //showed the book, chapter, verse, words
-        // string book = "1 Nephi";
-        //int chapter = 1;
+        // string book = "1 Nephi";  made the text we would store
+        //int chapter = 1; made the variable
         //int verse = 1;
-        //string text = "I, Nephi, having been born of goodly parents,";
+        //string text = "I, Nephi, having been born of goodly parents,"; storing the actual words of the scripture
 
-        //Console.WriteLine($"{book} {chapter}:{verse}");
-        // Console.WriteLine(text);
+        //Console.WriteLine($"{book} {chapter}:{verse}"); printing the book chapter verse
+        // Console.WriteLine(text); printing the text
         /*
         //showed text in same spacing
-        var words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        Console.WriteLine(string.Join(" ", words)); // should match text spacing
+        var words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries); made an array of strings, split cut the verses into seperate pieces.
+        Console.WriteLine(string.Join(" ", words)); // should match text spacing join glued all the words back together with spaces in between.
         //made words hide
         HideOneWord(words, 0);
-        Console.WriteLine(string.Join(" ", words));
+        Console.WriteLine(string.Join(" ", words));// hides the words at index 0
         // hides words as well
         ShowVerse(book, chapter, verse, words);
-        HideOneWord(words, 0);
+        HideOneWord(words, 0); hides the words chapter verse book at index 0
         ShowVerse(book, chapter, verse, words);
         //works with random word deleter method
         var rng = new Random();
@@ -41,7 +41,7 @@ class Program
         ShowVerse(book, chapter, verse, words);
 
         // while loop to pick random until pushed continue
-        while (true)
+        while (true) //keep looping forever until you break.
         {
             Console.Write("Press ENTER to hide a word (or type 'quit'): ");
             var input = Console.ReadLine();
@@ -56,11 +56,11 @@ class Program
             HideOneWord(words, idx2);
             ShowVerse(book, chapter, verse, words);*/
         //uh this made them all repear not slowly disapear
-        string path = "scriptures.txt";
-        if (!File.Exists(path))
+        string path = "scriptures.txt"; //here the text is "scriptures.txt", which is the filename of the file we want to read.
+        if (!File.Exists(path)) // path is just a variable name you called the file // if checks if the file exists
         {
-            Console.WriteLine("Could not find " + path);
-            return;
+            Console.WriteLine("Could not find " + path);// got a couple of these until I moved my scripture.txt to proper location
+            return; // stopped the program from continuing on. 
         }
 
         // read the first valid scripture from file
@@ -111,13 +111,13 @@ class Program
 
         var valid = new List<Scripture>();
 
-        foreach (var raw in File.ReadAllLines(path))
+        foreach (var raw in File.ReadAllLines(path)) //open the file and read every line into a list. foreach means go through each line. 
         {
-            var line = raw.Trim();
-            if (line.Length == 0) continue;
-
+            var line = raw.Trim(); //raw = original line, might have spaces at start or end. .Trim() = cut off extra spaces on both ends.
+            if (line.Length == 0) continue; //.Length = how many characters are in the line. if there is a empty line skip it.
+            //continue = jump back to the top of the foreach, don’t do the rest for this line.
             // Expect: Book|Chapter|Start|End|Text
-            var parts = line.Split('|');
+            var parts = line.Split('|'); //.Split('|') = cut the line into chunks every time you see
             if (parts.Length != 5) continue;
 
             string book = parts[0].Trim();
