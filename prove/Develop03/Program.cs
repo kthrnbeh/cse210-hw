@@ -36,7 +36,7 @@ class Program
         // now parts[0] is book, parts[1] is chapter, etc.
 
         string book = parts[0];  
-        int chapter = int.Parse(parts[1]);  
+        int chapter = int.Parse(parts[1]);  //I get why
         int startVerse = int.Parse(parts[2]);  
         int endVerse = int.Parse(parts[3]);  
         string text = parts[4];  
