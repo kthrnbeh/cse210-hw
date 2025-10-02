@@ -1,4 +1,4 @@
-public Scriptures
+public class Scriptures
 {
     private _reference();
     private_words(List);
