@@ -65,51 +65,88 @@ class Program
 
         // read the first valid scripture from file
 
-        var rng = new Random();
+        var rng = new Random();// rng = a random number generator. Like a dice roller.
+// We'll use rng to pick random words to hide OR to pick a random verse from the file.
     
-        Scripture s;
+        Scripture s; //// This makes a variable named s, type Scripture (your class).
+        // At this point it's empty — you will fill it later with an actual Scripture object.
 
         // pick ONE random verse from scriptures.txt
         try
         {
             s = LoadRandomFromFile("scriptures.txt", rng);
+            // try = "try to do this code, but if something goes wrong, don't crash."
+            // LoadRandomFromFile(...) = our helper function below.
+            // It opens the file, loads all the lines, picks one scripture, and gives it back.
         }
         catch (Exception ex)
         {
-            Console.WriteLine(ex.Message);
-            return;
-        }
-
+    Console.WriteLine(ex.Message);
+    // If something goes wrong (like file not found, or bad format),
+    // print the error message. ex.Message is just the text of the error.
+    return; // stop the program
         // interactive hide loop
         while (true)
         {
             Console.Clear();
+                // Clear the console so it looks like the screen refreshes.
+
             Console.WriteLine(s.GetDisplay());
+            // Ask your Scripture object s to show itself.
+            // GetDisplay() calls Reference.Bookinfo() and Word.Present() under the hood.
 
-            if (s.IsFullyHidden())
-            {
-                Console.WriteLine("\nAll words hidden. Nice work!");
-                return;
-            }
+                if (s.IsFullyHidden())
+                {
+                    Console.WriteLine("\nAll words hidden. Nice work!");
+                    return;
+                }
+         // check if every Word inside Scripture is hidden.
+         // If yes, print a "done" message and stop the program.
 
-            Console.Write("\nPress Enter to hide 3 words, or type 'quit': ");
-            string input = Console.ReadLine();
+
+                Console.Write("\nPress Enter to hide 3 words, or type 'quit': ");
+                string input = Console.ReadLine();
+    // Ask the user for input. Waits until they hit Enter.
+    // If they type nothing, input is empty. If they type quit, input = "quit".
+                if (!string.IsNullOrWhiteSpace(input) &&
+                input.Trim().Equals("quit", StringComparison.OrdinalIgnoreCase))
+                {
+                     return;
+                }
+                // If the input is not empty AND equals "quit" (ignore spaces/capital letters),
+                // then stop the program.
+
+            
             if (!string.IsNullOrWhiteSpace(input) &&
                 input.Trim().Equals("quit", StringComparison.OrdinalIgnoreCase))
             {
                 return;
             }
 
-            s.HideRandomWords(3, rng);
+                s.HideRandomWords(3, rng);
+                    // Otherwise, ask the Scripture to hide 3 random words.
+                    // Scripture calls into its Word objects to change them to underscores.
+}
+
         }
 
     }
         static Scripture LoadRandomFromFile(string path, Random rng)
+        // static means this belongs to Program, not to an object.
+        // It returns a Scripture object.
+        // Takes 2 things: path (filename string), rng (random dice).
+
     {
+       
         if (!File.Exists(path))
             throw new FileNotFoundException($"File not found: {path}");
+        // Check if the file exists. If not, throw = stop running this function and send back an error.
+        // $"File not found: {path}" makes a message like "File not found: scriptures.txt"
+
 
         var valid = new List<Scripture>();
+        // Make a list to store all the good Scripture objects we find in the file.
+
 
         foreach (var raw in File.ReadAllLines(path)) //open the file and read every line into a list. foreach means go through each line. 
         {
@@ -118,28 +155,38 @@ class Program
             //continue = jump back to the top of the foreach, don’t do the rest for this line.
             // Expect: Book|Chapter|Start|End|Text
             var parts = line.Split('|'); //.Split('|') = cut the line into chunks every time you see
-            if (parts.Length != 5) continue;
+            if (parts.Length != 5) continue; // checks if we got 5 parts 
 
-            string book = parts[0].Trim();
-            if (!int.TryParse(parts[1], out int chapter)) continue;
-            if (!int.TryParse(parts[2], out int start)) continue;
+            string book = parts[0].Trim(); //the first index book and trim if there is extra space
+            if (!int.TryParse(parts[1], out int chapter)) continue;// chapter try to turn it into a number.” if fails skip
+            if (!int.TryParse(parts[2], out int start)) continue; // verse try to print/parse a number/ or skp if its bad
 
             int end = start;
-            int.TryParse(parts[3], out end); // if parse fails, end == start
+            int.TryParse(parts[3], out end); // if parse fails, end == start, this handles single-verse scriptures like 1:1
 
-            string text = parts[4];
+            string text = parts[4]; // the verse text 
 
             var reference = (start == end)
-                ? new Reference(book, chapter, start)
+                ? new Reference(book, chapter, start) //this is a ternary operator (fancy if/else in one line). //still confused on this and its puropse. 
+                //if start == end → build a Reference with 3 pieces (book, chapter, verse).
+// else → build a Reference with 4 pieces (book, chapter, startVerse, endVerse).  this makes sure both “single verse” and “range of verses” are supported.
                 : new Reference(book, chapter, start, end);
 
             valid.Add(new Scripture(reference, text));
+            // Build a Scripture object with the reference + text.
+            // Put it in the valid list.
+
         }
 
-        if (valid.Count == 0)
-            throw new InvalidOperationException("No valid scriptures found in file.");
+            if (valid.Count == 0)
+                throw new InvalidOperationException("No valid scriptures found in file.");
+            // If we never added anything to the list, throw an error.
 
-        return valid[rng.Next(valid.Count)];
+
+            return valid[rng.Next(valid.Count)];
+        // Pick a random index between 0 and list size-1.
+    // Return that Scripture object.
+
     }
 
             
