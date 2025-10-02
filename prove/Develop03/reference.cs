@@ -7,7 +7,7 @@ public class Reference
     private int _startVerse;
     private int _endVerse;
     //They weren't in my method! Don't forget to put same names in same method
-    public Reference(string book, int chapter, int verse) //this one gets one verse 
+    //this one gets one verse 
 
     public Reference(string book, int chapter, int verse)
     {
@@ -19,7 +19,6 @@ public class Reference
         _endVerse = verse;
     }
     //this one gets multiple verses 
-    public Reference(string book, int chapter, int startVerse, int endVerse)// I forgot the arg
 
     public Reference(string book, int chapter, int startVerse, int endVerse)
     {
@@ -28,25 +27,19 @@ public class Reference
         _startVerse = startVerse;
         _endVerse = endVerse;
     }
-public string Bookinfo()
-{
-    if (_startVerse == _endVerse)
-    {
-        return $"{_book} {_chapter} : {_startVerse}"; //wow now this is making even more sense when I wrote it. Ok. I see. 
-    }
-    else
-
     public string Bookinfo()
     {
-        return $"{_book} {_chapter} : {_startVerse} - {_endVerse}";
         if (_startVerse == _endVerse)
-            return $"{_book} {_chapter}:{_startVerse}";
+        {
+            return $"{_book} {_chapter} : {_startVerse}"; //wow now this is making even more sense when I wrote it. Ok. I see. 
+        }
         else
+        }
             return $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
-    }
+        }
 }
 // took me seeing it to reconize the error... so silly. 
-}
+
 //So if I follow the Encap. https://byui-cse.github.io/cse210-course-2023/unit03/prepare.html
 
 //specifically constructors 
