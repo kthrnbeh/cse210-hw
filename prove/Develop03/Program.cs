@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO; //reads files into an ary of strings and prints them. writting to not forget what this does.
-using System.IO;
 using System.Runtime.CompilerServices; //reads files into an ary of strings and prints them. writting to not forget what this does.
 
 //team scripture code
@@ -22,8 +21,9 @@ class Program
         int verse = 1;
         string text = "I, Nephi, having been born of goodly parents,";
 
-        /*Console.WriteLine($"{book} {chapter}:{verse}");
+        Console.WriteLine($"{book} {chapter}:{verse}");
         Console.WriteLine(text);
+        /*
         //showed text in same spacing
         var words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
         Console.WriteLine(string.Join(" ", words)); // should match text spacing
