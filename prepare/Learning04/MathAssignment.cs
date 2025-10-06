@@ -7,6 +7,7 @@ public class MathAssignment
     //have it call the base class constructor to set the base class attributes that way
 
     }
+    
 
 }
 //Add the GetHomeworkList() method.
