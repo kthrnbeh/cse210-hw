@@ -1,9 +1,10 @@
 //Create the class and set up the inheritance relationship.
 public class WritingAssignment
 {
+    private string _title;
     //Add the member variables and set up the constructor as you did for the MathAssignment class.
 
-    public WritingAssignment
+    public WritingAssignment ( )
     {
 
     }
