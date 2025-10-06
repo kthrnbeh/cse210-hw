@@ -1,14 +1,18 @@
 //Create the class and set up the inheritance relationship.
-public class WritingAssignment
+public class WritingAssignment : Assignment
 {
     private string _title;
     //Add the member variables and set up the constructor as you did for the MathAssignment class.
 
-    public WritingAssignment ( )
+    public WritingAssignment(string studentName, string topic, string title) : base(studentName, topic)
     {
-
+        _title = title;
     }
     //Add the GetWritingInformation() method.
+    public string GetWritingInformation()
+    {
+        return $" {_title}";
+    }
 }
 /* Notice that this method needs to access the _studentName variable defined in the base class. Even though WritingAssignment class inherited this attribute, it is private, so you cannot access it directly in the derived class.
 
