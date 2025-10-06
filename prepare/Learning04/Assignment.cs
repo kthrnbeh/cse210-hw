@@ -15,9 +15,9 @@ public class Assignment
 
     }
     //Add the method for GetSummary() to return the student's name and the topic.
-    public string GetSummary()
+    public string GetSummary() // need to add string
     {
-        return $"{_studentName},{_topic}";
+        return $"{_studentName},{_topic}"; //only need to call the variables not name them again.
     }
 
 }
