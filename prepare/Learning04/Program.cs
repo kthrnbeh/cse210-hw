@@ -11,9 +11,11 @@ class Program
 
         Assignment assignment = new Assignment("Gary, Steven", "History");
         Console.WriteLine(assignment.GetSummary());
-        MathAssignment math = new MathAssignment("GaryBob","Fraction", "8.3"," 8-19");
+        MathAssignment math = new MathAssignment("GaryBob", "Fraction", "8.3", " 8-19");
         Console.WriteLine(math.GetSummary());
-        WritingAssignment write = new WritingAssignment("Mary Waters","European Histroy","The Causes of World war 2 by Mary Waters.");
+        Console.WriteLine(math.GetHomeworkList());
+        WritingAssignment write = new WritingAssignment("Mary Waters", "European Histroy", "The Causes of World war 2 by Mary Waters.");
         Console.WriteLine(write.GetSummary());
+        Console.WriteLine(write.GetWritingInformation());
     }
 }
