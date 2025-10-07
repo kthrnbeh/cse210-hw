@@ -9,7 +9,7 @@ class Program
     //Taking ideas from Develope 2 for the menu
     int menuNumber = 0;
     while (menuNumber != 4)
-    {
+    {// found this to guide https://video.byui.edu/media/t/1_f4017z1d/259941952
       // my idea is to write a menu and have it keep going until it gets the number 5
       Console.WriteLine("Menu Options:");
       Console.WriteLine("1.Start Breathing Activity");
