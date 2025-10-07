@@ -4,7 +4,7 @@ public class Activity
     protected string _description;
     protected int _time; // accisible to the family
     public Activity() // my constructor
-    { // initialize activity, description, time
+    { // initialize activity, description, time //if you don't make them call the arg don't put them in()
         _activity = "";
         _description = "";
         _time = 0;
