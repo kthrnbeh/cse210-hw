@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
@@ -20,12 +21,12 @@ class Program
 
       Console.Write("Select a choice from the Menu ");
 
-       string userInput = Console.ReadLine();
-            if (!int.TryParse(userInput, out menuNumber))
-            {
-                Console.WriteLine("Invalid input. Please enter a number.");
-                continue;
-            }
+      string userInput = Console.ReadLine();
+      if (!int.TryParse(userInput, out menuNumber))
+      {
+        Console.WriteLine("Invalid input. Please enter a number.");
+        continue;
+      }
 
       if (menuNumber == 1)
       {
@@ -35,7 +36,7 @@ class Program
         breathingActivity.StartMessageDisplay();
         breathingActivity.EndMessageDisplay();
         breathingActivity.StartSpinner(5);
-                                                                      //what can I call
+        //what can I call
 
       }
       else if (menuNumber == 2)
@@ -54,7 +55,9 @@ class Program
       {
         Console.WriteLine("Invalid Choice");
       }
-      }
+      
+    }
+      
     }
     
   
