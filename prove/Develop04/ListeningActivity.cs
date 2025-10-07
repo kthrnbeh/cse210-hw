@@ -1,4 +1,4 @@
-public class ListeningActivities()
+public class ListeningActivities:Activity
 {
     private int count;
     private string prompt;

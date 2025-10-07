@@ -1,4 +1,4 @@
-public class ReflecionActivity()
+public class ReflecionActivity:Activity
 {
     private List<string> _prompt;
     private List<string> _question;

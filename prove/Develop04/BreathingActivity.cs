@@ -29,7 +29,7 @@ public class BreathingActivity : Activity
     //have user breath in for 5 seconds
     // have user breath out for 5 seconds
     // repeat(loop)
-    Console.WriteLine("Breath In")
+        Console.WriteLine("Breath In")
         CountDown(5);
         Console.WriteLine("Breathout")
         CountDown(5);
