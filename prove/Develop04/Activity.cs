@@ -1,13 +1,13 @@
 public class Activity
 {
-    private string _activity; //I guess I messed this up its supposed to be private
-    private string _description;
-    private int _time;
+    protected string _activity; //I guess I messed this up its supposed to be protected
+    protected string _description;
+    protected int _time; // accisible to the family
     public Activity(string activity, string description, int time) // my constructor
     { // initialize activity, description, time
-        _activity = activity;
-        _description = description;
-        _time = time;
+        _activity = "";
+        _description = "";
+        _time = 0;
     }
     public void StartMessageDisplay()
     {
@@ -30,6 +30,8 @@ public class Activity
     }
     public void CountDown(int seconds)
     {
+        for (int i = 1; i < seconds; i++) ;
+        
 
     }
 
