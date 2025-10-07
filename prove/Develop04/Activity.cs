@@ -30,7 +30,13 @@ public class Activity
     }
     public void CountDown(int seconds)
     {
-        for (int i = 1; i < seconds; i++) ;
+        for (int i = 1; i < seconds; i++)
+        {
+            Console.WriteLine(i);
+            Thread.Sleep(1000); // learned from the video in activity
+        }
+
+         
         
 
     }
