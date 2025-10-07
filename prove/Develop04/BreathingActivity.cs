@@ -10,14 +10,22 @@ public class BreathingActivity : Activity
     public string RandomPrompt();
     {
         StartMessageDisplay();
-        DateTime startTime = DateTime.Now;
+    DateTime startTime = DateTime.Now;
     DateTime stopTime = startTime.AddSeconds(_time);
+        while(DateTime.Now<stopTime) {
+            string s = animationstrings(i);
+            Console.Write(s);
+            Thread.Speed(1000);
+            Console.Write("\b\b");
+            if (i>=animationstrings.count)
+            {
+                i=0;
+            }
+        }
+    
 
     //While loop to tell it when to stop
-        do {
-            while(DateOnly.Time < stopTime);
-        }
-        
+
     //have user breath in for 5 seconds
     // have user breath out for 5 seconds
     // repeat(loop)

@@ -25,7 +25,22 @@ public class Activity
         Console.Clear();
     }
     public void StartSpinner(int seconds)
-    {//copy video
+    {//copy video in assignment
+        List<string> animationstrings = new List<string>();
+        animationstrings.Add("|");
+        animationstrings.Add("/");
+        animationstrings.Add("__");
+        animationstrings.Add("\\");
+        animationstrings.Add("|");
+        animationstrings.Add("/");
+        animationstrings.Add("__");
+        foreach (string s in animationstrings)
+        {
+            Console.Write(s);
+            Thread.Sleep(1000);
+            Console.Write("\b\b");
+        }
+
 
     }
     public void CountDown(int seconds)
