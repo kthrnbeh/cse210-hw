@@ -1,10 +1,11 @@
 public class BreathingActivity : Activity
 {
 
-    public BreathingActivity() : base()
+    public BreathingActivity()
     {
         _activity = "Breathing Activity";
         _description = "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.";
+        _time = 0;
     }
 
     public void BreathingCycle() // void not returning anything
@@ -35,3 +36,4 @@ public class BreathingActivity : Activity
 }
 
 //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/preprocessor-directives
+//https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/parameter-argument-mismatch?f1url=%3FappId%3Droslyn%26k%3Dk(CS7036)

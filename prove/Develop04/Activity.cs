@@ -3,7 +3,7 @@ public class Activity
     protected string _activity; //I guess I messed this up its supposed to be protected
     protected string _description;
     protected int _time; // accisible to the family
-    public Activity(string activity, string description, int time) // my constructor
+    public Activity() // my constructor
     { // initialize activity, description, time
         _activity = "";
         _description = "";
