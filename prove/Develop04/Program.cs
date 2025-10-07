@@ -19,8 +19,36 @@ class Program
 
       Console.Write("Select a choice from the Menu ");
 
-      string userInput = Console.ReadLine();
+       string userInput = Console.ReadLine();
+            if (!int.TryParse(userInput, out menuNumber))
+            {
+                Console.WriteLine("Invalid input. Please enter a number.");
+                continue;
+            }
+
+            if (menuNumber == 1)
+            {
+                (); // Each of these go to the classes
+            }
+            else if (menuNumber == 2)
+            {
+                ();
+            }
+            else if (menuNumber == 3)
+            {
+                ();
+            }
+            else if (menuNumber == 4)
+            {
+                Console.WriteLine("Quit selected. Goodbye!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid Choice");
+            }
+      }
     }
-  }
+    
+  
 
 }
