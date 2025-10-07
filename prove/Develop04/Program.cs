@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 class Program
 {
@@ -26,26 +27,32 @@ class Program
                 continue;
             }
 
-            if (menuNumber == 1)
-            {
-              BreathingActivity breathingActivity = new BreathingActivity();//new breathing activity
-            }
-            else if (menuNumber == 2)
-            {
-                ();
-            }
-            else if (menuNumber == 3)
-            {
-                ();
-            }
-            else if (menuNumber == 4)
-            {
-                Console.WriteLine("Quit selected. Goodbye!");
-            }
-            else
-            {
-                Console.WriteLine("Invalid Choice");
-            }
+      if (menuNumber == 1)
+      {
+        BreathingActivity breathingActivity = new BreathingActivity();//new breathing activity
+        breathingActivity.RandomPrompt();
+        breathingActivity.CountDown();
+        breathingActivity.StartMessageDisplay();
+        breathingActivity.EndMessageDisplay();
+                                                                      //what can I call
+
+      }
+      else if (menuNumber == 2)
+      {
+        ();
+      }
+      else if (menuNumber == 3)
+      {
+        ();
+      }
+      else if (menuNumber == 4)
+      {
+        Console.WriteLine("Quit selected. Goodbye!");
+      }
+      else
+      {
+        Console.WriteLine("Invalid Choice");
+      }
       }
     }
     
