@@ -31,9 +31,10 @@ class Program
       {
         BreathingActivity breathingActivity = new BreathingActivity();//new breathing activity
         breathingActivity.RandomPrompt();
-        breathingActivity.CountDown();
+        breathingActivity.CountDown(5);
         breathingActivity.StartMessageDisplay();
         breathingActivity.EndMessageDisplay();
+        breathingActivity.StartSpinner(5);
                                                                       //what can I call
 
       }

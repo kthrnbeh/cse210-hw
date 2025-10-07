@@ -6,4 +6,8 @@ public class BreathingActivity : Activity
 
     }
     public string RandomPrompt();
+    {
+        StartMessageDisplay();
+        EndMessageDisplay();
+    }
 }
