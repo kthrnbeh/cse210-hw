@@ -28,7 +28,7 @@ class Program
 
             if (menuNumber == 1)
             {
-                (); // Each of these go to the classes
+              BreathingActivity breathingActivity = new BreathingActivity();//new breathing activity
             }
             else if (menuNumber == 2)
             {
