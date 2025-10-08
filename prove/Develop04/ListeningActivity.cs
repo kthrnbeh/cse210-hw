@@ -45,11 +45,13 @@ public class ListeningActivity : Activity
                 string input = Console.ReadLine();
                 //add to list 
                 items.Add(input);
+                counter++;
             }
 
             // After the loop finishes, display the total number of items entered.
-
-                // Display the standard finishing message.
+            Console.WriteLine($"You entered{counter}. Great Job!");
+            // Display the standard finishing message.
+            EndMessageDisplay();
         }
     }
 }
