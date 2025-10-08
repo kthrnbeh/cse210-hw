@@ -55,7 +55,7 @@ class Program
       else if (menuNumber == 3)
       {
         ListeningActivity listeningActivity = new ListeningActivity();
-        listeningActivity.StartMessageDisplay()
+        listeningActivity.StartMessageDisplay();
         listeningActivity.RunActivity();
         listeningActivity.EndMessageDisplay();
 
