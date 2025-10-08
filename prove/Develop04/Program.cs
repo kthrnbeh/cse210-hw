@@ -42,11 +42,17 @@ class Program
       }
       else if (menuNumber == 2)
       {
-      
+        ReflecionActivity reflecionActivity = new ReflecionActivity();
+        reflecionActivity.DisplayPrompt();
+        reflecionActivity.DisplayQuestion();
+        reflecionActivity.StartMessageDisplay();
+        reflecionActivity.EndMessageDisplay();
       }
       else if (menuNumber == 3)
       {
+        ListeningActivity listeningActivity = new ListeningActivity();
         
+
       }
       else if (menuNumber == 4)
       {
