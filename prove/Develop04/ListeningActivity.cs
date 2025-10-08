@@ -49,9 +49,9 @@ public class ListeningActivity : Activity
             }
 
             // After the loop finishes, display the total number of items entered.
-            Console.WriteLine($"You entered{counter}. Great Job!");
+                Console.WriteLine($"You entered{counter}. Great Job!");
             // Display the standard finishing message.
-            EndMessageDisplay();
+                EndMessageDisplay();
         }
     }
 }
