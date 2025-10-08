@@ -21,18 +21,31 @@ public class ListeningActivity : Activity
     public void RunActivity()
     {
         // Display the standard starting message and prompt for duration.
-
+        StartMessageDisplay(); // like the others 
 
         // Get a random prompt and display it.
-
+        Random random = new Random();
+        int index = random.Next(_prompts.Count);
+        Console.Write(_prompts[index]);
         // Give the user a countdown to prepare.
-
+        CountDown(5);
         // Loop for the duration specified by the user.
-        // Inside the loop, prompt the user for input.
-        // Increment a counter each time the user enters an item.
+        DateTime startTime = DateTime.Now;
+        while ((DateTime.Now - startTime).TotalSeconds < _time)
+        {
+            // Inside the loop, prompt the user for input.
+            Console.WriteLine("List as many items you can until timer stops.");
+            //https://chatgpt.com/g/g-p-68c870dd40588191bccd1f9442b39616-kat-homework/c/68e6846f-3f70-8325-9031-a68f18ff2698
+            List 
+            // Increment a counter each time the user enters an item.
+            while (true)
+            {
 
-        // After the loop finishes, display the total number of items entered.
+            }
 
-        // Display the standard finishing message.
+            // After the loop finishes, display the total number of items entered.
+
+                // Display the standard finishing message.
+        }
     }
 }
