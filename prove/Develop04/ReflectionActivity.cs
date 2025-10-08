@@ -25,12 +25,12 @@ public class ReflecionActivity : Activity
         "How can you keep this experience in mind in the future?",
     };
 
-    public ReflecionActivity()
+    public ReflecionActivity() : base("Reflection Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.")
+    
     {
         // Set the activity name and description.
         // The base class constructor is implicitly called first if parameterless.
-        _activity = "Reflection Activity";
-        _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+
     }
 
     public void GetRandomPrompt() // changed to void no return

@@ -11,11 +11,10 @@ public class ListeningActivity : Activity
         "Who are some of your personal heroes?"
     };
 
-    public ListeningActivity()
+    public ListeningActivity():base("Listening Activity","This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.")
     {
         // Set the activity name and description in the constructor.
-        _activity = "Listening Activity";
-        _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+        //teacher said to use base here instead.
     }
 
     public void RunActivity()

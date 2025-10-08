@@ -3,10 +3,10 @@ public class Activity
     protected string _activity; //I guess I messed this up its supposed to be protected
     protected string _description;
     protected int _time; // accisible to the family
-    public Activity() // my constructor
+    public Activity(string activity,string description) // my constructor
     { // initialize activity, description, time //if you don't make them call the arg don't put them in()
-        _activity = "";
-        _description = "";
+        _activity = activity;
+        _description = description;
         _time = 0;
     }
     public void StartMessageDisplay()
