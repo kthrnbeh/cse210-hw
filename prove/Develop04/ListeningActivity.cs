@@ -4,6 +4,11 @@ public class ListeningActivity : Activity
     private List<string> _prompts = new List<string>()
     {
         // Add prompts here as per the instructions.
+        "Who are people that you appreciate?",
+        "What are personal strengths of yours?",
+        "Who are people that you have helped this week?",
+        "When have you felt the Holy Ghost this month?",
+        "Who are some of your personal heroes?"
     };
 
     public ListeningActivity()
@@ -16,6 +21,7 @@ public class ListeningActivity : Activity
     public void RunActivity()
     {
         // Display the standard starting message and prompt for duration.
+
 
         // Get a random prompt and display it.
 
