@@ -37,6 +37,7 @@ class Program
         breathingActivity.StartMessageDisplay();
         breathingActivity.EndMessageDisplay();
         breathingActivity.StartSpinner(5);
+        
         //what can I call
 
       }
@@ -47,11 +48,14 @@ class Program
         reflecionActivity.DisplayQuestion();
         reflecionActivity.StartMessageDisplay();
         reflecionActivity.EndMessageDisplay();
+        reflecionActivity.GetRandomPrompt();
+        reflecionActivity.GetRandomQuestion();
+        reflecionActivity.StartActivity();
       }
       else if (menuNumber == 3)
       {
         ListeningActivity listeningActivity = new ListeningActivity();
-        
+
 
       }
       else if (menuNumber == 4)
