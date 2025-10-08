@@ -40,7 +40,7 @@ public class ReflecionActivity : Activity
     public string GetRandomQuestion()
     {
         // Get a random question from the _questions list.
-        return _questions[_random.Next](_questions.Count);
+        return _questions[_random.Next](_questions.Count); // calling them with a return 
         
 
     }
@@ -48,12 +48,15 @@ public class ReflecionActivity : Activity
     public void DisplayPrompt()
     {
         // Display the prompt to the user.
-        Console.WriteLine("");
+        Console.WriteLine($"{GetRandomPrompt}"); // need message for the user 
+        CountDown(5);
     }
 
     public void DisplayQuestion()
     {
         // Display a random question to the user and then pause with a spinner.
+        Console.WriteLine($" {GetRandomQuestion}");
+        StartSpinner(5);
     }
 
     public void StartActivity()
