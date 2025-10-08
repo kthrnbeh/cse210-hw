@@ -41,7 +41,8 @@ public class ListeningActivity : Activity
             // Increment a counter each time the user enters an item.
             while (true)
             {
-
+                Console.WriteLine("Start.");
+                string input = 
             }
 
             // After the loop finishes, display the total number of items entered.
