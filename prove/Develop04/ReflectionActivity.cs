@@ -69,9 +69,11 @@ public class ReflecionActivity : Activity
         StartMessageDisplay();
         DisplayPrompt();
         DateTime startTime = DateTime.Now;
-        while ((DateTime.Now - startTime).TotalSeconds < _time) 
+        while ((DateTime.Now - startTime).TotalSeconds < _time)
         {
-
+            //inside the loop display random question
+            DisplayQuestion();
         }
+        EndMessageDisplay(); //end activyity by displaying the finsished message. 
     }   
 }
