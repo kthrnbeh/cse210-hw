@@ -42,7 +42,9 @@ public class ListeningActivity : Activity
             while (true)
             {
                 Console.WriteLine("Start.");
-                string input = 
+                string input = Console.ReadLine();
+                //add to list 
+                items.Add(input);
             }
 
             // After the loop finishes, display the total number of items entered.
