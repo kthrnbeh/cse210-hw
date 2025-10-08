@@ -1,26 +1,28 @@
 public class ReflecionActivity : Activity
 {
-    private List<string> _prompts = new List<string>()
+    private static List<string> _prompts = new List<string>()
     {
         // Add prompts here.
-        Think of a time when you stood up for someone else.
-        Think of a time when you did something really difficult.
-        Think of a time when you helped someone in need.
-        Think of a time when you did something truly selfless.
+        //oh I need quotes 
+        "Think of a time when you stood up for someone else.",
+       " Think of a time when you did something really difficult.",
+        "Think of a time when you helped someone in need.",
+        "Think of a time when you did something truly selfless.",
     };
 
-    private List<string> _questions = new List<string>()
+    private static List<string> _questions = new List<string>()
     {
         // Add questions here.
-        Why was this experience meaningful to you?
-        Have you ever done anything like this before?
-        How did you get started?
-        How did you feel when it was complete?
-        What made this time different than other times when you were not as successful?
-        What is your favorite thing about this experience?
-        What could you learn from this experience that applies to other situations?
-        What did you learn about yourself through this experience?
-        How can you keep this experience in mind in the future?
+        //looked at problems in the termanial for answers. 
+       " Why was this experience meaningful to you?",
+        "Have you ever done anything like this before?",
+        "How did you get started?",
+        "How did you feel when it was complete?",
+       " What made this time different than other times when you were not as successful?",
+        "What is your favorite thing about this experience?",
+        "What could you learn from this experience that applies to other situations?",
+        "What did you learn about yourself through this experience?",
+        "How can you keep this experience in mind in the future?",
     };
 
     public ReflecionActivity()
@@ -31,18 +33,20 @@ public class ReflecionActivity : Activity
         _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
     }
 
-    public string GetRandomPrompt()
+    public void GetRandomPrompt() // changed to void no return
     {
-        // Get a random prompt from the _prompts list.
-        return _prompts[_random.Next](_prompts.Count);
+        Random random = new Random();//looked up what to do to have a random string. I know I learned this but forgot. 
+                                     // Get a random prompt from the _prompts list.
+        int index = random.Next(_prompts.Count);//missed s found that in termainal problem
+        Console.WriteLine(_prompts[index]);
     }
 
-    public string GetRandomQuestion()
+    public void GetRandomQuestion()
     {
-        // Get a random question from the _questions list.
-        return _questions[_random.Next](_questions.Count); // calling them with a return 
-        
-
+      Random random = new Random();//looked up what to do to have a random string. I know I learned this but forgot. 
+                                     // Get a random prompt from the _prompts list.
+        int index = random.Next(_questions.Count);
+        Console.WriteLine(_questions[index]);
     }
 
     public void DisplayPrompt()
@@ -75,5 +79,6 @@ public class ReflecionActivity : Activity
             DisplayQuestion();
         }
         EndMessageDisplay(); //end activyity by displaying the finsished message. 
-    }   
+    }
 }
+//https://www.c-sharpcorner.com/article/generating-random-number-and-string-in-C-Sharp/
