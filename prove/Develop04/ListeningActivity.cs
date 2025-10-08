@@ -36,7 +36,7 @@ public class ListeningActivity : Activity
             // Inside the loop, prompt the user for input.
             Console.WriteLine("List as many items you can until timer stops.");
             //https://chatgpt.com/g/g-p-68c870dd40588191bccd1f9442b39616-kat-homework/c/68e6846f-3f70-8325-9031-a68f18ff2698
-            List 
+            List <string> items= new List
             // Increment a counter each time the user enters an item.
             while (true)
             {
