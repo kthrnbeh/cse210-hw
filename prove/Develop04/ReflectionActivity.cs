@@ -69,7 +69,7 @@ public class ReflecionActivity : Activity
         StartMessageDisplay();
         DisplayPrompt();
         DateTime startTime = DateTime.Now;
-        while (DateTime.Now - startTime).TimeSeconds(_time);
+        while ((DateTime.Now - startTime).TotalSeconds < _time) 
         {
 
         }
