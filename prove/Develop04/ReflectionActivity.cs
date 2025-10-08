@@ -66,5 +66,8 @@ public class ReflecionActivity : Activity
         // Loop for the specified duration.
         // Inside the loop, display random questions, pausing with a spinner after each one.
         // End the activity by displaying the finishing message.
-    }
+        StartMessageDisplay();
+        DisplayPrompt();
+        DateTime startTime = DateTime.Now;
+    }   
 }
