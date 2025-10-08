@@ -37,7 +37,7 @@ class Program
         breathingActivity.StartMessageDisplay();
         breathingActivity.EndMessageDisplay();
         breathingActivity.StartSpinner(5);
-        
+
         //what can I call
 
       }
@@ -55,6 +55,9 @@ class Program
       else if (menuNumber == 3)
       {
         ListeningActivity listeningActivity = new ListeningActivity();
+        listeningActivity.StartMessageDisplay()
+        listeningActivity.RunActivity();
+        listeningActivity.EndMessageDisplay();
 
 
       }
