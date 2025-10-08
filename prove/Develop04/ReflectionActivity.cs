@@ -34,16 +34,21 @@ public class ReflecionActivity : Activity
     public string GetRandomPrompt()
     {
         // Get a random prompt from the _prompts list.
+        return _prompts[_random.Next](_prompts.Count);
     }
 
     public string GetRandomQuestion()
     {
         // Get a random question from the _questions list.
+        return _questions[_random.Next](_questions.Count);
+        
+
     }
 
     public void DisplayPrompt()
     {
         // Display the prompt to the user.
+        Console.WriteLine("");
     }
 
     public void DisplayQuestion()
