@@ -28,27 +28,27 @@ public class ListeningActivity : Activity
         // Display the standard starting message and prompt for duration.
         DisplayStartMessage(); // like the others 
         Console.WriteLine($"{GetRandomprompt()}");
-        Console.WriteLine("Ready?");
-        Console.WriteLine("Begin!");
+        Console.WriteLine("List as many items you can until timer stops.");
         CountDown(5);
         // Loop for the duration specified by the user.
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_time);
-        int counter = 0; //I keep forgeting this from the video... 
-        while ((DateTime.Now - startTime).TotalSeconds < _time)
+        int counter = 0; //I keep forgeting this from the video... oh I had it in the loop 
+        while (DateTime.Now <endTime)
         {
             // Inside the loop, prompt the user for input.
-            Console.WriteLine("List as many items you can until timer stops.");
+            
             //https://chatgpt.com/g/g-p-68c870dd40588191bccd1f9442b39616-kat-homework/c/68e6846f-3f70-8325-9031-a68f18ff2698
             List<string> items = new List<string>(); // store user enteries 
-            int counter = 0; //start at zero
+            
             // Increment a counter each time the user enters an item.
             while (true)
             {
-                Console.WriteLine("Start.");
-                string input = Console.ReadLine();
-                //add to list 
-                items.Add(input);
+                //copying Breathing again
+                if (DateTime.Now >= endTime)
+                {
+                    break; // stop!
+                }
                 counter++;
             }
 
