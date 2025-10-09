@@ -13,7 +13,14 @@ class Program
     int menuNumber = 0;
     while (menuNumber != 4)
     {// found this to guide https://video.byui.edu/media/t/1_f4017z1d/259941952
-      // my idea is to write a menu and have it keep going until it gets the number 5
+     // my idea is to write a menu and have it keep going until it gets the number 5
+      string userInput = Console.ReadLine();
+      if (!int.TryParse(userInput, out menuNumber))
+        {
+                Console.WriteLine("Invalid input. Please enter a number.");
+                continue;
+         }// copied from the journal program. 
+
       Console.WriteLine("Menu Options:");
       Console.WriteLine("1.Start Breathing Activity");
       Console.WriteLine("2.Start Reflecting Activity");
@@ -69,11 +76,13 @@ class Program
       {
         Console.WriteLine("Invalid Choice");
       }
-      
+
     }
-      
-    }
-    
-  
+
+  }
+
+
 
 }
+//links that helped 
+//https://dev.to/zacharypatten/beginner-s-guide-to-console-input-in-c-1654

@@ -26,7 +26,8 @@ public class BreathingActivity : Activity
 
 
             // have user breathe out for 5 seconds
-            Console.WriteLine("Breathe Out");
+            Console.Write("Breathe Out");
+            Console.Write()
             Thread.Sleep(1000);
             CountDown(5);
             Console.Write("\b\b");
