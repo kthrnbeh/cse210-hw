@@ -1,6 +1,6 @@
 public class ReflectionActivity : Activity
 {
-    private int _reflection = 5; // 
+    private int _reflection = 5; // coping breathing activity
     private List<string> _prompts = new List<string>() // static made random not work. 
     {
         // Add prompts here.
@@ -25,7 +25,7 @@ public class ReflectionActivity : Activity
         "What did you learn about yourself through this experience?",
         "How can you keep this experience in mind in the future?",
     };
-
+    
     public ReflectionActivity() : base("Reflection Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.")
     
     {
@@ -33,7 +33,12 @@ public class ReflectionActivity : Activity
         // The base class constructor is implicitly called first if parameterless.
 
     }
+    private void GetReflectionTime() // don't want anything returned
+    {
+        Console.WriteLine("How many seconds would you like to reflect?");
 
+
+    }
     public void GetRandomPrompt() // changed to void no return
     {
         Random random = new Random();//looked up what to do to have a random string. I know I learned this but forgot. 
