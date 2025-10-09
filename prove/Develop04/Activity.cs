@@ -26,7 +26,10 @@ public class Activity
         else
         {
             Console.WriteLine("Not a valid input, default is to 30 seconds.");
+            _time = 30; //assign time for when they give bad input.
+            Thread.Sleep(2000);
         }
+        Console.Clear(); // clear screen 
 
        
         
