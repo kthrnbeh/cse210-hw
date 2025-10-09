@@ -21,7 +21,7 @@ public class Activity
         //maybe I need a if statement or something
         Console.WriteLine("How long would you like your session?");
         string input = Console.ReadLine();
-         if (int.TryParse(input, out int duration) && duration > 0)//always backwards... 
+        if (int.TryParse(input, out int duration) && duration > 0)//always backwards... 
         {
             _time = duration; // reassigning the name 
         }
@@ -77,16 +77,16 @@ public class Activity
             Thread.Sleep(1000); // learned from the video in activity
             Console.WriteLine("\b\b");
         }
-
-
-        public Random GetRandom()
-    {
-        return _random;
-    } //makes use of encapsulation 
-
     }
+         public Random GetRandom()
+        {
+            return _random;
+        } //makes use of encapsulation
+}     
 
-} //https://ironpdf.com/blog/net-help/csharp-tryparse/
+    
+
+ //https://ironpdf.com/blog/net-help/csharp-tryparse/
 //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators
 //https://www.geeksforgeeks.org/c-sharp/constructors-c-sharp/  
 //https://www.geeksforgeeks.org/c-sharp/encapsulation-in-c-sharp/
