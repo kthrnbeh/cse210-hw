@@ -30,13 +30,16 @@ public class Activity
             Thread.Sleep(2000);
         }
         Console.Clear(); // clear screen 
-
+        Console.Write("Ready?");
+        StartSpinner(5);
        
         
     }
-    public void EndMessageDisplay()
+    public void DisplayEndMessage()// keep getting confused so changing name. 
     {
         Console.WriteLine("");
+        Console.WriteLine("You did it. Good Job. ");
+        Console.WriteLine($"")
         StartSpinner(5);
         Console.Clear();
     }
