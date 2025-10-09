@@ -21,7 +21,7 @@ public class Activity
         string input = Console.ReadLine();
         if (!int.TryParse(input, out int duration) && duration > 0)
         {
-            _time = duration;
+            _time = duration; // reassigning the name 
         }
         else
         {
