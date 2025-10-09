@@ -79,16 +79,17 @@ public class Activity
         }
 
 
-        public class GetRandom(); // I wanted to include this because I noticed that I also have been using this to oftenin other parts of the program. 
-        {
-            return _random; //not working? 
-        }
+        public Random GetRandom()
+    {
+        return _random;
+    } //makes use of encapsulation 
 
     }
 
 } //https://ironpdf.com/blog/net-help/csharp-tryparse/
 //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators
 //https://www.geeksforgeeks.org/c-sharp/constructors-c-sharp/  
+//https://www.geeksforgeeks.org/c-sharp/encapsulation-in-c-sharp/
 //I really like the geek website
 //https://www.w3schools.com/cpp/cpp_date.asp
 //https://www.dotnetperls.com/modulo
