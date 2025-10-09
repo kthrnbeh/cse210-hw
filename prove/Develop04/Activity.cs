@@ -32,8 +32,8 @@ public class Activity
         Console.Clear(); // clear screen 
         Console.Write("Ready?");
         StartSpinner(5);
-       
-        
+
+
     }
     public void DisplayEndMessage()// keep getting confused so changing name. 
     {
@@ -44,7 +44,7 @@ public class Activity
         Console.Clear();
     }
     public void StartSpinner(int seconds)
-    {//copy video in assignment
+    {//copy video in assignment // I noticed I have to keep doing seperate date.now in all my other programs. I want to just do it here. 
         List<string> animationstrings = new List<string>();
         animationstrings.Add("|");
         animationstrings.Add("/");
@@ -53,6 +53,12 @@ public class Activity
         animationstrings.Add("|");
         animationstrings.Add("/");
         animationstrings.Add("__");
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(seconds); // from video
+        while (DateTime.Now < endTime)
+        {
+
+        }
         foreach (string s in animationstrings)
         {
             Console.Write(s);
@@ -70,9 +76,10 @@ public class Activity
             Thread.Sleep(1000); // learned from the video in activity
         }
 
-         
-        
+
+
 
     }
 
 } //https://ironpdf.com/blog/net-help/csharp-tryparse/
+//https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators
