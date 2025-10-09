@@ -55,16 +55,15 @@ public class Activity
         animationstrings.Add("__");
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(seconds); // from video
+        int i = 0;
         while (DateTime.Now < endTime)
         {
-
-        }
-        foreach (string s in animationstrings)
-        {
+            string s = animationstrings[i % animationstrings.Count]; // apparently use % to help it cycle
             Console.Write(s);
             Thread.Sleep(1000);
             Console.Write("\b\b");
         }
+        
 
 
     }
