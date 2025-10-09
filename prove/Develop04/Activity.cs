@@ -19,11 +19,13 @@ public class Activity
         //maybe I need a if statement or something
         Console.WriteLine("How long would you like your session?");
         string input = Console.ReadLine();
-        if (!int.TryParse(input, out ))
+        if (!int.TryParse(input, out int duration) && duration > 0)
         {
-            Console.WriteLine("Invalid input. Please enter a number.");
-            Thread.Sleep(2000); // Give user time to read the error
-            continue; // Restart the loop
+            _time = duration;
+        }
+        else
+        {
+
         }
 
        
@@ -67,4 +69,4 @@ public class Activity
 
     }
 
-}
+} //https://ironpdf.com/blog/net-help/csharp-tryparse/
