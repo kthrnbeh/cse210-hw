@@ -60,23 +60,43 @@ public class ReflectionActivity : Activity
     {
         StartMessageDisplay();
 
+        if (_cancelRequested)
+        {
+            return;
+        }
+
         DisplayPrompt();
         Console.WriteLine("When you have something in mind, press enter to continue.");
         Console.ReadLine();
 
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
         Console.Write("You may begin in: ");
-        CountDown(5);
+        if (!CountDown(5))
+        {
+            return;
+        }
         Console.WriteLine();
 
         DateTime endTime = DateTime.Now.AddSeconds(_time);
-        while (DateTime.Now < endTime)
+        while (DateTime.Now < endTime && !_cancelRequested)
         {
             DisplayQuestion();
-            StartSpinner(5);
+            if (!StartSpinner(5))
+            {
+                break;
+            }
+
+            if (_cancelRequested)
+            {
+                break;
+            }
+
             Console.WriteLine();
         }
 
-        EndMessageDisplay();
+        if (!_cancelRequested)
+        {
+            EndMessageDisplay();
+        }
     }
 }

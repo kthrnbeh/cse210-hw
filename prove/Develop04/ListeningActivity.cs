@@ -25,16 +25,24 @@ public class ListeningActivity : Activity
     {
         StartMessageDisplay();
 
+        if (_cancelRequested)
+        {
+            return;
+        }
+
         Console.WriteLine("List as many responses as you can to the following prompt:");
         Console.WriteLine();
         Console.WriteLine($"--- {_prompts[_random.Next(_prompts.Count)]} ---");
         Console.WriteLine();
         Console.Write("You may begin in: ");
-        CountDown(5);
+        if (!CountDown(5))
+        {
+            return;
+        }
 
         List<string> items = new List<string>();
         DateTime endTime = DateTime.Now.AddSeconds(_time);
-        while (DateTime.Now < endTime)
+        while (DateTime.Now < endTime && !_cancelRequested)
         {
             Console.Write("> ");
             string input = Console.ReadLine();
@@ -42,6 +50,11 @@ public class ListeningActivity : Activity
             {
                 items.Add(input.Trim());
             }
+        }
+
+        if (_cancelRequested)
+        {
+            return;
         }
 
         Console.WriteLine();

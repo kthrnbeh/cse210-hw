@@ -13,16 +13,30 @@ public class BreathingActivity : Activity
     {
         StartMessageDisplay();
 
-        DateTime endTime = DateTime.Now.AddSeconds(_time);
-        while (DateTime.Now < endTime)
+        if (_cancelRequested)
         {
-            Console.Write("\nBreathe in... ");
-            CountDown(4);
-
-            Console.Write("Breathe out... ");
-            CountDown(6);
+            return;
         }
 
-        EndMessageDisplay();
+        DateTime endTime = DateTime.Now.AddSeconds(_time);
+        while (DateTime.Now < endTime && !_cancelRequested)
+        {
+            Console.Write("\nBreathe in... ");
+            if (!CountDown(4))
+            {
+                break;
+            }
+
+            Console.Write("Breathe out... ");
+            if (!CountDown(6))
+            {
+                break;
+            }
+        }
+
+        if (!_cancelRequested)
+        {
+            EndMessageDisplay();
+        }
     }
 }
