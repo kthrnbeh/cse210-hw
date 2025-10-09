@@ -11,16 +11,20 @@ public class ListeningActivity : Activity
         "Who are some of your personal heroes?"
     };
 
-    public ListeningActivity():base("Listening Activity","This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.")
+    public ListeningActivity() : base("Listening Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.")
     {
         // Set the activity name and description in the constructor.
         //teacher said to use base here instead.
+    }
+    private void GetRandomprompt()
+    {
+        
     }
 
     public void RunActivity()
     {
         // Display the standard starting message and prompt for duration.
-        StartMessageDisplay(); // like the others 
+        DisplayStartMessage(); // like the others 
 
         // Get a random prompt and display it.
         Random random = new Random();
@@ -50,7 +54,7 @@ public class ListeningActivity : Activity
             // After the loop finishes, display the total number of items entered.
                 Console.WriteLine($"You entered{counter}. Great Job!");
             // Display the standard finishing message.
-                EndMessageDisplay();
+                DisplayEndMessage();
         }
     }
 }
