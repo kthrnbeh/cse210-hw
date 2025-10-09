@@ -17,7 +17,8 @@ public class Activity
         //show spinner 
         StartSpinner(5);
         Console.WriteLine("How long would you like for your session?"); // I forgot about this from the video.//https://video.byui.edu/media/t/1_e36t63t0
-        if 
+        string input = Console.ReadLine(); // for response 
+        if
     }
     public void EndMessageDisplay()
     {
