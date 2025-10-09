@@ -19,7 +19,7 @@ public class ListeningActivity : Activity
     private void GetRandomprompt()
     {
         Random random = new Random();
-        int index = 
+        int index = random.Next(_prompts.Count);
     }
 
     public void RunActivity()
