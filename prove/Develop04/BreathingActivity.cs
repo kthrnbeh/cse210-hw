@@ -20,9 +20,9 @@ public class BreathingActivity : Activity
         const int totalTime = cycleTime + 2;
         while (DateTime.Now <= stopTime)
         {
-            if (DateTime.Now.AddSeconds(totalTime) > stopTime) 
+          if (DateTime.Now.AddSeconds(totalTime) >= stopTime) 
         {
-            break;
+            break; // Stop the loop
         }
             //While loop to tell it when to stop
             //have user breathe in for 5 seconds

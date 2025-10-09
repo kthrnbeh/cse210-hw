@@ -34,7 +34,7 @@ class Program
       {
                 BreathingActivity breathingActivity = new BreathingActivity();//new breathing activity
                 breathingActivity.BreathingCycle();
-                break;
+                
         
        
 
