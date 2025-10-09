@@ -32,12 +32,7 @@ class Program
       if (menuNumber == 1)
       {
         BreathingActivity breathingActivity = new BreathingActivity();//new breathing activity
-        breathingActivity.BreathingCycle();
-        breathingActivity.CountDown(5);
-        breathingActivity.StartMessageDisplay();
-        breathingActivity.EndMessageDisplay();
-        breathingActivity.StartSpinner(5);
-
+        breathingActivity.
         //what can I call
 
       }
