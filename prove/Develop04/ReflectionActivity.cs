@@ -1,6 +1,7 @@
 public class ReflectionActivity : Activity
 {
-    private static List<string> _prompts = new List<string>()
+    private int _reflection = 5; // 
+    private List<string> _prompts = new List<string>() // static made random not work. 
     {
         // Add prompts here.
         //oh I need quotes 
@@ -10,7 +11,7 @@ public class ReflectionActivity : Activity
         "Think of a time when you did something truly selfless.",
     };
 
-    private static List<string> _questions = new List<string>()
+    private List<string> _questions = new List<string>()
     {
         // Add questions here.
         //looked at problems in the termanial for answers. 
