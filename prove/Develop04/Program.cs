@@ -31,24 +31,30 @@ class Program
 
       if (menuNumber == 1)
       {
-        BreathingActivity breathingActivity = new BreathingActivity();//new breathing activity
-        breathingActivity.BreathingCycle();
+                BreathingActivity breathingActivity = new BreathingActivity();//new breathing activity
+                breathingActivity.BreathingCycle();
+                break;
+        
        
 
         //what can I call
 
-      }
-      else if (menuNumber == 2)
+        }
+    else if (menuNumber == 2)
       {
-        ReflectionActivity reflecionActivity = new ReflectionActivity();
+             ReflectionActivity reflecionActivity = new ReflectionActivity();
+
+                reflecionActivity.StartActivity();
+                break;
         
-        reflecionActivity.StartActivity();
+        
       }
       else if (menuNumber == 3)
       {
         ListeningActivity listeningActivity = new ListeningActivity();
-       
-        listeningActivity.RunActivity();
+
+                listeningActivity.RunActivity();
+                break;
      
 
 
@@ -57,11 +63,13 @@ class Program
       {
                 Console.WriteLine("Quit selected. Goodbye!");
                 Thread.Sleep(1000);
+                break;
       }
       else
       {
                 Console.WriteLine("Invalid Choice");
                 Thread.Sleep(1000);
+                break;
       }
       
     }

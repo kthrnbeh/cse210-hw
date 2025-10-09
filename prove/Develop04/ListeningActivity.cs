@@ -1,6 +1,6 @@
 public class ListeningActivity : Activity
 {
-    private int _count;
+
     private List<string> _prompts = new List<string>()
     {
         // Add prompts here as per the instructions.
