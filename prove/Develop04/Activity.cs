@@ -17,12 +17,14 @@ public class Activity
         //prompt for the duration
         //show spinner 
         //maybe I need a if statement or something
-        if (!int.TryParse(userInput, out menuNumber))
-            {
-                Console.WriteLine("Invalid input. Please enter a number.");
-                Thread.Sleep(2000); // Give user time to read the error
-                continue; // Restart the loop
-            }
+        Console.WriteLine("How long would you like your session?");
+        string input = Console.ReadLine();
+        if (!int.TryParse(input, out ))
+        {
+            Console.WriteLine("Invalid input. Please enter a number.");
+            Thread.Sleep(2000); // Give user time to read the error
+            continue; // Restart the loop
+        }
 
        
         
