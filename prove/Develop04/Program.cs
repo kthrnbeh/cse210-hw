@@ -55,11 +55,13 @@ class Program
       }
       else if (menuNumber == 4)
       {
-        Console.WriteLine("Quit selected. Goodbye!");
+                Console.WriteLine("Quit selected. Goodbye!");
+                Thread.Sleep(1000);
       }
       else
       {
-        Console.WriteLine("Invalid Choice");
+                Console.WriteLine("Invalid Choice");
+                Thread.Sleep(1000);
       }
       
     }
