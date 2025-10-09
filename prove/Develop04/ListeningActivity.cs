@@ -1,9 +1,10 @@
+using System;
+using System.Collections.Generic;
+
 public class ListeningActivity : Activity
 {
-    private int _count;
-    private List<string> _prompts = new List<string>()
+    private readonly List<string> _prompts = new List<string>
     {
-        // Add prompts here as per the instructions.
         "Who are people that you appreciate?",
         "What are personal strengths of yours?",
         "Who are people that you have helped this week?",
@@ -11,46 +12,41 @@ public class ListeningActivity : Activity
         "Who are some of your personal heroes?"
     };
 
-    public ListeningActivity():base("Listening Activity","This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.")
+    private readonly Random _random = new Random();
+
+    public ListeningActivity()
+        : base(
+            "Listing Activity",
+            "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.")
     {
-        // Set the activity name and description in the constructor.
-        //teacher said to use base here instead.
     }
 
-    public void RunActivity()
+    public void Run()
     {
-        // Display the standard starting message and prompt for duration.
-        StartMessageDisplay(); // like the others 
+        StartMessageDisplay();
 
-        // Get a random prompt and display it.
-        Random random = new Random();
-        int index = random.Next(_prompts.Count);
-        Console.Write(_prompts[index]);
-        // Give the user a countdown to prepare.
+        Console.WriteLine("List as many responses as you can to the following prompt:");
+        Console.WriteLine();
+        Console.WriteLine($"--- {_prompts[_random.Next(_prompts.Count)]} ---");
+        Console.WriteLine();
+        Console.Write("You may begin in: ");
         CountDown(5);
-        // Loop for the duration specified by the user.
-        DateTime startTime = DateTime.Now;
-        while ((DateTime.Now - startTime).TotalSeconds < _time)
-        {
-            // Inside the loop, prompt the user for input.
-            Console.WriteLine("List as many items you can until timer stops.");
-            //https://chatgpt.com/g/g-p-68c870dd40588191bccd1f9442b39616-kat-homework/c/68e6846f-3f70-8325-9031-a68f18ff2698
-            List<string> items = new List<string>(); // store user enteries 
-            int counter = 0; //start at zero
-            // Increment a counter each time the user enters an item.
-            while (true)
-            {
-                Console.WriteLine("Start.");
-                string input = Console.ReadLine();
-                //add to list 
-                items.Add(input);
-                counter++;
-            }
 
-            // After the loop finishes, display the total number of items entered.
-                Console.WriteLine($"You entered{counter}. Great Job!");
-            // Display the standard finishing message.
-                EndMessageDisplay();
+        List<string> items = new List<string>();
+        DateTime endTime = DateTime.Now.AddSeconds(_time);
+        while (DateTime.Now < endTime)
+        {
+            Console.Write("> ");
+            string input = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                items.Add(input.Trim());
+            }
         }
+
+        Console.WriteLine();
+        Console.WriteLine($"You listed {items.Count} items!");
+
+        EndMessageDisplay();
     }
 }

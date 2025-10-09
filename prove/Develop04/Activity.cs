@@ -1,59 +1,74 @@
+using System;
+using System.Collections.Generic;
+using System.Threading;
+
 public class Activity
 {
-    protected string _activity; //I guess I messed this up its supposed to be protected
+    protected string _activity;
     protected string _description;
-    protected int _time; // accisible to the family
-    public Activity(string activity,string description) // my constructor
-    { // initialize activity, description, time //if you don't make them call the arg don't put them in()
+    protected int _time;
+
+    public Activity(string activity, string description)
+    {
         _activity = activity;
         _description = description;
         _time = 0;
     }
+
     public void StartMessageDisplay()
     {
-        Console.Clear(); //to clear the screen
-        Console.WriteLine("");
-        //prompt for the duration
-        //show spinner 
-        StartSpinner(5);
+        Console.Clear();
+        Console.WriteLine($"Welcome to the {_activity}.");
+        Console.WriteLine();
+        Console.WriteLine(_description);
+        Console.WriteLine();
 
+        Console.Write("How long, in seconds, would you like for your session? ");
+        while (!int.TryParse(Console.ReadLine(), out _time) || _time <= 0)
+        {
+            Console.Write("Please enter a positive number of seconds: ");
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("Get ready...");
+        StartSpinner(3);
     }
+
     public void EndMessageDisplay()
     {
-        Console.WriteLine("");
-        StartSpinner(5);
-        Console.Clear();
+        Console.WriteLine();
+        Console.WriteLine("Well done!");
+        StartSpinner(3);
+        Console.WriteLine($"You have completed another {_time} seconds of the {_activity}.");
+        StartSpinner(3);
     }
+
     public void StartSpinner(int seconds)
-    {//copy video in assignment
-        List<string> animationstrings = new List<string>();
-        animationstrings.Add("|");
-        animationstrings.Add("/");
-        animationstrings.Add("__");
-        animationstrings.Add("\\");
-        animationstrings.Add("|");
-        animationstrings.Add("/");
-        animationstrings.Add("__");
-        foreach (string s in animationstrings)
+    {
+        List<string> animationStrings = new List<string> { "|", "/", "-", "\\" };
+        DateTime endTime = DateTime.Now.AddSeconds(seconds);
+        int index = 0;
+
+        while (DateTime.Now < endTime)
         {
-            Console.Write(s);
-            Thread.Sleep(1000);
-            Console.Write("\b\b");
+            Console.Write(animationStrings[index]);
+            Thread.Sleep(250);
+            Console.Write("\b ");
+            Console.Write("\b");
+            index = (index + 1) % animationStrings.Count;
         }
-
-
+        Console.WriteLine();
     }
+
     public void CountDown(int seconds)
     {
-        for (int i = 1; i <= seconds; i++) //want it to go to 5 not 4 add =
+        for (int i = seconds; i > 0; i--)
         {
-            Console.WriteLine(i);
-            Thread.Sleep(1000); // learned from the video in activity
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b ");
+            Console.Write("\b");
         }
-
-         
-        
-
+        Console.WriteLine();
     }
-
 }
