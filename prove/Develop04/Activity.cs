@@ -60,19 +60,20 @@ public class Activity
         {
             string s = animationstrings[i % animationstrings.Count]; // apparently use % to help it cycle
             Console.Write(s);
-            Thread.Sleep(1000);
+            Thread.Sleep(1000); // original from for
             Console.Write("\b\b");
+            i++; //remember this from the video
         }
         
-
-
     }
     public void CountDown(int seconds)
     {
-        for (int i = 1; i <= seconds; i++) //want it to go to 5 not 4 add =
+        for (int i = seconds; i <= 0; i--) //want it to go to 5 not 4 add = oops need negatives right.... that was in my notes.
+                                           // man I have such dyslexia I always do stuff backwards and opposite! ugh. 
         {
             Console.WriteLine(i);
             Thread.Sleep(1000); // learned from the video in activity
+            Console.WriteLine("\b\b");
         }
 
 
@@ -82,3 +83,7 @@ public class Activity
 
 } //https://ironpdf.com/blog/net-help/csharp-tryparse/
 //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators
+//https://www.geeksforgeeks.org/c-sharp/constructors-c-sharp/  
+//I really like the geek website
+//https://www.w3schools.com/cpp/cpp_date.asp
+//https://www.dotnetperls.com/modulo
