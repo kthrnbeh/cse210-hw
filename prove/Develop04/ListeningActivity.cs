@@ -18,7 +18,8 @@ public class ListeningActivity : Activity
     }
     private void GetRandomprompt()
     {
-        
+        Random random = new Random();
+        int index = 
     }
 
     public void RunActivity()
