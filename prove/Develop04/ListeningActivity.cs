@@ -16,25 +16,25 @@ public class ListeningActivity : Activity
         // Set the activity name and description in the constructor.
         //teacher said to use base here instead.
     }
-    private void GetRandomprompt()
+    private string GetRandomprompt()//not void i do return... 
     {
         Random random = new Random();
         int index = random.Next(_prompts.Count);
+        return _prompts[index];
     }
 
     public void RunActivity()
     {
         // Display the standard starting message and prompt for duration.
         DisplayStartMessage(); // like the others 
-
-        // Get a random prompt and display it.
-        Random random = new Random();
-        int index = random.Next(_prompts.Count);
-        Console.Write(_prompts[index]);
-        // Give the user a countdown to prepare.
+        Console.WriteLine($"{GetRandomprompt()}");
+        Console.WriteLine("Ready?");
+        Console.WriteLine("Begin!");
         CountDown(5);
         // Loop for the duration specified by the user.
         DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(_time);
+        int counter = 0; //I keep forgeting this from the video... 
         while ((DateTime.Now - startTime).TotalSeconds < _time)
         {
             // Inside the loop, prompt the user for input.
