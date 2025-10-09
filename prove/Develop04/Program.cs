@@ -39,20 +39,12 @@ class Program
       else if (menuNumber == 2)
       {
         ReflectionActivity reflecionActivity = new ReflectionActivity();
-        reflecionActivity.DisplayPrompt();
-        reflecionActivity.DisplayQuestion();
-        reflecionActivity.StartMessageDisplay();
-        reflecionActivity.EndMessageDisplay();
-        reflecionActivity.GetRandomPrompt();
-        reflecionActivity.GetRandomQuestion();
-        reflecionActivity.StartActivity();
+        
       }
       else if (menuNumber == 3)
       {
         ListeningActivity listeningActivity = new ListeningActivity();
-        listeningActivity.StartMessageDisplay();
-        listeningActivity.RunActivity();
-        listeningActivity.EndMessageDisplay();
+        
 
 
       }
