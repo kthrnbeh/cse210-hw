@@ -39,7 +39,7 @@ public class Activity
     {
         Console.WriteLine("");
         Console.WriteLine("You did it. Good Job. ");
-        Console.WriteLine($"")
+        Console.WriteLine($"You did the {_activity}, for {_time} seconds.");
         StartSpinner(5);
         Console.Clear();
     }
