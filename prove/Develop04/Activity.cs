@@ -25,7 +25,7 @@ public class Activity
         }
         else
         {
-
+            Console.WriteLine("Not a valid input, default is to 30 seconds.");
         }
 
        
