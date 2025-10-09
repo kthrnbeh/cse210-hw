@@ -33,10 +33,7 @@ class Program
       {
         BreathingActivity breathingActivity = new BreathingActivity();//new breathing activity
         breathingActivity.BreathingCycle();
-        breathingActivity.CountDown(5);
-        breathingActivity.StartMessageDisplay();
-        breathingActivity.EndMessageDisplay();
-        breathingActivity.StartSpinner(5);
+       
 
         //what can I call
 
@@ -44,20 +41,15 @@ class Program
       else if (menuNumber == 2)
       {
         ReflectionActivity reflecionActivity = new ReflectionActivity();
-        reflecionActivity.DisplayPrompt();
-        reflecionActivity.DisplayQuestion();
-        reflecionActivity.StartMessageDisplay();
-        reflecionActivity.EndMessageDisplay();
-        reflecionActivity.GetRandomPrompt();
-        reflecionActivity.GetRandomQuestion();
+        
         reflecionActivity.StartActivity();
       }
       else if (menuNumber == 3)
       {
         ListeningActivity listeningActivity = new ListeningActivity();
-        listeningActivity.StartMessageDisplay();
+       
         listeningActivity.RunActivity();
-        listeningActivity.EndMessageDisplay();
+     
 
 
       }
