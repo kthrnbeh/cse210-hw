@@ -3,13 +3,14 @@ public class Activity
     protected string _activity; //I guess I messed this up its supposed to be protected
     protected string _description;
     protected int _time; // accisible to the family
-    public Activity(string activity,string description) // my constructor
+    private Random _random = new Random();
+    public Activity(string activity, string description) // my constructor
     { // initialize activity, description, time //if you don't make them call the arg don't put them in()
         _activity = activity;
         _description = description;
         _time = 0;
     }
-    public void StartMessageDisplay()
+    public void DisplayStartMessage()
     {
         Console.Clear(); //to clear the screen
         Console.WriteLine($"Welcome to {_activity}!");
