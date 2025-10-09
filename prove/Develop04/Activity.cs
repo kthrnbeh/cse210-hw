@@ -16,10 +16,8 @@ public class Activity
         Console.WriteLine($"Welcome to {_activity}!");
         //prompt for the duration
         //show spinner 
-        StartSpinner(5);
-        Console.WriteLine("How long would you like for your session?"); // I forgot about this from the video.//https://video.byui.edu/media/t/1_e36t63t0
-        string input = Console.ReadLine(); // for response 
-        Console.Clear(); //to clear the screen
+        //maybe I need a if statement or something
+       
         
     }
     public void EndMessageDisplay()
