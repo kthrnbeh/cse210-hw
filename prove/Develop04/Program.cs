@@ -43,7 +43,7 @@ class Program
       }
       else if (menuNumber == 2)
       {
-        ReflecionActivity reflecionActivity = new ReflecionActivity();
+        ReflectionActivity reflecionActivity = new ReflectionActivity();
         reflecionActivity.DisplayPrompt();
         reflecionActivity.DisplayQuestion();
         reflecionActivity.StartMessageDisplay();

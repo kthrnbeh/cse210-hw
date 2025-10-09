@@ -14,17 +14,22 @@ public class BreathingActivity : Activity
         StartMessageDisplay();
         DateTime startTime = DateTime.Now;
         DateTime stopTime = startTime.AddSeconds(_time);
-        
+
         while (DateTime.Now <= stopTime)
         {
             //While loop to tell it when to stop
             //have user breathe in for 5 seconds
             Console.Write("Breathe In");
+            Thread.Sleep(1000);
             CountDown(5);
-            
+            Console.Write("\b \b");
+
+
             // have user breathe out for 5 seconds
             Console.WriteLine("Breathe Out");
+            Thread.Sleep(1000);
             CountDown(5);
+            Console.Write("\b\b");
         }
 
         EndMessageDisplay();
