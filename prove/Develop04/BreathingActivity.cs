@@ -13,14 +13,17 @@ public class BreathingActivity : Activity
 
     public void BreathingCycle() // void not returning anything
     { 
-        StartMessageDisplay();
+        DisplayStartMessage();
         DateTime startTime = DateTime.Now;
         DateTime stopTime = startTime.AddSeconds(_time);
         const int cycleTime = 5; // ohhh I need to set the timer her for them
         const int totalTime = cycleTime + 2;
         while (DateTime.Now <= stopTime)
         {
-            
+            if (DateTime.Now.AddSeconds(totalTime) > stopTime) 
+        {
+            break;
+        }
             //While loop to tell it when to stop
             //have user breathe in for 5 seconds
             Console.Write("Breathe In");
@@ -32,7 +35,7 @@ public class BreathingActivity : Activity
             CountDown(cycleTime);
         }
 
-        EndMessageDisplay();
+        DisplayEndMessage();//changed the name 
     }
 
     //While loop to tell it when to stop
@@ -43,3 +46,5 @@ public class BreathingActivity : Activity
 
 //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/preprocessor-directives
 //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/parameter-argument-mismatch?f1url=%3FappId%3Droslyn%26k%3Dk(CS7036)
+//https://www.c-sharpcorner.com/blogs/understanding-constants-in-c-sharp2
+//https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/jump-statements
