@@ -1,59 +1,130 @@
+using System;
+using System.Collections.Generic;
+using System.Threading;
+
 public class Activity
 {
-    protected string _activity; //I guess I messed this up its supposed to be protected
+    protected string _activity;
     protected string _description;
-    protected int _time; // accisible to the family
-    public Activity(string activity,string description) // my constructor
-    { // initialize activity, description, time //if you don't make them call the arg don't put them in()
+    protected int _time;
+    protected bool _cancelRequested;
+
+    public Activity(string activity, string description)
+    {
         _activity = activity;
         _description = description;
         _time = 0;
     }
+
+    protected void ResetCancellation()
+    {
+        _cancelRequested = false;
+    }
+
+    private bool CheckForCancelKeyPress()
+    {
+        if (!_cancelRequested && Console.KeyAvailable)
+        {
+            ConsoleKeyInfo keyInfo = Console.ReadKey(intercept: true);
+            if (keyInfo.Key == ConsoleKey.Q)
+            {
+                _cancelRequested = true;
+                Console.WriteLine();
+                Console.WriteLine("Activity cancelled. Returning to the menu...");
+                Console.WriteLine();
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void StartMessageDisplay()
     {
-        Console.Clear(); //to clear the screen
-        Console.WriteLine("");
-        //prompt for the duration
-        //show spinner 
-        StartSpinner(5);
+        ResetCancellation();
+        Console.Clear();
+        Console.WriteLine($"Welcome to the {_activity}.");
+        Console.WriteLine();
+        Console.WriteLine(_description);
+        Console.WriteLine();
+        Console.WriteLine("Press 'Q' at any time to return to the menu.");
+        Console.WriteLine();
 
+        Console.Write("How long, in seconds, would you like for your session? ");
+        while (!int.TryParse(Console.ReadLine(), out _time) || _time <= 0)
+        {
+            Console.Write("Please enter a positive number of seconds: ");
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("Get ready...");
+        StartSpinner(3);
     }
+
     public void EndMessageDisplay()
     {
-        Console.WriteLine("");
-        StartSpinner(5);
-        Console.Clear();
-    }
-    public void StartSpinner(int seconds)
-    {//copy video in assignment
-        List<string> animationstrings = new List<string>();
-        animationstrings.Add("|");
-        animationstrings.Add("/");
-        animationstrings.Add("__");
-        animationstrings.Add("\\");
-        animationstrings.Add("|");
-        animationstrings.Add("/");
-        animationstrings.Add("__");
-        foreach (string s in animationstrings)
+        if (_cancelRequested)
         {
-            Console.Write(s);
-            Thread.Sleep(1000);
-            Console.Write("\b\b");
+            _cancelRequested = false;
+            return;
         }
 
-
+        Console.WriteLine();
+        Console.WriteLine("Well done!");
+        if (!StartSpinner(3))
+        {
+            _cancelRequested = false;
+            return;
+        }
+        Console.WriteLine($"You have completed another {_time} seconds of the {_activity}.");
+        if (!StartSpinner(3))
+        {
+            _cancelRequested = false;
+        }
     }
-    public void CountDown(int seconds)
+
+    public bool StartSpinner(int seconds)
     {
-        for (int i = 1; i <= seconds; i++) //want it to go to 5 not 4 add =
+        List<string> animationStrings = new List<string> { "|", "/", "-", "\\" };
+        DateTime endTime = DateTime.Now.AddSeconds(seconds);
+        int index = 0;
+
+        while (DateTime.Now < endTime && !_cancelRequested)
         {
-            Console.WriteLine(i);
-            Thread.Sleep(1000); // learned from the video in activity
+            Console.Write(animationStrings[index]);
+            Thread.Sleep(250);
+            Console.Write("\b ");
+            Console.Write("\b");
+            index = (index + 1) % animationStrings.Count;
+
+            CheckForCancelKeyPress();
         }
+        Console.WriteLine();
 
-         
-        
-
+        return !_cancelRequested;
     }
 
+    public bool CountDown(int seconds)
+    {
+        for (int i = seconds; i > 0 && !_cancelRequested; i--)
+        {
+            Console.Write(i);
+            for (int step = 0; step < 10 && !_cancelRequested; step++)
+            {
+                Thread.Sleep(100);
+                CheckForCancelKeyPress();
+            }
+
+            if (_cancelRequested)
+            {
+                break;
+            }
+
+            Console.Write("\b ");
+            Console.Write("\b");
+        }
+        Console.WriteLine();
+
+        return !_cancelRequested;
+    }
 }
