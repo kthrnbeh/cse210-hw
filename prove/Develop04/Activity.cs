@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 public class Activity
 {
     protected string _activity; //I guess I messed this up its supposed to be protected
@@ -64,7 +66,7 @@ public class Activity
             Console.Write("\b\b");
             i++; //remember this from the video
         }
-        
+
     }
     public void CountDown(int seconds)
     {
@@ -77,7 +79,10 @@ public class Activity
         }
 
 
-
+        public class GetRandom(); // I wanted to include this because I noticed that I also have been using this to oftenin other parts of the program. 
+        {
+            return _random; //not working? 
+        }
 
     }
 
