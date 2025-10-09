@@ -24,10 +24,11 @@ class Program
 
       string userInput = Console.ReadLine();
       if (!int.TryParse(userInput, out menuNumber))
-      {
-        Console.WriteLine("Invalid input. Please enter a number.");
-        continue;
-      }
+            {
+                Console.WriteLine("Invalid input. Please enter a number.");
+                Thread.Sleep(2000); 
+                continue;
+            }
 
       if (menuNumber == 1)
       {
@@ -69,7 +70,7 @@ class Program
       {
                 Console.WriteLine("Invalid Choice");
                 Thread.Sleep(1000);
-                break;
+                
       }
       
     }
