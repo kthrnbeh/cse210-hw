@@ -19,7 +19,7 @@ public class Activity
         //prompt for the duration
         //show spinner 
         //maybe I need a if statement or something
-        Console.WriteLine("How long would you like your session?");
+        
         string input = Console.ReadLine();
         if (int.TryParse(input, out int duration) && duration > 0)//always backwards... 
         {
