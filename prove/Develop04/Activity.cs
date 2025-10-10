@@ -14,10 +14,9 @@ public class Activity
     }
     public void DisplayStartMessage()
     {
-        
         Console.WriteLine($"Welcome to {_activity}!");
         Console.WriteLine($"{_description}");
-        Console.Clear();
+        
         //prompt for the duration
         //show spinner 
         //maybe I need a if statement or something

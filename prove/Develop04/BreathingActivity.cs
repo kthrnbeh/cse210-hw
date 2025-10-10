@@ -28,13 +28,29 @@ public class BreathingActivity : Activity
         }
             //While loop to tell it when to stop
             //have user breathe in for 5 seconds
-            Console.Write("Breathe In...");
+            Console.WriteLine("Breathe In...");
+            Thread.Sleep(1000);
+            Console.Write("1");
+            Thread.Sleep(1000);
+            Console.Write("2");
+            Thread.Sleep(1000);
+            Console.Write("3");
+            Thread.Sleep(1000);
+           
+
             CountDown(cycleTime);
 
-
-
+            Console.WriteLine();
             // have user breathe out for 5 seconds
-            Console.Write("Breathe Out...");
+            Console.WriteLine("Breathe Out...");
+            Thread.Sleep(1000);
+             Console.Write("1");
+            Thread.Sleep(1000);
+            Console.Write("2");
+            Thread.Sleep(1000);
+            Console.Write("3");
+            Thread.Sleep(1000);
+            Console.Write("\b\b");
             CountDown(cycleTime);
         }
         DisplayEndMessage();
