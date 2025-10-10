@@ -27,11 +27,13 @@ public class BreathingActivity : Activity
             //While loop to tell it when to stop
             //have user breathe in for 5 seconds
             Console.Write("Breathe In");
+            Thread.Sleep(1000);
             CountDown(cycleTime);
 
 
             // have user breathe out for 5 seconds
             Console.Write("Breathe Out");
+            Thread.Sleep(1000);
             CountDown(cycleTime);
         }
 
