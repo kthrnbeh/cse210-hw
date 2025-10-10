@@ -20,7 +20,7 @@ public class BreathingActivity : Activity
         DateTime stopTime = startTime.AddSeconds(_time);
         const int cycleTime = 5; // ohhh I need to set the timer her for them
         const int totalTime = cycleTime + 2;
-        while (DateTime.Now < stopTime)
+        while (DateTime.Now < stopTime)// not equal
         {
           if (DateTime.Now.AddSeconds(totalTime) >= stopTime) 
         {
@@ -28,15 +28,13 @@ public class BreathingActivity : Activity
         }
             //While loop to tell it when to stop
             //have user breathe in for 5 seconds
-            Console.Write("Breathe In");
-            Thread.Sleep(1000);
+            Console.Write("Breathe In...");
             CountDown(cycleTime);
 
 
 
             // have user breathe out for 5 seconds
-            Console.Write("Breathe Out");
-            Thread.Sleep(1000);
+            Console.Write("Breathe Out...");
             CountDown(cycleTime);
         }
         DisplayEndMessage();
