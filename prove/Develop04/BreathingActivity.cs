@@ -1,4 +1,4 @@
-using System.Dynamic;
+
 
 public class BreathingActivity : Activity
 {   
@@ -20,7 +20,7 @@ public class BreathingActivity : Activity
         DateTime stopTime = startTime.AddSeconds(_time);
         const int cycleTime = 5; // ohhh I need to set the timer her for them
         const int totalTime = cycleTime + 2;
-        while (DateTime.Now <= stopTime)
+        while (DateTime.Now < stopTime)
         {
           if (DateTime.Now.AddSeconds(totalTime) >= stopTime) 
         {

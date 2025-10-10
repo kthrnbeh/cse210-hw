@@ -24,7 +24,7 @@ public class Activity
         Console.Write("How long would you like your session (in seconds)? ");
         string input = Console.ReadLine();//move here 
         
-        string input = Console.ReadLine();
+        
         if (int.TryParse(input, out int duration) && duration > 0)//always backwards... 
         {
             _time = duration; // reassigning the name 
@@ -35,19 +35,16 @@ public class Activity
             _time = 30; //assign time for when they give bad input.
             Thread.Sleep(2000);
         }
-        Console.Clear(); // clear screen 
-        //Console.Write("Ready?");
-       // Console.Clear();
-       // CountDown(5);
-       // Thread.Sleep(1000);
-       // StartSpinner(5);
+        Console.Clear(); // clear screen before 'Ready?'
+        Console.Write("Ready?");
+        StartSpinner(5); // Show spinner
         
 
 
     }
     public void DisplayEndMessage()// keep getting confused so changing name. 
     {
-        Console.WriteLine("");
+       
         Console.WriteLine("You did it. Good Job. ");
         Console.WriteLine($"You did the {_activity}, for {_time} seconds.");
         StartSpinner(5);
