@@ -14,11 +14,15 @@ public class Activity
     }
     public void DisplayStartMessage()
     {
-        Console.Clear(); //to clear the screen
+        
         Console.WriteLine($"Welcome to {_activity}!");
+        Console.WriteLine($"{_description}");
+        Console.Clear();
         //prompt for the duration
         //show spinner 
         //maybe I need a if statement or something
+        Console.Write("How long would you like your session (in seconds)? ");
+        string input = Console.ReadLine();//move here 
         
         string input = Console.ReadLine();
         if (int.TryParse(input, out int duration) && duration > 0)//always backwards... 
@@ -32,11 +36,11 @@ public class Activity
             Thread.Sleep(2000);
         }
         Console.Clear(); // clear screen 
-        Console.Write("Ready?");
-        Console.Clear();
-        CountDown(5);
-        Thread.Sleep(1000);
-        StartSpinner(5);
+        //Console.Write("Ready?");
+       // Console.Clear();
+       // CountDown(5);
+       // Thread.Sleep(1000);
+       // StartSpinner(5);
         
 
 
@@ -61,14 +65,14 @@ public class Activity
         animationstrings.Add("__");
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(seconds); // from video
-        int i = 0;
+        //int i = 0;
         foreach (string s in animationstrings)
         {
             Console.Write(s);
             Thread.Sleep(1000);
             Console.Write("\b\b");
         }
-        Console.WriteLine("Done.");
+        
        // while (DateTime.Now < endTime)
         //{
           //  string s = animationstrings[i % animationstrings.Count]; // apparently use % to help it cycle

@@ -12,8 +12,10 @@ public class BreathingActivity : Activity
     }
 
     public void BreathingCycle() // void not returning anything
-    { 
+    {
         DisplayStartMessage();
+        
+        
         DateTime startTime = DateTime.Now;
         DateTime stopTime = startTime.AddSeconds(_time);
         const int cycleTime = 5; // ohhh I need to set the timer her for them
@@ -37,7 +39,7 @@ public class BreathingActivity : Activity
             Thread.Sleep(1000);
             CountDown(cycleTime);
         }
-
+        DisplayEndMessage();
        
     }
 
