@@ -36,6 +36,7 @@ public class BreathingActivity : Activity
             Thread.Sleep(1000);
             Console.Write("3");
             Thread.Sleep(1000);
+            Console.Write("\b\b"); // this made it fix
             CountDown(cycleTime);
 
             Console.WriteLine();
