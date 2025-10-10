@@ -33,7 +33,11 @@ public class Activity
         }
         Console.Clear(); // clear screen 
         Console.Write("Ready?");
+        Console.Clear();
+        CountDown(5);
+        Thread.Sleep(1000);
         StartSpinner(5);
+        
 
 
     }
@@ -58,14 +62,21 @@ public class Activity
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(seconds); // from video
         int i = 0;
-        while (DateTime.Now < endTime)
+        foreach (string s in animationstrings)
         {
-            string s = animationstrings[i % animationstrings.Count]; // apparently use % to help it cycle
             Console.Write(s);
-            Thread.Sleep(1000); // original from for
+            Thread.Sleep(1000);
             Console.Write("\b\b");
-            i++; //remember this from the video
         }
+        Console.WriteLine("Done.");
+       // while (DateTime.Now < endTime)
+        //{
+          //  string s = animationstrings[i % animationstrings.Count]; // apparently use % to help it cycle
+         //   Console.Write(s);
+           // Thread.Sleep(1000); // original from for
+           // Console.Write("\b\b");
+           // i++; //remember this from the video
+        //}
 
     }
     public void CountDown(int seconds)

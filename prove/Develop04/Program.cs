@@ -33,7 +33,9 @@ class Program
       if (menuNumber == 1)
       {
                 BreathingActivity breathingActivity = new BreathingActivity();//new breathing activity
+                breathingActivity.DisplayStartMessage();
                 breathingActivity.BreathingCycle();
+                breathingActivity.DisplayEndMessage();
                 
         
        
