@@ -21,7 +21,7 @@ class PromptGenerator
         // TODO: int i = rng.Next(0, Prompts.Count); return Prompts[i];
         //get a random index value and look up the string prompts 
         int i = rng.Next(0, Prompts.Count);
-        return P;
+        return Prompts[i];
     }
 
     
