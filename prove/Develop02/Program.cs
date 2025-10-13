@@ -3,12 +3,12 @@ class Program
     // Keep one Journal + PromptGenerator for the whole session
     static Journal journal = new Journal();
     static PromptGenerator promptGen = new PromptGenerator();
-    
+
 
     static void Main(string[] args)
     {
-        
-      
+
+
         int menuNumber = 0;
         while (menuNumber != 5)
         {
@@ -73,3 +73,4 @@ class Program
         }
     }
 }
+//https://video.byui.edu/media/t/1_twcn0vdk/259941952
