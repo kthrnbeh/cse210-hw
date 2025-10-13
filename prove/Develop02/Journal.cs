@@ -34,7 +34,11 @@ class Journal
         //https://byui-cse.github.io/cse210-course-2023/unit02/develop.html
         using (StreamWriter outputFile = new StreamWriter(filename))
         {
-            for(var entry)
+            foreach(var entry in Entries) 
+            {
+                // You can add text to the file with the WriteLine method
+                outputFile.WriteLine("This will be the first line in the file.");
+            }
 
         }
     }
