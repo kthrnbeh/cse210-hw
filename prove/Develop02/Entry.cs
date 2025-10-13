@@ -1,13 +1,11 @@
-public class Entry
+class Entry
 {
+    public string _dateText;
     public string _prompt;
-    public int _time;
     public string _response;
-    public Entry(string prompt, int time, string response)
+
+    public void Display()
     {
-        _prompt = prompt;
-        _time = time;
-        _response = response;
-        
+        // TODO: print date, prompt, response nicely
     }
 }

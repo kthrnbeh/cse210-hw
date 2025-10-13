@@ -1,25 +1,28 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-
 class Program
 {
-    static List<Entry> journalEntries = new List<Entry>();
-    static Random rng = new Random();
+    // Keep one Journal + PromptGenerator for the whole session
+    static Journal journal = new Journal();
+    static PromptGenerator promptGen = new PromptGenerator();
 
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
-        // Working with my team to develope a journal prompt 
-        // https://www.youtube.com/watch?v=3bBiQ1G7BOU Watched this to help me with ideas of what to do.
-        // Looks like first thing I need to do is make a menu
-        // ok I need to make a couple classes , Entry and Journal
-        // https://chatgpt.com/share/68d46af7-953c-8002-9fc8-8fd62fd20bf8
+        // ---- File check must be INSIDE a method ----
+        string path = "prompt.txt";
+        Console.WriteLine("Looking for file in: " + Directory.GetCurrentDirectory());
+
+        if (!File.Exists(path))
+        {
+            Console.WriteLine("Could not find " + path + " (using built-in prompts instead).");
+        }
+        else
+        {
+            // Optional: load external prompts
+            promptGen.TryLoadFromFile(path);
+        }
 
         int menuNumber = 0;
         while (menuNumber != 5)
         {
-            // my idea is to write a menu and have it keep going until it gets the number 5
             Console.WriteLine("Please select one of the following choices:");
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
@@ -32,25 +35,41 @@ class Program
             if (!int.TryParse(userInput, out menuNumber))
             {
                 Console.WriteLine("Invalid input. Please enter a number.");
+                Console.WriteLine();
                 continue;
             }
 
             if (menuNumber == 1)
             {
-                Journal journaling = new Journal();
+                // ==== WRITE ====
+                // TODO:
+                // - string prompt = promptGen.GetRandomPrompt();
+                // - Console.WriteLine(prompt)
+                // - string response = Console.ReadLine();
+                // - string date = DateTime.Now.ToString("yyyy-MM-dd");
+                // - var e = new Entry { DateText = date, Prompt = prompt, Response = response };
+                // - journal.AddEntry(e);
             }
             else if (menuNumber == 2)
             {
-               
+                // ==== DISPLAY ====
+                // TODO: journal.DisplayAll();
             }
             else if (menuNumber == 3)
             {
-                Entry entry = new Entry();
-                
+                // ==== LOAD ====
+                // TODO:
+                // - Console.Write("Filename to load: ");
+                // - string fileName = Console.ReadLine();
+                // - journal.LoadFromFile(fileName);
             }
             else if (menuNumber == 4)
             {
-                
+                // ==== SAVE ====
+                // TODO:
+                // - Console.Write("Filename to save: ");
+                // - string fileName = Console.ReadLine();
+                // - journal.SaveToFile(fileName);
             }
             else if (menuNumber == 5)
             {
@@ -60,7 +79,8 @@ class Program
             {
                 Console.WriteLine("Invalid Choice");
             }
+
+            Console.WriteLine();
         }
     }
-
- 
+}
