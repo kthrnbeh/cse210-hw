@@ -49,6 +49,17 @@ class Journal
         // TODO: clear list; read lines; split by '|'; create Entry; add
         // guard for missing file: if (!File.Exists(fileName)) { message; return; }
         //loop through each line in the file and create new entry objects to put in a list
+        
+string filename = "myFile.txt";
+string[] lines = System.IO.File.ReadAllLines(filename);
+
+foreach (string line in lines)
+{
+    string[] parts = line.Split(",");
+
+    string firstName = parts[0];
+    string lastName = parts[1];
+}
     }
 }
 
