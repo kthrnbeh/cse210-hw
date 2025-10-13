@@ -1,6 +1,6 @@
 class Program
 {
-    // Keep one Journal + PromptGenerator for the whole session
+
     static Journal journal = new Journal();
     static PromptGenerator promptGen = new PromptGenerator();
 
