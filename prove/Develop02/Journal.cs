@@ -62,7 +62,7 @@ class Journal
                 string _prompt = parts[1];
                 string _response = parts[2];
 
-                Entry entry = new Entry(_dateText, _prompt, _response);
+                Entry entry = new Entry();
                 Entries.Add(entry);
             }
         }
