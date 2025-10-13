@@ -1,4 +1,4 @@
-class Entry
+public class Entry
 {
     public string _dateText;
     public string _prompt;
@@ -7,5 +7,7 @@ class Entry
     public void Display()
     {
         // TODO: print date, prompt, response nicely
+        Console.WriteLine($"{_dateText} :{_prompt}");
+        Console.WriteLine($"{_response}");
     }
 }
