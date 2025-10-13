@@ -19,13 +19,9 @@ class PromptGenerator
     public string GetRandomPrompt()
     {
         // TODO: int i = rng.Next(0, Prompts.Count); return Prompts[i];
+        //get a random index value and look up the string prompts 
         return "A random prompt.";
     }
 
-    // (Optional) load prompts from prompt.txt
-    public void TryLoadFromFile(string path)
-    {
-        // TODO: if (File.Exists(path)) Prompts = new List<string>(File.ReadAllLines(path));
-        // else keep defaults
-    }
+    
 }

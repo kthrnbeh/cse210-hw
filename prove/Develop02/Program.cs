@@ -7,20 +7,8 @@ class Program
 
     static void Main(string[] args)
     {
-        // ---- File check must be INSIDE a method ----
-        string path = "prompt.txt";
-        Console.WriteLine("Looking for file in: " + Directory.GetCurrentDirectory());
-
-        if (!File.Exists(path))
-        {
-            Console.WriteLine("Could not find " + path + " (using built-in prompts instead).");
-        }
-        else
-        {
-            // Optional: load external prompts
-            promptGen.TryLoadFromFile(path);
-        }
-
+        
+      
         int menuNumber = 0;
         while (menuNumber != 5)
         {
