@@ -59,6 +59,9 @@ class Program
                 // - Console.Write("Filename to load: ");
                 // - string fileName = Console.ReadLine();
                 // - journal.LoadFromFile(fileName);
+                Console.Write("FileName to Load:");
+                string fileName = Console.ReadLine();
+                journal.LoadFromFile(fileName);
             }
             else if (menuNumber == 4)
             {
@@ -67,6 +70,8 @@ class Program
                 // - Console.Write("Filename to save: ");
                 // - string fileName = Console.ReadLine();
                 // - journal.SaveToFile(fileName);
+                Console.Write("Filename to Save:");
+                string fileName = Console.ReadLine();
             }
             else if (menuNumber == 5)
             {
