@@ -37,7 +37,8 @@ class Journal
             foreach(var entry in Entries) 
             {
                 // You can add text to the file with the WriteLine method
-                outputFile.WriteLine("This will be the first line in the file.");
+                outputFile.WriteLine($"{entry._dateText}|{entry._prompt}|{entry._response}");
+                
             }
 
         }
