@@ -5,7 +5,7 @@ class Journal
     public void AddEntry(Entry e)
     {
         // TODO: Entries.Add(e);
-        //make new entry
+        // Make new entry
         Entries.Add(e);
     }
 
@@ -13,14 +13,14 @@ class Journal
     {
         // TODO: foreach (var e in Entries) e.Display();
         // If none, say "No entries yet."
-        //display all of the enteries
-        //loops and lists 
         if (Entries.Count == 0)
         {
-            Console.Write("No items to display"); // in case nothing is there
+            Console.Write("No items to display"); // In case nothing is there
             return;
         }
-        foreach (var e in Entries) e.Display();
+
+        // Display all the entries
+        foreach (var entry in Entries)
         {
             entry.Display();
         }
@@ -30,39 +30,42 @@ class Journal
     {
         // TODO: write each entry line as: date|prompt|response
         // using (var w = new StreamWriter(fileName)) { ... }
-        //loop through each file in entries and save it to a file
-        //https://byui-cse.github.io/cse210-course-2023/unit02/develop.html
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
-            foreach(var entry in Entries) 
+            foreach (var entry in Entries)
             {
-                // You can add text to the file with the WriteLine method
+                // Add text to the file with the WriteLine method
                 outputFile.WriteLine($"{entry._dateText}|{entry._prompt}|{entry._response}");
-
             }
-
         }
     }
 
     public void LoadFromFile(string fileName)
     {
         // TODO: clear list; read lines; split by '|'; create Entry; add
-        // guard for missing file: if (!File.Exists(fileName)) { message; return; }
-        //loop through each line in the file and create new entry objects to put in a list
-                //clear Entries 
-            string fileName = "myFile.txt";
-            string[] lines = System.IO.File.ReadAllLines(fileName);
+        // Guard for missing file: if (!File.Exists(fileName)) { message; return; }
+        if (!File.Exists(fileName))
+        {
+            Console.WriteLine("File not found.");
+            return;
+        }
 
-            foreach (string line in lines)
+        Entries.Clear();
+        string[] lines = System.IO.File.ReadAllLines(fileName);
+
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split("|");
+            if (parts.Length == 3)
             {
-                string[] parts = line.Split("|");
+                string _dateText = parts[0];
+                string _prompt = parts[1];
+                string _response = parts[2];
 
-                     int _dateText = parts[0];
-                     string _prompt = parts[1]
-                     string _response = 
-
-
+                Entry entry = new Entry(_dateText, _prompt, _response);
+                Entries.Add(entry);
             }
+        }
     }
 }
 

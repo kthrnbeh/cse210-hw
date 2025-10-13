@@ -43,6 +43,7 @@ class Program
             {
                 // ==== DISPLAY ====
                 // TODO: journal.DisplayAll();
+                journal.DisplayAll();
             }
             else if (menuNumber == 3)
             {
