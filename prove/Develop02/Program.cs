@@ -36,9 +36,15 @@ class Program
                 Console.WriteLine(prompt);
                 string response = Console.ReadLine();
                 string date = DateTime.Now.ToString("yyyy-MM-dd");
-                 var e = new Entry {  }
+                var e = new Entry
+                {
+                    _dateText = date,
+                    _prompt = prompt,
+                    _response = response, //fixed because of problem prompt
 
-                - journal.AddEntry(e);
+                };
+
+                     journal.AddEntry(e);
             }
             else if (menuNumber == 2)
             {
