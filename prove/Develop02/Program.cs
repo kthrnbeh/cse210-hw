@@ -32,12 +32,13 @@ class Program
             {
                 // ==== WRITE ====
                 // TODO:
-                // - string prompt = promptGen.GetRandomPrompt();
-                // - Console.WriteLine(prompt)
-                // - string response = Console.ReadLine();
-                // - string date = DateTime.Now.ToString("yyyy-MM-dd");
-                // - var e = new Entry { DateText = date, Prompt = prompt, Response = response };
-                // - journal.AddEntry(e);
+                 string prompt = promptGen.GetRandomPrompt();
+                Console.WriteLine(prompt);
+                string response = Console.ReadLine();
+                string date = DateTime.Now.ToString("yyyy-MM-dd");
+                 var e = new Entry {  }
+
+                - journal.AddEntry(e);
             }
             else if (menuNumber == 2)
             {
