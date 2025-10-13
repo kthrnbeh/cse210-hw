@@ -6,6 +6,7 @@ class Journal
     {
         // TODO: Entries.Add(e);
         //make new entry
+        Entries.Add(e);
     }
 
     public void DisplayAll()
@@ -14,6 +15,15 @@ class Journal
         // If none, say "No entries yet."
         //display all of the enteries
         //loops and lists 
+        if (Entries.Count == 0)
+        {
+            Console.Write("No items to display"); // in case nothing is there
+            return;
+        }
+        foreach (var e in Entries) e.Display();
+        {
+            entry.Display();
+        }
     }
 
     public void SaveToFile(string fileName)
@@ -21,6 +31,12 @@ class Journal
         // TODO: write each entry line as: date|prompt|response
         // using (var w = new StreamWriter(fileName)) { ... }
         //loop through each file in entries and save it to a file
+        //https://byui-cse.github.io/cse210-course-2023/unit02/develop.html
+        using (StreamWriter outputFile = new StreamWriter(filename))
+        {
+            for(var entry)
+
+        }
     }
 
     public void LoadFromFile(string fileName)
