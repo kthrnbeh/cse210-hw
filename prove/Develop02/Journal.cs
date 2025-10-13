@@ -32,13 +32,13 @@ class Journal
         // using (var w = new StreamWriter(fileName)) { ... }
         //loop through each file in entries and save it to a file
         //https://byui-cse.github.io/cse210-course-2023/unit02/develop.html
-        using (StreamWriter outputFile = new StreamWriter(filename))
+        using (StreamWriter outputFile = new StreamWriter(fileName))
         {
             foreach(var entry in Entries) 
             {
                 // You can add text to the file with the WriteLine method
                 outputFile.WriteLine($"{entry._dateText}|{entry._prompt}|{entry._response}");
-                
+
             }
 
         }
