@@ -72,6 +72,7 @@ class Program
                 // - journal.SaveToFile(fileName);
                 Console.Write("Filename to Save:");
                 string fileName = Console.ReadLine();
+                journal.SaveToFile(fileName);
             }
             else if (menuNumber == 5)
             {
