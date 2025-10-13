@@ -37,19 +37,20 @@ class Program
 
             if (menuNumber == 1)
             {
-                WriteEntry(); // Each of these go to the classes
+                Journal journaling = new Journal();
             }
             else if (menuNumber == 2)
             {
-                DisplayAllEntries();
+               
             }
             else if (menuNumber == 3)
             {
-                LoadFromFile();
+                Entry entry = new Entry();
+                
             }
             else if (menuNumber == 4)
             {
-                SaveToFile();
+                
             }
             else if (menuNumber == 5)
             {
@@ -62,96 +63,4 @@ class Program
         }
     }
 
-    static void WriteEntry()
-    {
-        string filename = "prompt.txt"; // looked up how to get a prompt.txt
-
-        if (!File.Exists(filename))
-        {
-            Console.WriteLine($"Prompt file '{filename}' not found.");
-            return;
-        }
-
-        string[] prompts = File.ReadAllLines(filename);
-        if (prompts.Length == 0)
-        {
-            Console.WriteLine("No prompts found in prompt.txt");
-            return;
-        }
-
-        int index = rng.Next(prompts.Length); // index
-        string prompt = prompts[index];
-
-        Console.WriteLine(prompt);
-        Console.Write("> ");
-        string response = Console.ReadLine();
-
-        // add this to one of the classes not main
-        Entry newEntry = new Entry();
-        newEntry.date = DateTime.Now.ToShortDateString();
-        newEntry.prompt = prompt;
-        newEntry.response = response;
-
-        journalEntries.Add(newEntry);
-    }
-
-    static void DisplayAllEntries()
-    {
-        foreach (Entry entry in journalEntries)
-        {
-            Console.WriteLine($"Date: {entry.date} - Prompt: {entry.prompt}");
-            Console.WriteLine($"Response: {entry.response}");
-        }
-    }
-
-    static void SaveToFile()
-    {
-        Console.Write("Filename: ");
-        string filename = Console.ReadLine();
-
-        List<string> lines = new List<string>();
-        foreach (Entry entry in journalEntries)
-        {
-            lines.Add($"{entry.date}|{entry.prompt}|{entry.response}");
-        }
-
-        File.WriteAllLines(filename, lines);
-        Console.WriteLine("Saved.");
-    }
-
-    static void LoadFromFile()
-    {
-        Console.Write("Enter filename to load: ");
-        string filename = Console.ReadLine();
-
-        if (!File.Exists(filename))
-        {
-            Console.WriteLine("File not found.");
-            return;
-        }
-
-        journalEntries.Clear();
-
-        string[] lines = File.ReadAllLines(filename);
-        foreach (string line in lines)
-        {
-            string[] parts = line.Split('|');
-            if (parts.Length != 3) continue;
-
-            Entry newEntry = new Entry();
-            newEntry.date = parts[0];
-            newEntry.prompt = parts[1];
-            newEntry.response = parts[2];
-
-            journalEntries.Add(newEntry);
-        }
-    }
-}
-
-class Entry
-{
-    public string date;
-    public string prompt;
-    public string response;
-}
-//Thanks to my team I think I did it!! oh my thanks so much.
+ 
