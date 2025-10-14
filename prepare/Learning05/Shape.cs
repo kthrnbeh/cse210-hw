@@ -1,11 +1,16 @@
 public abstract class Shape // base class for all shapes
 {
     private string _color; // from diagram (_color : string)
-    public Shape(string color)
+    private string _shapeType;
+    public Shape(string type,string color)
     {
         _color = color; //added this to get a constructor for the square file
+        _
+    }   
+    public string GetShape(string shapeType)
+    {
+        return _shapeType;
     }
-
     public string GetColor()
     {
         // TODO: return the color

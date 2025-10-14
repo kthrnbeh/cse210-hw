@@ -1,5 +1,7 @@
 using System;
-using System.Collections.Generic; // for the list of shapes
+using System.Collections.Generic;
+using System.Globalization;
+using System.Security.Cryptography.X509Certificates; // for the list of shapes
 
 class Program
 {
@@ -27,9 +29,23 @@ class Program
         {
             shape.GetColor();
             shape.GetArea();
+            shape.GetType();
         }
 
         // TODO: test output to verify polymorphism works correctly
         // (each shape type should calculate its own area)
+        //copy like the video
+
+
+
     }
+    //oh yeah has to be outside
+    public static void DisplayShapeinfo(Shape shape)
+    {
+        string color = shape.GetColor();
+        double area = shape.GetArea();
+        string shap = shape.GetType();
+        Console.WriteLine($"Shape:{shap}, Color:{color}, Area{area}");
+    }
+    
 }
