@@ -27,9 +27,8 @@ class Program
         //oh like the polymorph video
         foreach (Shape shape in shapes)
         {
-           string color = shape.GetColor();
-            double area = shape.GetArea();
-           string shap = shape.GetType();
+            //nothing was happening because I forgot to call my display
+            DisplayShapeinfo(shape);
         }
 
         // TODO: test output to verify polymorphism works correctly
