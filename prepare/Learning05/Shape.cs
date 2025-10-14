@@ -1,6 +1,10 @@
 public abstract class Shape // base class for all shapes
 {
     private string _color; // from diagram (_color : string)
+    public Shape(string color)
+    {
+        
+    }
 
     public string GetColor()
     {
