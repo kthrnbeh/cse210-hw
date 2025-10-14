@@ -8,10 +8,11 @@ public abstract class Shape // base class for all shapes
         return _color;
     }
 
-    public void SetColor()
+    public void SetColor(string color)
     {
         // TODO: set the color value (parameter should be a string)
-        
+        _color = color;
+
     }
 
     public abstract double GetArea(); 
