@@ -10,7 +10,10 @@ class Program
         // TODO: create a list to hold shapes (List<Shape>)
         // example: List<Shape> shapes = new List<Shape>();
         List<Shape> shapes = new List<Shape>();
-
+        shapes shapes = new shapes();
+        shapes.Add(Square);
+        shapes.Add(Rectangle);
+        shapes.Add
         // TODO: add one of each shape (Square, Rectangle, Circle)
         // each should include color and size values
 
