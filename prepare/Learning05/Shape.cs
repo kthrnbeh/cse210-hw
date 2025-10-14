@@ -3,7 +3,7 @@ public abstract class Shape // base class for all shapes
     private string _color; // from diagram (_color : string)
     public Shape(string color)
     {
-        
+        _color = color; //added this to get a constructor for the square file
     }
 
     public string GetColor()
