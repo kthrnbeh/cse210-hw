@@ -6,11 +6,13 @@ public class Circle : Shape // derived class from Shape
     {
         // TODO: set the _radius value from the parameter
         // this constructor should call the base class constructor for color
+        _radius = radius;
     }
 
     public override double GetArea()
     {
         // TODO: calculate and return the area of a circle
         // formula: Math.PI * radius * radius
+        return Math.PI * _radius * _radius;
     }
 }
