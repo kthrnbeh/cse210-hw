@@ -12,11 +12,11 @@ class Program
         // TODO: create a list to hold shapes (List<Shape>)
         // example: List<Shape> shapes = new List<Shape>();
         List<Shape> shapes = new List<Shape>();
-        Square square = new Square("Blue", "Square", 0.9);
+        Square square = new Square("Square", "blue", 0.9);
         shapes.Add(square);
-        Rectangle rect = new Rectangle("Green","Rectangle", .08, .09);
+        Rectangle rect = new Rectangle("Rectangle","Red", .08, .09);
         shapes.Add(rect);
-        Circle circle = new Circle("Purple","Circle", 90);
+        Circle circle = new Circle("Circle","Purple", 90);
         shapes.Add(circle);
         // TODO: add one of each shape (Square, Rectangle, Circle)
         // each should include color and size values
@@ -44,7 +44,7 @@ class Program
         string color = shape.GetColor();
         double area = shape.GetArea();
         string shap = shape.GetType();
-        Console.WriteLine($"Shape:{shap}, Color:{color}, Area{area}");
+        Console.WriteLine($"Shape: {shap}, Color: {color}, Area: {area}");
     }
     
 }
