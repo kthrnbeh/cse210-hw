@@ -114,7 +114,7 @@ public class GoalManager
         for (int i = 0; i < _goals.Count; i++)
         {
             Goal goal = _goals[i];
-            Console.WriteLine($"{i + 1} {goal.GetDetails()}");
+            Console.WriteLine($"{i + 1} {goal.GetName()}");
             
             
             
@@ -126,6 +126,20 @@ public class GoalManager
     {
         // Loop through the list of goals and display
         // the full details
+        //realized myself that it was similar
+         if(_goals.Count==0)
+        {
+            Console.WriteLine("No goals submitted");
+            return;
+        }
+        for (int i = 0; i < _goals.Count; i++)
+        {
+            Goal goal = _goals[i];
+            Console.WriteLine($"{i + 1} {goal.GetDetails()}");
+            
+            
+            
+        }
     }
 
     public void CreateAGoal()
@@ -149,6 +163,17 @@ public class GoalManager
         // Call the RecordEvent method on the correct goal
         // Update the goal based on points
         // Display how many points you have
+        Console.WriteLine("please select a goal");
+        Console.ReadLine();
+        string filename = "goals.txt";
+        string[] lines = System.IO.File.ReadAllLines(filename);
+
+        foreach (string line in lines)
+        {
+         string[] parts = line.Split(",");
+        string firstName = parts[0];
+        string lastName = parts[1];
+        }
     }
 
     public void SaveTheGoals()
@@ -156,6 +181,8 @@ public class GoalManager
         // Ask user for a file name
         // Loop through each goal
         // Convert each goal to a string and save the string
+        Console.WriteLine("What is the file name?");
+        Console.ReadLine();
     }
 
     public void LoadTheGoals()
@@ -163,6 +190,9 @@ public class GoalManager
         // Ask user for a file name
         // Read each line of the file and split it up
         // Use the parts to recreate the goal object
+        Console.WriteLine("What is the File Name?");
     }
 }
 //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements
+//https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/polymorphism
+//https://byui-cse.github.io/cse210-course-2023/unit05/prepare.html
