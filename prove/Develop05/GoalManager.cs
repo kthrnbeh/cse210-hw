@@ -105,10 +105,7 @@ public class GoalManager
         // Loop through the list of goals
         // Display the names
         // You may need another function in the Goal class
-        foreach(Goal goal in _goals)
-        {
-            
-        }
+        
 
     }
 
