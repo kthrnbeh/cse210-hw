@@ -1,3 +1,4 @@
+using System.ComponentModel.Design;
 using System.Runtime.CompilerServices;
 using System.Threading;
 public class GoalManager
@@ -169,9 +170,10 @@ public class GoalManager
             Console.WriteLine("Please select a goal:");
 
         }
-        Console.WriteLine("Which Goal did you achieve?"){
-            int select = int.Parse(Console.ReadLine());
-        }
+        Console.WriteLine("Which Goal did you achieve?");
+        int select = int.Parse(Console.ReadLine());
+        Goal selectedGoal = _goals[select - 1];
+        
     }
 
     public void SaveTheGoals()
