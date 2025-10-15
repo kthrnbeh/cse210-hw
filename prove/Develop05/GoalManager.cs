@@ -163,17 +163,7 @@ public class GoalManager
         // Call the RecordEvent method on the correct goal
         // Update the goal based on points
         // Display how many points you have
-        Console.WriteLine("please select a goal");
-        Console.ReadLine();
-        string filename = "goals.txt";
-        string[] lines = System.IO.File.ReadAllLines(filename);
-
-        foreach (string line in lines)
-        {
-         string[] parts = line.Split(",");
-        string firstName = parts[0];
-        string lastName = parts[1];
-        }
+       
     }
 
     public void SaveTheGoals()

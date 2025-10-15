@@ -25,7 +25,7 @@ class Program
     }
     //https://video.byui.edu/media/t/1_6lpgm7dz
     //https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/main-command-line
-
-
+    //https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-9.0
+    
 }
     
