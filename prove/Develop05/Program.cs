@@ -1,7 +1,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Threading;
+using System.Collections.Generic;
 class Program
+
 
 {
     static void Main(string[] args)
@@ -17,12 +19,12 @@ class Program
         var manager = new GoalManager();
         manager.Start();
 
-     
+
 
     }
     //https://video.byui.edu/media/t/1_6lpgm7dz
     //https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/main-command-line
-  
+
 
 }
     

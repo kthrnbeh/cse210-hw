@@ -1,3 +1,4 @@
+
 public class GoalManager
 {
     // Attributes (private)
@@ -5,7 +6,7 @@ public class GoalManager
     private readonly List<Goal> _goals = new List<Goal>();
     private int _score = 0;
 
-    
+
 
     public void Start()
     {
@@ -27,7 +28,7 @@ public class GoalManager
             Console.WriteLine("4.Load Goals");
             Console.WriteLine("5.Recod Event");
             Console.WriteLine("6.Quit");
-             string userInput = Console.ReadLine();
+            string userInput = Console.ReadLine();
 
             if (!int.TryParse(userInput, out menuNumber))
             {
@@ -90,7 +91,7 @@ public class GoalManager
             }
 
 
-            }
+        }
     }
 
     public void DisplayPlayerInfo()
@@ -103,7 +104,7 @@ public class GoalManager
         // Loop through the list of goals
         // Display the names
         // You may need another function in the Goal class
-       
+
     }
 
     public void ListGoalDetail()
@@ -118,12 +119,12 @@ public class GoalManager
         // Ask for the name, description, and points
         // Ask for more if they pick the checklist goal
         // Create the object and add to the goal list
-         Console.WriteLine("What type of goal would you like to make?");
-                string answer = Console.ReadLine();
-                // Ask for name, description, and points
-                Console.WriteLine("1. Simple Goal");
-                Console.WriteLine("2.Eternal Goal");
-                Console.WriteLine("3. Checklist");
+        Console.WriteLine("What type of goal would you like to make?");
+        string answer = Console.ReadLine();
+        // Ask for name, description, and points
+        Console.WriteLine("1. Simple Goal");
+        Console.WriteLine("2.Eternal Goal");
+        Console.WriteLine("3. Checklist");
     }
 
     public void RecordEvent()
