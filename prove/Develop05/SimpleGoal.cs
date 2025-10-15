@@ -11,6 +11,7 @@ public class SimpleGoal : Goal
     {
         // TODO: Initialize _done = false
         // This ensures the goal starts as incomplete
+        _done = false;
     }
 
     // OVERRIDES — implements required behaviors from base Goal class
@@ -25,7 +26,18 @@ public class SimpleGoal : Goal
         // 3. If already complete:
         //      - Return 0 or ignore (no additional points awarded)
         // This method MUST return an integer (the number of points earned).
-        return 0; // placeholder — replace once logic is written
+        // return 0; // placeholder — replace once logic is written
+        if (_done == false)
+        {
+            _done = true;
+            Console.WriteLine("[x]");
+            return _points;
+
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     public override bool isComplete()
@@ -33,7 +45,7 @@ public class SimpleGoal : Goal
         // TODO:
         // Return whether this goal is complete or not
         // Simply return _done (true if completed, false otherwise)
-        return false; // placeholder — replace with _done
+        return _done; // placeholder — replace with _done
     }
 
     public override string GetstringRepresent()
@@ -56,3 +68,4 @@ public class SimpleGoal : Goal
         return ""; // placeholder — replace when implemented
     }
 }
+//https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/selection-statements
