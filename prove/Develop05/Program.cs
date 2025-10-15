@@ -14,8 +14,9 @@ class Program
         //goals.Add(simple);
         //Goal goal = goals[0];
         Console.WriteLine("Hello Develop05 World!");
-        GoalManager manager = new GoalManager();
-        
+        var manager = new GoalManager();
+        manager.Start();
+
      
 
     }
