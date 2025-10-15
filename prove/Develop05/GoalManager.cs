@@ -1,11 +1,12 @@
+using System.Runtime.CompilerServices;
 using System.Threading;
 public class GoalManager
 {
     // Attributes (private)
     // Constructors initializing the attributes
+    private int _score;
     private List<Goal> _goals = new List<Goal>();
-
-
+ 
 
     public void Start()
     {
@@ -96,6 +97,7 @@ public class GoalManager
     public void DisplayPlayerInfo()
     {
         // Display points
+        Console.WriteLine($"{_score}");
     }
 
     public void ListGoalNames()
@@ -103,6 +105,10 @@ public class GoalManager
         // Loop through the list of goals
         // Display the names
         // You may need another function in the Goal class
+        foreach(Goal goal in _goals)
+        {
+            
+        }
 
     }
 
@@ -149,3 +155,4 @@ public class GoalManager
         // Use the parts to recreate the goal object
     }
 }
+//https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements
