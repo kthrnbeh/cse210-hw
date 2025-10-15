@@ -1,60 +1,70 @@
 public class GoalManager
 {
-    //Attributes(private)
-    //constructors italizing the attributes
+    // Attributes (private)
+    // Constructors initializing the attributes
 
-    public void Start
+    public void Start()
     {
-        //Display the main menu and player info
-        //call one of the funcitions
-        //CreateGoal, listGoaldetails, Save Goals, Load Goals
-        //Record Event, etc..
-        //loop until quit 
+        // Display the main menu and player info
+        // Call one of the functions:
+        // CreateGoal, ListGoalDetails, SaveGoals, LoadGoals, RecordEvent, etc.
+        // Loop until quit
+        // This is similar to the menu system from Develop 2 but with updates
 
-    }
-    
-    public void DisplayPlayerInfo
-    {
-        //Display points
-    }
-    public void ListGoalNames
-    {
-        //Loop through the list of goals
-        //Display the names
-        //you may need another function in the goal class
-    }
-    public void ListGoalDetail
-    {
-        //Loop through the list of goals and display
-        //the full details
+        int menuNumber = 0;
 
+        while (menuNumber != 4)
+        {
+            // TODO: Display menu options and handle user input here
+        }
+    }
 
-    }
-    public void CreateAGoal
+    public void DisplayPlayerInfo()
     {
-        //Display a submenu to select the goal type
-        //ask for the name description and points
-        //ask for more if they pick the check list goal
-        //Create the object and add to the goal list
+        // Display points
+    }
 
-    }
-    public void RecordEvent
+    public void ListGoalNames()
     {
-        //we want to display a list of all of the goal names
-        //ask user to select a goal
-        //Call the record event on the correct goal
-        //update the goal based on the point
-        //Display how many points you have
+        // Loop through the list of goals
+        // Display the names
+        // You may need another function in the Goal class
     }
-    public void SaveTheGoals
+
+    public void ListGoalDetail()
     {
-        //ask user for a file name loop through goal
-        //convert each goal to a string then save the string
+        // Loop through the list of goals and display
+        // the full details
     }
-    public void LoadTheGoals
+
+    public void CreateAGoal()
     {
-        //Ask user for a file name
-        //Read each line of the file and split it up
-        //use the parts to recreate the goal object
+        // Display a submenu to select the goal type
+        // Ask for the name, description, and points
+        // Ask for more if they pick the checklist goal
+        // Create the object and add to the goal list
+    }
+
+    public void RecordEvent()
+    {
+        // Display a list of all goal names
+        // Ask user to select a goal
+        // Call the RecordEvent method on the correct goal
+        // Update the goal based on points
+        // Display how many points you have
+    }
+
+    public void SaveTheGoals()
+    {
+        // Ask user for a file name
+        // Loop through each goal
+        // Convert each goal to a string and save the string
+    }
+
+    public void LoadTheGoals()
+    {
+        // Ask user for a file name
+        // Read each line of the file and split it up
+        // Use the parts to recreate the goal object
     }
 }
