@@ -50,12 +50,13 @@ public class ChecklistGoal : Goal
     public override string GetstringRepresent()
     {
         // TODO: return "Checklist|name|description|points|current|target|bonus"
-        return "";
+         return $"ChecklistGoal|{_name}|{_description}|{_points}|{_bonus}|{_target}|{_amountCompleted}";
+
     }
 
     public override string GetDetails()
     {
         // TODO: return "[ ] Name — Completed X/Y (+points each, +bonus bonus)"
-        return "";
+        
     }
 }
