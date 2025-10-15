@@ -11,16 +11,32 @@ public class ChecklistGoal : Goal
         : base(name, description, points)
     {
         // TODO: set _target, _bonus, and initialize _amountCompleted = 0
+        _amountCompleted = 0; //int
+        _target = target;
+        _bonus = bonus;
+
     }
 
     // OVERRIDES (names exactly as diagram)
     public override int RecordEvent()
     {
         // TODO:
-        //  - increment _amountCompleted
+        //  - increment _amountCompleted meaning add to amountcompleted
+        _amountCompleted++;
+        
         //  - award base points
         //  - if now equals _target → include _bonus
-        return 0;
+        if (_amountCompleted >= _target)
+        {
+            Console.WriteLine($"{_bonus}");
+            return _points + _bonus; // when the goal is completed give it bonus
+        }
+        else
+        {
+            Console.WriteLine($"{_points}");
+            return _points; // if the goal is not yet completed just add points
+        }
+       
     }
 
     public override bool IsComplete()
