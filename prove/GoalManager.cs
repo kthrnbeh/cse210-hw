@@ -13,9 +13,24 @@ public class GoalManager
 
         int menuNumber = 0;
 
-        while (menuNumber != 4)
+        while (menuNumber != 5) //menu quits after 6
         {
             // TODO: Display menu options and handle user input here
+            Console.WriteLine("Menu Options:");
+            Console.WriteLine("1.Create Goals");
+            Console.WriteLine("2.List Goals");
+            Console.WriteLine("3.Save Goals");
+            Console.WriteLine("4.Load Goals");
+            Console.WriteLine("5.Recod Event");
+            Console.WriteLine("6.Quit");
+             string userInput = Console.ReadLine();
+
+            if (!int.TryParse(userInput, out menuNumber))
+                {
+                    Console.WriteLine("Invalid input. Please enter a number.");
+                    Thread.Sleep(2000);
+                    continue;
+                }
         }
     }
 
