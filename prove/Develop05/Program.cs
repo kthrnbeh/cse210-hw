@@ -1,9 +1,15 @@
 using System;
+using System.Runtime.CompilerServices;
 
 class Program
 {
     static void Main(string[] args)
     {
+        //create a list of goal objects
+        List<Goal> goals = new List<Goal>();
+        SimpleClass simple = new SimpleClass();
+        goals.Add(simple);
+        Goal goal = goals[0];
         Console.WriteLine("Hello Develop05 World!");
         //first step is to make a menu
         //Taking ideas from Develope 2 for the menu
