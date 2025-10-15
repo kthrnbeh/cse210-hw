@@ -3,8 +3,7 @@ public class GoalManager
 {
     // Attributes (private)
     // Constructors initializing the attributes
-    private readonly List<Goal> _goals = new List<Goal>();
-    private int _score = 0;
+    private List<Goal> _goals = new List<Goal>();
 
 
 
@@ -28,8 +27,8 @@ public class GoalManager
             Console.WriteLine("4.Load Goals");
             Console.WriteLine("5.Recod Event");
             Console.WriteLine("6.Quit");
+            Console.WriteLine("Select a choice from the Menu.");
             string userInput = Console.ReadLine();
-
             if (!int.TryParse(userInput, out menuNumber))
             {
                 Console.WriteLine("Invalid input. Please enter a number.");
@@ -119,12 +118,12 @@ public class GoalManager
         // Ask for the name, description, and points
         // Ask for more if they pick the checklist goal
         // Create the object and add to the goal list
-        Console.WriteLine("What type of goal would you like to make?");
-        string answer = Console.ReadLine();
         // Ask for name, description, and points
         Console.WriteLine("1. Simple Goal");
         Console.WriteLine("2.Eternal Goal");
         Console.WriteLine("3. Checklist");
+        Console.WriteLine("What type of goal would you like to make?");
+        string answer = Console.ReadLine();
     }
 
     public void RecordEvent()
