@@ -2,6 +2,9 @@ public class GoalManager
 {
     // Attributes (private)
     // Constructors initializing the attributes
+    private string _name;
+    private string _description;
+    private int _points;
 
     public void Start()
     {

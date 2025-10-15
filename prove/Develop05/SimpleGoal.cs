@@ -54,7 +54,7 @@ public class SimpleGoal : Goal
         // Return a string version of this goal suitable for saving to file.
         // Example format: "Simple|name|description|points|done"
         // Keep it simple and easy to parse later when loading goals back in.
-        return $"Simple Goal|{_name}|{_description}|{_points}|{_done}; // placeholder — replace when implemented
+        return $"SimpleGoal|{_name}|{_description}|{_points}|{_done}"; // placeholder — replace when implemented
     }
 
     public override string GetDetails()
@@ -65,6 +65,7 @@ public class SimpleGoal : Goal
         //    "[ ] Read Scriptures — Read daily for strength (+100 points)"
         // or "[X] Run a Marathon — Goal completed! (+1000 points)"
         // Use [ ] if not done, [X] if complete.
+        if()
         return ""; // placeholder — replace when implemented
     }
 }
