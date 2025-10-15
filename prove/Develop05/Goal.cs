@@ -11,6 +11,9 @@ public abstract class Goal
     public Goal(string name, string description, int points)
     {
         // TODO: set common fields
+        _name = name;
+        _description = description;
+        _points = points;
     }
 
     // POLYMORPHIC API (exact names per diagram)
