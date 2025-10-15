@@ -2,6 +2,9 @@ public class GoalManager
 {
     // Attributes (private)
     // Constructors initializing the attributes
+    private readonly List<Goal> _goals = new List<Goal>();
+    private int _score = 0;
+
     
 
     public void Start()
@@ -38,7 +41,8 @@ public class GoalManager
                 // Ask the user what type of goal (Simple/Eternal/Checklist)
                 // Ask for name, description, and points
                 // Create the goal and add it to the list
-                Console.WriteLine("Creating a new goal...");
+                ListGoalNames();
+                
             }
             else if (menuNumber == 2)
             {
@@ -94,6 +98,12 @@ public class GoalManager
         // Loop through the list of goals
         // Display the names
         // You may need another function in the Goal class
+        Console.WriteLine("What type of goal would you like to make?");
+                string answer = Console.ReadLine();
+                // Ask for name, description, and points
+                Console.WriteLine("1. Simple Goal");
+                Console.WriteLine("2.Eternal Goal");
+                Console.WriteLine("3. Checklist");
     }
 
     public void ListGoalDetail()
