@@ -40,7 +40,7 @@ public class SimpleGoal : Goal
         }
     }
 
-    public override bool isComplete()
+    public override bool IsComplete()
     {
         // TODO:
         // Return whether this goal is complete or not

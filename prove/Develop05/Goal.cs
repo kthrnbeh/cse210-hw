@@ -15,7 +15,7 @@ public abstract class Goal
 
     // POLYMORPHIC API (exact names per diagram)
 
-    public abstract void RecordEvent();
+    public abstract int RecordEvent();
     // TODO: implement in derived types to apply progress/points
 
     public abstract bool IsComplete();
