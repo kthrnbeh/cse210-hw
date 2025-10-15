@@ -1,4 +1,6 @@
 // Purpose: Complete after hitting a target count; bonus on completion.
+using System.Runtime;
+
 public class ChecklistGoal : Goal
 {
     // FIELDS (as in diagram)
@@ -28,7 +30,7 @@ public class ChecklistGoal : Goal
         //  - if now equals _target → include _bonus
         if (_amountCompleted >= _target)
         {
-            Console.WriteLine($"{_bonus}");
+            Console.WriteLine($"{_points+_bonus}");
             return _points + _bonus; // when the goal is completed give it bonus
         }
         else
@@ -42,7 +44,7 @@ public class ChecklistGoal : Goal
     public override bool IsComplete()
     {
         // TODO: return _amountCompleted >= _target
-        return false;
+        return _amountCompleted >= _target;
     }
 
     public override string GetstringRepresent()
