@@ -8,7 +8,8 @@ public class GoalManager
         //Display the main menu and player info
         //call one of the funcitions
         //CreateGoal, listGoaldetails, Save Goals, Load Goals
-        //Record Event, etc.. 
+        //Record Event, etc..
+        //loop until quit 
 
     }
     
