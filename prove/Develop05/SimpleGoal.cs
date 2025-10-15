@@ -54,7 +54,7 @@ public class SimpleGoal : Goal
         // Return a string version of this goal suitable for saving to file.
         // Example format: "Simple|name|description|points|done"
         // Keep it simple and easy to parse later when loading goals back in.
-        return $"GoalType|goal|description|points|bonus"; // placeholder — replace when implemented
+        return $"Simple Goal|{_name}|{_description}|{_points}|{_done}; // placeholder — replace when implemented
     }
 
     public override string GetDetails()
