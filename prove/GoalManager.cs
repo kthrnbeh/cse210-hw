@@ -41,8 +41,8 @@ public class GoalManager
                 // Ask the user what type of goal (Simple/Eternal/Checklist)
                 // Ask for name, description, and points
                 // Create the goal and add it to the list
-                ListGoalNames();
-                
+                CreateAGoal();
+
             }
             else if (menuNumber == 2)
             {
@@ -51,19 +51,24 @@ public class GoalManager
                 // Example:
                 //   1. [ ] Read Scriptures — Read daily for strength (+100 points)
                 //   2. [X] Run Marathon — Goal completed! (+1000 points)
-                Console.WriteLine("Listing goals...");
+                ListGoalDetail();
             }
+
+
             else if (menuNumber == 3)
             {
                 // TODO: SaveGoals()
                 // Save all goals to a file (include score at top)
-                Console.WriteLine("Saving goals to file...");
+                SaveTheGoals();
             }
+
+
+
             else if (menuNumber == 4)
             {
                 // TODO: LoadGoals()
                 // Load goals from file and restore score
-                Console.WriteLine("Loading goals from file...");
+                LoadTheGoals();
             }
             else if (menuNumber == 5)
             {
@@ -71,7 +76,7 @@ public class GoalManager
                 // Display all goals with numbers
                 // Ask which one to record progress on
                 // Add the returned points from goal.RecordEvent() to _score
-                Console.WriteLine("Recording goal event...");
+                RecordEvent();
             }
             else if (menuNumber == 6)
             {
@@ -83,9 +88,9 @@ public class GoalManager
                 // Any number not 1–6
                 Console.WriteLine("Invalid menu number. Try again.");
             }
-                
-            
-        }
+
+
+            }
     }
 
     public void DisplayPlayerInfo()
@@ -98,12 +103,7 @@ public class GoalManager
         // Loop through the list of goals
         // Display the names
         // You may need another function in the Goal class
-        Console.WriteLine("What type of goal would you like to make?");
-                string answer = Console.ReadLine();
-                // Ask for name, description, and points
-                Console.WriteLine("1. Simple Goal");
-                Console.WriteLine("2.Eternal Goal");
-                Console.WriteLine("3. Checklist");
+       
     }
 
     public void ListGoalDetail()
@@ -118,6 +118,12 @@ public class GoalManager
         // Ask for the name, description, and points
         // Ask for more if they pick the checklist goal
         // Create the object and add to the goal list
+         Console.WriteLine("What type of goal would you like to make?");
+                string answer = Console.ReadLine();
+                // Ask for name, description, and points
+                Console.WriteLine("1. Simple Goal");
+                Console.WriteLine("2.Eternal Goal");
+                Console.WriteLine("3. Checklist");
     }
 
     public void RecordEvent()
