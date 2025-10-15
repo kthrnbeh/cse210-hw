@@ -105,7 +105,20 @@ public class GoalManager
         // Loop through the list of goals
         // Display the names
         // You may need another function in the Goal class
-        
+        //ah like we have done before
+        if(_goals.Count==0)
+        {
+            Console.WriteLine("No goals submitted");
+            return;
+        }
+        for (int i = 0; i < _goals.Count; i++)
+        {
+            Goal goal = _goals[i];
+            Console.WriteLine($"{i + 1} {goal.GetDetails()}");
+            
+            
+            
+        }
 
     }
 

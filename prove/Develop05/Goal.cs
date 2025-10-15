@@ -17,7 +17,10 @@ public abstract class Goal
     }
 
     // POLYMORPHIC API (exact names per diagram)
-
+    public string GetName()
+    {
+        return _name;
+    }
     public abstract int RecordEvent();
     // TODO: implement in derived types to apply progress/points
 
