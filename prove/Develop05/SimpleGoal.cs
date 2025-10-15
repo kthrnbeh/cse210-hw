@@ -65,15 +65,15 @@ public class SimpleGoal : Goal
         //    "[ ] Read Scriptures — Read daily for strength (+100 points)"
         // or "[X] Run a Marathon — Goal completed! (+1000 points)"
         // Use [ ] if not done, [X] if complete.
-        if ( != _done)
+        if (_done == false) // ohhhh if the goal is not met it will not do the x or not be done if it is.. it will x
         {
-            return "[]";
+            return  $" [ ] {_done}, {_name}, {_description}, {_points}";
         }
         else
         {
-            return "[X]";
+            return $" [X] {_done}, {_name}, {_description}, {_points}";
         }
-       
+            
     }
 }
 //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/selection-statements

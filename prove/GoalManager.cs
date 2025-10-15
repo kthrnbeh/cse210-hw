@@ -2,9 +2,7 @@ public class GoalManager
 {
     // Attributes (private)
     // Constructors initializing the attributes
-    private string _name;
-    private string _description;
-    private int _points;
+    
 
     public void Start()
     {
@@ -16,7 +14,7 @@ public class GoalManager
 
         int menuNumber = 0;
 
-        while (menuNumber != 5) //menu quits after 6
+        while (menuNumber != 6) //menu quits after 6
         {
             // TODO: Display menu options and handle user input here
             Console.WriteLine("Menu Options:");
@@ -29,11 +27,60 @@ public class GoalManager
              string userInput = Console.ReadLine();
 
             if (!int.TryParse(userInput, out menuNumber))
-                {
-                    Console.WriteLine("Invalid input. Please enter a number.");
-                    Thread.Sleep(2000);
-                    continue;
-                }
+            {
+                Console.WriteLine("Invalid input. Please enter a number.");
+                Thread.Sleep(2000);
+                continue;
+            }
+            if (menuNumber == 1)
+            {
+                // TODO: CreateGoal()
+                // Ask the user what type of goal (Simple/Eternal/Checklist)
+                // Ask for name, description, and points
+                // Create the goal and add it to the list
+                Console.WriteLine("Creating a new goal...");
+            }
+            else if (menuNumber == 2)
+            {
+                // TODO: ListGoalDetails()
+                // Show all goals with their details
+                // Example:
+                //   1. [ ] Read Scriptures — Read daily for strength (+100 points)
+                //   2. [X] Run Marathon — Goal completed! (+1000 points)
+                Console.WriteLine("Listing goals...");
+            }
+            else if (menuNumber == 3)
+            {
+                // TODO: SaveGoals()
+                // Save all goals to a file (include score at top)
+                Console.WriteLine("Saving goals to file...");
+            }
+            else if (menuNumber == 4)
+            {
+                // TODO: LoadGoals()
+                // Load goals from file and restore score
+                Console.WriteLine("Loading goals from file...");
+            }
+            else if (menuNumber == 5)
+            {
+                // TODO: RecordEvent()
+                // Display all goals with numbers
+                // Ask which one to record progress on
+                // Add the returned points from goal.RecordEvent() to _score
+                Console.WriteLine("Recording goal event...");
+            }
+            else if (menuNumber == 6)
+            {
+                // Quit
+                Console.WriteLine("Goodbye!");
+            }
+            else
+            {
+                // Any number not 1–6
+                Console.WriteLine("Invalid menu number. Try again.");
+            }
+                
+            
         }
     }
 

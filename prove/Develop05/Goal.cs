@@ -3,9 +3,9 @@
 public abstract class Goal
 {
     // FIELDS (private)
-    private string _shortName;   // goal title
-    private string _description; // goal description
-    private int _points;         // base points
+    protected string _name;   // goal title
+    protected string _description; // goal description
+    protected int _points;         // base points
 
     // CONSTRUCTOR
     public Goal(string name, string description, int points)
