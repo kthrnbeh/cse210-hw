@@ -57,6 +57,14 @@ public class ChecklistGoal : Goal
     public override string GetDetails()
     {
         // TODO: return "[ ] Name — Completed X/Y (+points each, +bonus bonus)"
+        if(_amountCompleted >= _target)
+        {
+            return $"[X] {_name}|{_description} ({_amountCompleted}/{_target}) (+{_points} +{_bonus} bonus)";
+        }
+        else
+        {
+            return  $"[] {_name} — {_description} ({_amountCompleted}/{_target}) (+{_points})";
+        }
         
     }
 }
