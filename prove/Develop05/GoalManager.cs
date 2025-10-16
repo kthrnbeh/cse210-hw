@@ -164,7 +164,7 @@ public class GoalManager
         // Call the RecordEvent method on the correct goal
         // Update the goal based on points
         // Display how many points you have
-        for (int i = 0; i < _goals.Count,int++)
+        for (int i = 0; i < _goals.Count; i++)
         {
             Console.WriteLine($"{i + 1} {_goals[i].GetDetails()}");
             Console.WriteLine("Please select a goal:");
@@ -175,7 +175,7 @@ public class GoalManager
         Goal selectedGoal = _goals[select - 1];
         int pointsEarned = selectedGoal.RecordEvent();
         _score = pointsEarned;
-        Console
+        Console.WriteLine($"{_score}");
     }   
 
     public void SaveTheGoals()
