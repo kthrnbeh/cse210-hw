@@ -186,7 +186,17 @@ namespace StreamReadWrite //learned this part from microsoft
             // Loop through each goal
             // Convert each goal to a string and save the string
             Console.WriteLine("What is the file name?");
-            Console.ReadLine();
+            string fileName = Console.ReadLine();
+           string filename = "myFile.txt";
+string[] lines = System.IO.File.ReadAllLines(filename);
+
+foreach (string line in lines)
+{
+    string[] parts = line.Split(",");
+
+    string firstName = parts[0];
+    string lastName = parts[1];
+}
         }
 
         public void LoadTheGoals()
