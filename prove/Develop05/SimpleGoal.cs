@@ -81,8 +81,9 @@ public class SimpleGoal : Goal
         string description = parts[2];
         int points = int.Parse(parts[3]);
         bool isComplete = bool.Parse(parts[4]);
-        SimpleGoal goal = new SimpleGoal(name, description, points);
-        goal._done = isComplete;
-        return goal;
+        SimpleGoal goal = new SimpleGoal(name, description, points); // puts them all into a new object with the gotten info.
+        goal._done = isComplete; //restores the progress
+        return goal; 
+        //From what I am understanding, it takes all the parts, assembles it, and puts it back into a new object by calling the name.
     }
-}
+}//https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/arrays
