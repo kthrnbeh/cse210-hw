@@ -157,7 +157,6 @@ namespace StreamReadWrite // learned this part from Microsoft
                     //got help from group member Evan for this part
                     _goals.Add(new SimpleGoal(name, description, points));
                     break;
-                }
                 else if (answers == 2)
                 {
                     _goals.Add(new EternalGoal(name, description, points));
