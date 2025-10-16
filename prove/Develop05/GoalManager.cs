@@ -138,10 +138,22 @@ namespace StreamReadWrite // learned this part from Microsoft
             Console.WriteLine("2. Eternal Goal");
             Console.WriteLine("3. Checklist");
             Console.Write("What type of goal would you like to make? ");
-            string answer = Console.ReadLine();
+            string answer = int.TryParse(Console.ReadLine());
 
             // TODO: create the selected Goal type and add to _goals
             // e.g., _goals.Add(new SimpleGoal(name, desc, points));
+            if (answer == 1)
+            {
+
+            }
+            else if (answer == 2)
+            {
+
+            }
+            else if (answer == 3)
+            {
+                
+            }
         }
 
         public void RecordEvent()
