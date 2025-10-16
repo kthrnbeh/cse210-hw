@@ -173,8 +173,10 @@ public class GoalManager
         Console.WriteLine("Which Goal did you achieve?");
         int select = int.Parse(Console.ReadLine());
         Goal selectedGoal = _goals[select - 1];
-        
-    }
+        int pointsEarned = selectedGoal.RecordEvent();
+        _score = pointsEarned;
+        Console
+    }   
 
     public void SaveTheGoals()
     {
