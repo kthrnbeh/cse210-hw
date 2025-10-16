@@ -10,7 +10,7 @@ namespace StreamReadWrite // learned this part from Microsoft
         // Attributes (private)
         // Constructors initializing the attributes
         private int _score;
-        private List<Goal> _goals = new List<Goal>();
+        private readonly List<Goal> _goals = new List<Goal>();
 
         public void Start()
         {
@@ -54,9 +54,6 @@ namespace StreamReadWrite // learned this part from Microsoft
                 {
                     // TODO: ListGoalDetails()
                     // Show all goals with their details
-                    // Example:
-                    //   1. [ ] Read Scriptures — Read daily for strength (+100 points)
-                    //   2. [X] Run Marathon — Goal completed! (+1000 points)
                     ListGoalDetail();
                 }
                 else if (menuNumber == 3)
@@ -102,8 +99,6 @@ namespace StreamReadWrite // learned this part from Microsoft
         {
             // Loop through the list of goals
             // Display the names
-            // You may need another function in the Goal class
-            // ah like we have done before
             if (_goals.Count == 0)
             {
                 Console.WriteLine("No goals submitted");
@@ -119,9 +114,7 @@ namespace StreamReadWrite // learned this part from Microsoft
 
         public void ListGoalDetail()
         {
-            // Loop through the list of goals and display
-            // the full details
-            // realized myself that it was similar
+            // Loop through the list of goals and display the full details
             if (_goals.Count == 0)
             {
                 Console.WriteLine("No goals submitted");
@@ -141,12 +134,14 @@ namespace StreamReadWrite // learned this part from Microsoft
             // Ask for the name, description, and points
             // Ask for more if they pick the checklist goal
             // Create the object and add to the goal list
-            // Ask for name, description, and points
             Console.WriteLine("1. Simple Goal");
             Console.WriteLine("2. Eternal Goal");
             Console.WriteLine("3. Checklist");
             Console.Write("What type of goal would you like to make? ");
             string answer = Console.ReadLine();
+
+            // TODO: create the selected Goal type and add to _goals
+            // e.g., _goals.Add(new SimpleGoal(name, desc, points));
         }
 
         public void RecordEvent()
@@ -156,19 +151,29 @@ namespace StreamReadWrite // learned this part from Microsoft
             // Call the RecordEvent method on the correct goal
             // Update the goal based on points
             // Display how many points you have
+            if (_goals.Count == 0)
+            {
+                Console.WriteLine("No goals submitted");
+                return;
+            }
+
             for (int i = 0; i < _goals.Count; i++)
             {
                 Console.WriteLine($"{i + 1} {_goals[i].GetDetails()}");
             }
 
             Console.Write("Which goal did you achieve? ");
-            int select = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int select) || select < 1 || select > _goals.Count)
+            {
+                Console.WriteLine("Invalid selection.");
+                return;
+            }
 
             Goal selectedGoal = _goals[select - 1];
             int pointsEarned = selectedGoal.RecordEvent();
 
-            _score = pointsEarned; // (instructional placeholder; integrate with your scoring logic)
-            Console.WriteLine($"{_score}");
+            _score += pointsEarned; // add to total score
+            Console.WriteLine($"Points earned: {pointsEarned}. Total score: {_score}");
         }
 
         public void SaveTheGoals()
@@ -179,16 +184,27 @@ namespace StreamReadWrite // learned this part from Microsoft
             Console.Write("What is the file name? ");
             string fileName = Console.ReadLine();
 
-            string filename = "myFile.txt";
-            string[] lines = File.ReadAllLines(filename);
-
-            foreach (string line in lines)
+            if (string.IsNullOrWhiteSpace(fileName))
             {
-                string[] parts = line.Split(",");
-
-                string firstName = parts[0];
-                string lastName = parts[1];
+                Console.WriteLine("Invalid file name.");
+                return;
             }
+
+            // Example save format:
+            // First line: SCORE|<score>
+            // Then one line per goal via Goal.GetstringRepresent()
+            using (StreamWriter outputFile = new StreamWriter(fileName))
+            {
+                outputFile.WriteLine($"SCORE|{_score}");
+
+                foreach (Goal g in _goals)
+                {
+                    // TODO: ensure each Goal implements GetstringRepresent()
+                    outputFile.WriteLine(g.GetstringRepresent());
+                }
+            }
+
+            Console.WriteLine("Goals saved.");
         }
 
         public void LoadTheGoals()
@@ -198,6 +214,56 @@ namespace StreamReadWrite // learned this part from Microsoft
             // Use the parts to recreate the goal object
             Console.Write("What is the File Name? ");
             string fileName = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(fileName) || !File.Exists(fileName))
+            {
+                Console.WriteLine("File not found.");
+                return;
+            }
+
+            string[] lines = File.ReadAllLines(fileName);
+            _goals.Clear();
+
+            foreach (string line in lines)
+            {
+                if (string.IsNullOrWhiteSpace(line)) continue;
+
+                // Example expected lines:
+                // SCORE|123
+                // Simple|name|description|points|isComplete
+                // Eternal|name|description|points
+                // Checklist|name|description|points|current|target|bonus
+                string[] parts = line.Split('|');
+
+                if (parts.Length == 0) continue;
+
+                if (parts[0] == "SCORE")
+                {
+                    // Restore score
+                    if (parts.Length >= 2 && int.TryParse(parts[1], out int fileScore))
+                    {
+                        _score = fileScore;
+                    }
+                    continue;
+                }
+
+                // TODO: Recreate goals based on type in parts[0]
+                // Example switch:
+                // switch (parts[0])
+                // {
+                //     case "Simple":
+                //         _goals.Add(SimpleGoal.FromParts(parts));
+                //         break;
+                //     case "Eternal":
+                //         _goals.Add(EternalGoal.FromParts(parts));
+                //         break;
+                //     case "Checklist":
+                //         _goals.Add(ChecklistGoal.FromParts(parts));
+                //         break;
+                // }
+            }
+
+            Console.WriteLine("Goals loaded.");
         }
     }
 }
