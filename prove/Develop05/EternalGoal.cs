@@ -25,13 +25,13 @@ public class EternalGoal : Goal
     public override string GetstringRepresent()
     {
         // TODO: return "Eternal|name|description|points"
-       return $"[]Eternal Goal|{_name}|{_description}|{_points}";
+       return $"[x]Eternal Goal|{_name}|{_description}|{_points}";
     }
 
     public override string GetDetails()
     {
         // TODO: return "[ ] Name — Description (+points
-        return $"[x]Eternal Goal|{_name}|{_description}|{_points}";
+        return $"[]Eternal Goal|{_name}|{_description}|{_points}";
             
     }
 }

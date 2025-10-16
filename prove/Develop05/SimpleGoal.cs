@@ -67,11 +67,11 @@ public class SimpleGoal : Goal
         // Use [ ] if not done, [X] if complete.
         if (_done == false) // ohhhh if the goal is not met it will not do the x or not be done if it is.. it will x
         {
-            return  $" [ ] {_done}, {_name}, {_description}, {_points}";
+            return  $" [ ]SimpleGoal, {_name}, {_description}, {_points}";
         }
         else
         {
-            return $" [X] {_done}, {_name}, {_description}, {_points}";
+            return $" [X]SimpleGoal, {_name}, {_description}, {_points}";
         }
             
     }
