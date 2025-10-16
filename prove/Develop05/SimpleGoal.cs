@@ -6,7 +6,7 @@
 public class SimpleGoal : Goal
 {
     // ATTRIBUTE (private)
-    protected bool _done; // true after the goal is first completed
+    private bool _done; // true after the goal is first completed
 
     // CONSTRUCTOR
     public SimpleGoal(string name, string description, int points) : base(name, description, points)
