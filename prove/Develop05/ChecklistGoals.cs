@@ -23,9 +23,9 @@ public class ChecklistGoal : Goal
     {
         // TODO:
         //  - increment _amountCompleted meaning add to amountcompleted
-        if (IsComplete)
+        if (IsComplete())
         {
-            return 0; //
+            return 0; // if the goal is done no more points
         }
 
             _amountCompleted++;
