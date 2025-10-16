@@ -1,7 +1,7 @@
 using System.ComponentModel.Design;
 using System.Runtime.CompilerServices;
 using System.Threading;
-namespace StreamReadWrite
+namespace StreamReadWrite //learned this part from microsoft
 {
     public class GoalManager
     {
@@ -202,3 +202,4 @@ namespace StreamReadWrite
 //https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/polymorphism
 //https://byui-cse.github.io/cse210-course-2023/unit05/prepare.html
 //https://www.w3schools.com/cs/cs_files.php
+//https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-9.0
