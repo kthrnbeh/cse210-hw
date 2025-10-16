@@ -32,7 +32,7 @@ class Program
             {
                 // ==== WRITE ====
                 // TODO:
-                 string prompt = promptGen.GetRandomPrompt();
+                string prompt = promptGen.GetRandomPrompt();
                 Console.WriteLine(prompt);
                 string response = Console.ReadLine();
                 string date = DateTime.Now.ToString("yyyy-MM-dd");
@@ -44,7 +44,7 @@ class Program
 
                 };
 
-                     journal.AddEntry(e);
+                journal.AddEntry(e);
             }
             else if (menuNumber == 2)
             {
@@ -85,6 +85,7 @@ class Program
 
             Console.WriteLine();
         }
+        //retry to save and turn in.... 
     }
 }
 //https://video.byui.edu/media/t/1_twcn0vdk/259941952
