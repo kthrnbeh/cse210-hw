@@ -11,7 +11,7 @@ namespace StreamReadWrite // learned this part from Microsoft
         // Constructors initializing the attributes
         private int _score;
         private readonly List<Goal> _goals = new List<Goal>();
-
+        
         public void Start()
         {
             // Display the main menu and player info
@@ -138,21 +138,40 @@ namespace StreamReadWrite // learned this part from Microsoft
             Console.WriteLine("2. Eternal Goal");
             Console.WriteLine("3. Checklist");
             Console.Write("What type of goal would you like to make? ");
-            string answer = int.TryParse(Console.ReadLine());
+            string answer = Console.ReadLine();
 
-            // TODO: create the selected Goal type and add to _goals
-            // e.g., _goals.Add(new SimpleGoal(name, desc, points));
-            if (answer == 1)
+            Console.WriteLine("What is the name of your goal?");
+            string name = Console.ReadLine();
+            Console.WriteLine("What's a short description of it?");
+            string description = Console.ReadLine();
+            Console.WriteLine("What amount of points do you want for this goal?");
+            int points = int.Parse(Console.ReadLine());
+             
+            if (int.TryParse(answer, out int answers))
             {
 
-            }
-            else if (answer == 2)
-            {
-
-            }
-            else if (answer == 3)
-            {
-                
+                // TODO: create the selected Goal type and add to _goals
+                // e.g., _goals.Add(new SimpleGoal(name, desc, points));
+                if (answers == 1)
+                {
+                    //got help from group member Evan for this part
+                    _goals.Add(new SimpleGoal(name, description, points));
+                    break;
+                }
+                else if (answers == 2)
+                {
+                    _goals.Add(new EternalGoal(name, description, points));
+                    break;
+                }
+                else if (answers == 3)
+                {
+                    _goals.Add(new ChecklistGoal(name, description, points));
+                    break;
+                }
+                else
+                {
+                    Console.Write("Invalid input");
+                }
             }
         }
 
