@@ -1,5 +1,5 @@
 
-namespace StreamReadWrite // learned this part from Microsoft
+namespace GoalManager // learned this part from Microsoft
 {
     public class GoalManager
     {
