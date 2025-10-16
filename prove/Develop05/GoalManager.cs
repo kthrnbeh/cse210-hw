@@ -7,7 +7,7 @@ namespace GoalManager // learned this part from Microsoft
         // Constructors initializing the attributes
         private int _score;
         private readonly List<Goal> _goals = new List<Goal>();
-        
+
         public void Start()
         {
             // Display the main menu and player info
@@ -142,7 +142,7 @@ namespace GoalManager // learned this part from Microsoft
             string description = Console.ReadLine();
             Console.WriteLine("What amount of points do you want for this goal?");
             int points = int.Parse(Console.ReadLine());
-             
+
             if (int.TryParse(answer, out int answers))
             {
 
@@ -204,7 +204,7 @@ namespace GoalManager // learned this part from Microsoft
             int pointsEarned = selectedGoal.RecordEvent();
 
             _score += pointsEarned; // add to total score
-            
+
             Console.WriteLine($"Points earned: {pointsEarned}. Total score: {_score}");
         }
 
@@ -306,8 +306,8 @@ namespace GoalManager // learned this part from Microsoft
                 else if (parts[0] == "ChecklistGoal")
                 {
                     _goals.Add(ChecklistGoal.FromParts(parts));
-                //         break;
-                // }
+                    //         break;
+                    // }
                 }
 
 
@@ -317,3 +317,4 @@ namespace GoalManager // learned this part from Microsoft
         }
     }
 }
+//https://gemini.google.com/app/1c31e83a81e826c9?_gl=1*9xwabs*_gcl_aw*R0NMLjE3NTg4MjE0OTYuQ2owS0NRancwTlBHQmhDREFSSXNBR0F6cHAwX2hXT2tJSE1KV1JDVTNpWDNsQkJIRG1fNE9wOXNFdmV2V1A1OWg2U1k5RjVBaWxYVFRSc2FBbThNRUFMd193Y0I.*_gcl_dc*R0NMLjE3NTg4MjE0OTYuQ2owS0NRancwTlBHQmhDREFSSXNBR0F6cHAwX2hXT2tJSE1KV1JDVTNpWDNsQkJIRG1fNE9wOXNFdmV2V1A1OWg2U1k5RjVBaWxYVFRSc2FBbThNRUFMd193Y0I.*_gcl_au*OTUwNjIxNDgxLjE3NTg4MjE0OTYuMTYzNTQ4MDkxLjE3NTg4MjE5OTAuMTc1ODgyMTk4OQ..*_ga*MTA2MjIzODcyMC4xNzU4ODIxNDk2*_ga_WC57KJ50ZZ*czE3NTg4MjE0OTYkbzEkZzEkdDE3NTg4MjE5OTMkajU2JGwwJGgw
