@@ -1,10 +1,12 @@
 // Purpose: One-and-done goal. 
 // Represents a goal that can only be completed once and then marked as done.
 
+
+
 public class SimpleGoal : Goal
 {
     // ATTRIBUTE (private)
-    private bool _done; // true after the goal is first completed
+    protected bool _done; // true after the goal is first completed
 
     // CONSTRUCTOR
     public SimpleGoal(string name, string description, int points) : base(name, description, points)
@@ -15,7 +17,6 @@ public class SimpleGoal : Goal
     }
 
     // OVERRIDES — implements required behaviors from base Goal class
-
     public override int RecordEvent()
     {
         // TODO:
@@ -32,7 +33,6 @@ public class SimpleGoal : Goal
             _done = true;
             Console.WriteLine("[x]");
             return _points;
-
         }
         else
         {
@@ -67,14 +67,22 @@ public class SimpleGoal : Goal
         // Use [ ] if not done, [X] if complete.
         if (_done == false) // ohhhh if the goal is not met it will not do the x or not be done if it is.. it will x
         {
-            return  $" [ ]SimpleGoal, {_name}, {_description}, {_points}";
+            return $" [ ]SimpleGoal, {_name}, {_description}, {_points}";
         }
         else
         {
             return $" [X]SimpleGoal, {_name}, {_description}, {_points}";
         }
-            
+    }
+
+    public static SimpleGoal FromParts(string[] parts)
+    {
+        string name = parts[1];
+        string description = parts[2];
+        int points = int.Parse(parts[3]);
+        bool isComplete = bool.Parse(parts[4]);
+        SimpleGoal goal = new SimpleGoal(name, description, points);
+        goal._done = isComplete;
+        return goal;
     }
 }
-//https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/selection-statements
-//https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated

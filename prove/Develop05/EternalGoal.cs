@@ -22,17 +22,28 @@ public class EternalGoal : Goal
         return false;
     }
 
-    public override string GetstringRepresent()
+       public override string GetstringRepresent()
     {
-        // TODO: return "Eternal|name|description|points"
-       return $"[x]Eternal Goal|{_name}|{_description}|{_points}";
+    // Format: "GoalType|Name|Description|Points"
+         return $"EternalGoal{_name}|{_description}|{_points}";
     }
+
 
     public override string GetDetails()
     {
-        // TODO: return "[ ] Name — Description (+points
-        return $"[]Eternal Goal|{_name}|{_description}|{_points}";
-            
+        // Format: "[ ] Goal Name (Description)"
+        return $"[ ] {_name} ({_description})";
+    }
+    public static EternalGoal FromParts(string[] parts)
+    {
+    // parts[0] is "EternalGoal"
+        string name = parts[1];
+        string description = parts[2];
+        int points = int.Parse(parts[3]);
+
+    // Just create the object. No completion status is needed.
+        EternalGoal goal = new EternalGoal(name, description, points);
+        return goal;
     }
 }
 //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/abstract

@@ -203,8 +203,8 @@ namespace GoalManager // learned this part from Microsoft
             Goal selectedGoal = _goals[select - 1];
             int pointsEarned = selectedGoal.RecordEvent();
 
-            _score += pointsEarned // add to total score
-            ;
+            _score += pointsEarned; // add to total score
+            
             Console.WriteLine($"Points earned: {pointsEarned}. Total score: {_score}");
         }
 
