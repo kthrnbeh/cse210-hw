@@ -293,6 +293,13 @@ namespace GoalManager // learned this part from Microsoft
                 //         _goals.Add(ChecklistGoal.FromParts(parts));
                 //         break;
                 // }
+                if (parts[0] == SimpleGoal)
+                {
+                    _goals.Add(SimpleGoal.FromParts(parts));
+                    //         break;
+                }
+                else if(parts[0]== EternalGoal)
+                
             }
 
             Console.WriteLine("Goals loaded.");
