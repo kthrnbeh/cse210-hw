@@ -23,7 +23,13 @@ public class ChecklistGoal : Goal
     {
         // TODO:
         //  - increment _amountCompleted meaning add to amountcompleted
-        _amountCompleted++;
+        if (IsComplete)
+        {
+            return 0; //
+        }
+
+            _amountCompleted++;
+        
 
         //  - award base points
         //  - if now equals _target → include _bonus
