@@ -157,6 +157,7 @@ namespace StreamReadWrite // learned this part from Microsoft
                     //got help from group member Evan for this part
                     _goals.Add(new SimpleGoal(name, description, points));
                     break;
+                }
                 else if (answers == 2)
                 {
                     _goals.Add(new EternalGoal(name, description, points));
@@ -164,7 +165,11 @@ namespace StreamReadWrite // learned this part from Microsoft
                 }
                 else if (answers == 3)
                 {
-                    _goals.Add(new ChecklistGoal(name, description, points));
+                    Console.Write("How many times does this goal need to be accomplished for a bonus? ");
+                    int target = int.Parse(Console.ReadLine());
+                    Console.Write("What is the bonus for accomplishing it that many times? ");
+                    int bonus = int.Parse(Console.ReadLine());
+                    _goals.Add(new ChecklistGoal(name, description, points,target,bonus));
                     break;
                 }
                 else
