@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading;
 
 namespace StreamReadWrite // learned this part from Microsoft
 {
@@ -156,12 +152,12 @@ namespace StreamReadWrite // learned this part from Microsoft
                 {
                     //got help from group member Evan for this part
                     _goals.Add(new SimpleGoal(name, description, points));
-                    break;
+                    return;
                 }
                 else if (answers == 2)
                 {
                     _goals.Add(new EternalGoal(name, description, points));
-                    break;
+                    return;
                 }
                 else if (answers == 3)
                 {
@@ -169,8 +165,8 @@ namespace StreamReadWrite // learned this part from Microsoft
                     int target = int.Parse(Console.ReadLine());
                     Console.Write("What is the bonus for accomplishing it that many times? ");
                     int bonus = int.Parse(Console.ReadLine());
-                    _goals.Add(new ChecklistGoal(name, description, points,target,bonus));
-                    break;
+                    _goals.Add(new ChecklistGoal(name, description, points, target, bonus));
+                    return;
                 }
                 else
                 {
@@ -207,7 +203,8 @@ namespace StreamReadWrite // learned this part from Microsoft
             Goal selectedGoal = _goals[select - 1];
             int pointsEarned = selectedGoal.RecordEvent();
 
-            _score += pointsEarned; // add to total score
+            _score += pointsEarned // add to total score
+            ;
             Console.WriteLine($"Points earned: {pointsEarned}. Total score: {_score}");
         }
 
@@ -302,9 +299,3 @@ namespace StreamReadWrite // learned this part from Microsoft
         }
     }
 }
-
-// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements
-// https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/polymorphism
-// https://byui-cse.github.io/cse210-course-2023/unit05/prepare.html
-// https://www.w3schools.com/cs/cs_files.php
-// https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-9.0
