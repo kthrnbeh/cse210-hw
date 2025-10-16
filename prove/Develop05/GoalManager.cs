@@ -1,7 +1,9 @@
-using System.ComponentModel.Design;
-using System.Runtime.CompilerServices;
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Threading;
-namespace StreamReadWrite //learned this part from microsoft
+
+namespace StreamReadWrite // learned this part from Microsoft
 {
     public class GoalManager
     {
@@ -9,7 +11,6 @@ namespace StreamReadWrite //learned this part from microsoft
         // Constructors initializing the attributes
         private int _score;
         private List<Goal> _goals = new List<Goal>();
-
 
         public void Start()
         {
@@ -21,17 +22,18 @@ namespace StreamReadWrite //learned this part from microsoft
 
             int menuNumber = 0;
 
-            while (menuNumber != 6) //menu quits after 6
+            while (menuNumber != 6) // menu quits after 6
             {
                 // TODO: Display menu options and handle user input here
                 Console.WriteLine("Menu Options:");
-                Console.WriteLine("1.Create Goals");
-                Console.WriteLine("2.List Goals");
-                Console.WriteLine("3.Save Goals");
-                Console.WriteLine("4.Load Goals");
-                Console.WriteLine("5.Recod Event");
-                Console.WriteLine("6.Quit");
-                Console.WriteLine("Select a choice from the Menu.");
+                Console.WriteLine("1. Create Goals");
+                Console.WriteLine("2. List Goals");
+                Console.WriteLine("3. Save Goals");
+                Console.WriteLine("4. Load Goals");
+                Console.WriteLine("5. Record Event");
+                Console.WriteLine("6. Quit");
+                Console.Write("Select a choice from the Menu: ");
+
                 string userInput = Console.ReadLine();
                 if (!int.TryParse(userInput, out menuNumber))
                 {
@@ -39,6 +41,7 @@ namespace StreamReadWrite //learned this part from microsoft
                     Thread.Sleep(2000);
                     continue;
                 }
+
                 if (menuNumber == 1)
                 {
                     // TODO: CreateGoal()
@@ -46,7 +49,6 @@ namespace StreamReadWrite //learned this part from microsoft
                     // Ask for name, description, and points
                     // Create the goal and add it to the list
                     CreateAGoal();
-
                 }
                 else if (menuNumber == 2)
                 {
@@ -57,17 +59,12 @@ namespace StreamReadWrite //learned this part from microsoft
                     //   2. [X] Run Marathon — Goal completed! (+1000 points)
                     ListGoalDetail();
                 }
-
-
                 else if (menuNumber == 3)
                 {
                     // TODO: SaveGoals()
                     // Save all goals to a file (include score at top)
                     SaveTheGoals();
                 }
-
-
-
                 else if (menuNumber == 4)
                 {
                     // TODO: LoadGoals()
@@ -92,8 +89,6 @@ namespace StreamReadWrite //learned this part from microsoft
                     // Any number not 1–6
                     Console.WriteLine("Invalid menu number. Try again.");
                 }
-
-
             }
         }
 
@@ -108,40 +103,35 @@ namespace StreamReadWrite //learned this part from microsoft
             // Loop through the list of goals
             // Display the names
             // You may need another function in the Goal class
-            //ah like we have done before
+            // ah like we have done before
             if (_goals.Count == 0)
             {
                 Console.WriteLine("No goals submitted");
                 return;
             }
+
             for (int i = 0; i < _goals.Count; i++)
             {
                 Goal goal = _goals[i];
                 Console.WriteLine($"{i + 1} {goal.GetName()}");
-
-
-
             }
-
         }
 
         public void ListGoalDetail()
         {
             // Loop through the list of goals and display
             // the full details
-            //realized myself that it was similar
+            // realized myself that it was similar
             if (_goals.Count == 0)
             {
                 Console.WriteLine("No goals submitted");
                 return;
             }
+
             for (int i = 0; i < _goals.Count; i++)
             {
                 Goal goal = _goals[i];
                 Console.WriteLine($"{i + 1} {goal.GetDetails()}");
-
-
-
             }
         }
 
@@ -153,9 +143,9 @@ namespace StreamReadWrite //learned this part from microsoft
             // Create the object and add to the goal list
             // Ask for name, description, and points
             Console.WriteLine("1. Simple Goal");
-            Console.WriteLine("2.Eternal Goal");
+            Console.WriteLine("2. Eternal Goal");
             Console.WriteLine("3. Checklist");
-            Console.WriteLine("What type of goal would you like to make?");
+            Console.Write("What type of goal would you like to make? ");
             string answer = Console.ReadLine();
         }
 
@@ -169,14 +159,15 @@ namespace StreamReadWrite //learned this part from microsoft
             for (int i = 0; i < _goals.Count; i++)
             {
                 Console.WriteLine($"{i + 1} {_goals[i].GetDetails()}");
-                Console.WriteLine("Please select a goal:");
-
             }
-            Console.WriteLine("Which Goal did you achieve?");
+
+            Console.Write("Which goal did you achieve? ");
             int select = int.Parse(Console.ReadLine());
+
             Goal selectedGoal = _goals[select - 1];
             int pointsEarned = selectedGoal.RecordEvent();
-            _score = pointsEarned;
+
+            _score = pointsEarned; // (instructional placeholder; integrate with your scoring logic)
             Console.WriteLine($"{_score}");
         }
 
@@ -185,18 +176,19 @@ namespace StreamReadWrite //learned this part from microsoft
             // Ask user for a file name
             // Loop through each goal
             // Convert each goal to a string and save the string
-            Console.WriteLine("What is the file name?");
+            Console.Write("What is the file name? ");
             string fileName = Console.ReadLine();
-           string filename = "myFile.txt";
-string[] lines = System.IO.File.ReadAllLines(filename);
 
-foreach (string line in lines)
-{
-    string[] parts = line.Split(",");
+            string filename = "myFile.txt";
+            string[] lines = File.ReadAllLines(filename);
 
-    string firstName = parts[0];
-    string lastName = parts[1];
-}
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split(",");
+
+                string firstName = parts[0];
+                string lastName = parts[1];
+            }
         }
 
         public void LoadTheGoals()
@@ -204,12 +196,14 @@ foreach (string line in lines)
             // Ask user for a file name
             // Read each line of the file and split it up
             // Use the parts to recreate the goal object
-            Console.WriteLine("What is the File Name?");
+            Console.Write("What is the File Name? ");
+            string fileName = Console.ReadLine();
         }
     }
 }
-//https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements
-//https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/polymorphism
-//https://byui-cse.github.io/cse210-course-2023/unit05/prepare.html
-//https://www.w3schools.com/cs/cs_files.php
-//https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-9.0
+
+// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements
+// https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/polymorphism
+// https://byui-cse.github.io/cse210-course-2023/unit05/prepare.html
+// https://www.w3schools.com/cs/cs_files.php
+// https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-9.0
