@@ -7,7 +7,7 @@ A shipping label should list the name and address of the customer
 */
 public class Order //so glad I did so much reading yesterday and today on encapsulation..
 {
-    private List<Product> _products;
+    private List<Product> _products = new List<Product>();
     private string _customer;
     public Order(List<Product> products, string customer)
     {
