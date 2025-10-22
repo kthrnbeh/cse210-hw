@@ -43,7 +43,7 @@ public class Order //so glad I did so much reading yesterday and today on encaps
             totalCost += product.GetTotalCost();
         }
         double shippingCost = 0;
-        if(_customer.Contains("USA"))//could use IndexOf instead but decided its better in case its lowercase
+        if (_customer.Contains("USA"))//could use IndexOf instead but decided its better in case its lowercase
         {
             shippingCost = 5;
         }
@@ -51,7 +51,12 @@ public class Order //so glad I did so much reading yesterday and today on encaps
         {
             shippingCost = 35;
         }
-        return totalCost + shippingCost; 
+        return totalCost + shippingCost;
+    }
+    public string GetPackingLabel()
+    {
+        string packingLabel = "";
+        foreach (Product)
     }
 
     
