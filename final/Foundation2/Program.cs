@@ -13,7 +13,8 @@ class Program
         // TODO: Create at least two Customer objects using those addresses.
         Customer customer1 = new Customer("Pierce Morgan", address1);
         Customer customer2 = new Customer("Chris Hansen", address2);
-            // TODO: Create 2–3 Product objects per order with names, ids, prices, quantities.
+        // TODO: Create 2–3 Product objects per order with names, ids, prices, quantities.
+        Product product1 = new Product();
             // TODO: Create at least two Order objects with different customers.
             // TODO: Add products to each order via AddProduct().
             // TODO: For each order, display:
