@@ -26,11 +26,17 @@ public class Video
     {
         return _comments.Count;
     }
+    //need this to display all comments for each video
+    public List<Comment> GetComments()
+    {
+        return _comments;
+    }
     // TODO: Create a method to display the video’s details (title, author, length, number of comments).
     public void DisplayVideoDetails()
     {
         Console.WriteLine($" {_title}, by {_author} is{_lengthInSeconds} seconds long and has {GetNumberOfComments()} comments.");
     }
+
  
 }
     //https://byui-cse.github.io/cse210-course-2023/unit02/prepare.html
