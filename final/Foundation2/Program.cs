@@ -1,4 +1,5 @@
 using System;
+using System.Net.Sockets;
 
 class Program
 {//Encapsulation Part 2
@@ -6,7 +7,8 @@ class Program
     {
         Console.WriteLine("Hello Foundation2 World!");
           // TODO: Create at least two Address objects (USA and non-USA).
-            // TODO: Create at least two Customer objects using those addresses.
+          Address address 1 = new Address("825 e 12500 s, Draper, UT,84020, USA");
+                      // TODO: Create at least two Customer objects using those addresses.
             // TODO: Create 2–3 Product objects per order with names, ids, prices, quantities.
             // TODO: Create at least two Order objects with different customers.
             // TODO: Add products to each order via AddProduct().
@@ -14,7 +16,7 @@ class Program
             //       - Packing Label (GetPackingLabel())
             //       - Shipping Label (GetShippingLabel())
             //       - Total Price (GetTotalCost())
-            
+
     }
 }
 //https://byui-cse.github.io/cse210-course-2023/unit02/prepare.html

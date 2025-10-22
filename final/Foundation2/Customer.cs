@@ -7,8 +7,8 @@ they live in the USA or not. (Hint this should call a method on the address to f
 public class Customer
 {
     private string _name;
-    private int _address;
-    public Customer(string name, int address)
+    private Address _address; //calling the other file here 
+    public Customer(string name, Address address)
     {
         _name = name;
         _address = address;
@@ -25,9 +25,13 @@ public class Customer
     {
         return _address;
     }
-    public void SetAddress(int address)
+    public void SetAddress(Address address)
     {
         _address = address;
+    }
+    public bool LivesInUSA()
+    {
+        return true;
     }
     
 }
