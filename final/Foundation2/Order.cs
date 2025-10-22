@@ -62,7 +62,9 @@ public class Order // so glad I did so much reading yesterday and today on encap
 
     public string GetShippingLabel()
     {
-        string shippingLabel = $"{_customer} {_address}";
+        string shippingLabel = "Shipping To: \n";
+        shippingLabel += $"{_customer.GetName()}"; // ok so call the customer and the method to get the name 
+        shippingLabel += $"{_customer.GetAddress()}";// call to get the address
         return shippingLabel;
     }
 }

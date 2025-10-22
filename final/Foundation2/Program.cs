@@ -22,10 +22,14 @@ class Program
 
         // TODO: Create at least two Order objects with different customers.
         Order order1 = new Order(customer1);
-        order1.GetProducts(product1);
-        order1.AddProd
+        order1.AddProduct(product1);
+        order1.AddProduct(product3);
 
-            // TODO: Add products to each order via AddProduct().
+        Order order2 = new Order(customer2);
+        order2.AddProduct(product4);
+        order2.AddProduct(product5);
+        // TODO: Add products to each order via AddProduct().
+        
         
             // TODO: For each order, display:
             //       - Packing Label (GetPackingLabel())
