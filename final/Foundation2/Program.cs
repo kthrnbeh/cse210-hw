@@ -35,7 +35,7 @@ class Program
 
         Console.WriteLine(order2.GetPackingLabel());
         Console.WriteLine(order2.GetShippingLabel());
-        Console.WriteLine($"Total: {order2.GetTotalCost:F2()}");//parenthes is what I missed ugh
+        Console.WriteLine($"Total: {order2.GetTotalCost():F2}");//parenthes is what I missed ugh
         
             // TODO: For each order, display:
             //       - Packing Label (GetPackingLabel())
