@@ -28,5 +28,17 @@ public class Address
     {
         _streetAddress = streetAddress;
     }
-    
+    public string GetCity()
+    {
+        return _city;
+    }
+    public void SetCity(string city)
+    {
+        _city = city;
+    }
+    public string GetStateProvince()
+    {
+        return _stateProvince;
+    }
+
 }
