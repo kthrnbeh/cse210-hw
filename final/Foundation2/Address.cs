@@ -40,5 +40,13 @@ public class Address
     {
         return _stateProvince;
     }
+    public void SetStateProvince(string stateProvince)
+    {
+        _stateProvince = stateProvince;
+    }
+    public int GetZipCode()
+    {
+        return _zipCode;
+    }
 
 }
