@@ -52,6 +52,19 @@ public class Address
     {
         _zipCode = zipCode;
     }
+    public string GetCountry()
+    {
+        return _country;
+    }
+    public void SetCountry(string country)
+    {
+        _country = country;
+    }
+    public bool IsInUSA()
+    {
+        return _country == "USA";
+    }
     
+
 
 }
