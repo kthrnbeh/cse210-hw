@@ -48,5 +48,10 @@ public class Address
     {
         return _zipCode;
     }
+    public void SetZipCode(int zipCode)
+    {
+        _zipCode = zipCode;
+    }
+    
 
 }
