@@ -38,7 +38,7 @@ public class Order // so glad I did so much reading yesterday and today on encap
         {
             shippingCost = 5;
         }
-        else if (!_customer.LivesInUSA())
+        else 
         {
             shippingCost = 35;
         }
