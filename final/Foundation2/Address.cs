@@ -12,4 +12,21 @@ public class Address
     private string _stateProvince;
     private int _zipCode;
     private string _country;
+    public Address(string streetAddress, string city, string stateProvidence, int zipCode, string country)
+    {
+        _streetAddress = streetAddress;
+        _city = city;
+        _stateProvince = stateProvidence;
+        _zipCode = zipCode;
+        _country = country;
+    }
+    public string GetStreetAddress()
+    {
+        return _streetAddress;
+    }
+    public void SetStreetAddress(string streetAddress)
+    {
+        _streetAddress = streetAddress;
+    }
+    
 }
