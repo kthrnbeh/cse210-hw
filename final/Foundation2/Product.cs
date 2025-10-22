@@ -16,7 +16,20 @@ public class Product
         _productId = productId;
         _pricePerUnit = pricePerUnit;
         _quantity = quantity;
-        
+
+    }
+    public string GetName()
+    {
+        return _name;
+    }
+    public void SetName(string name)
+    {
+        _name = name;
+
+    }
+    public string GetProductId()
+    {
+        return _productId;
     }
     
 }
