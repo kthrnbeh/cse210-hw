@@ -13,6 +13,7 @@ public class Order // so glad I did so much reading yesterday and today on encap
 {
     private List<Product> _products = new List<Product>();
     private Customer _customer;
+
     public Order(Customer customer)
     {
         _customer = customer;
@@ -34,11 +35,11 @@ public class Order // so glad I did so much reading yesterday and today on encap
 
         double shippingCost = 0;
 
-        if (_customer.LivesInUSA()) //I can just use the method
+        if (_customer.LivesInUSA()) // I can just use the method
         {
             shippingCost = 5;
         }
-        else 
+        else
         {
             shippingCost = 35;
         }
@@ -60,9 +61,9 @@ public class Order // so glad I did so much reading yesterday and today on encap
 
     public string GetShippingLabel()
     {
-        string shippingLabel = "Shipping To: \n";
+        string shippingLabel = "Shipping To:\n";
         shippingLabel += $"{_customer.GetName()}"; // ok so call the customer and the method to get the name 
-        shippingLabel += $"{_customer.GetAddress().GetFullAddress()}";// call to get the address
+        shippingLabel += $"{_customer.GetAddress().GetFullAddress()}"; // call to get the address
         return shippingLabel;
     }
 }
