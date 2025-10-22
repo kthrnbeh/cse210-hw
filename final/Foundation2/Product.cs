@@ -43,4 +43,16 @@ public class Product
     {
         _pricePerUnit = pricePerUnit;
     }
+    public int GetQuantity()
+    {
+        return _quantity;
+    }
+    public void SetQuantity(int quantity)
+    {
+        _quantity = quantity;
+    }
+    public double GetTotalCost()
+    {
+        
+    }
 }
