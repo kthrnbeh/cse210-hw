@@ -35,7 +35,8 @@ class Program
 
         Console.WriteLine(order2.GetPackingLabel());
         Console.WriteLine(order2.GetShippingLabel());
-        Console.WriteLine($"Total: {order2.GetTotalCost():F2}");//parenthes is what I missed ugh
+        Console.WriteLine($"Total: {order2.GetTotalCost():F2}");//parenthes is what I missed ugh 
+        //asked about how to get display to only show Total as 0.00
         
             // TODO: For each order, display:
             //       - Packing Label (GetPackingLabel())
