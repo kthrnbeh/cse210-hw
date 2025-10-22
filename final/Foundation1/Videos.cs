@@ -2,8 +2,8 @@ using YouTubeVideos;
 
 public class Video
 {
-     // TODO: Create private fields to store title, author, and length (in seconds).
-        // TODO: Create a private List<Comment> to store all comments for this video.
+    // TODO: Create private fields to store title, author, and length (in seconds).
+    // TODO: Create a private List<Comment> to store all comments for this video.
     private string _title;
     private string _author;
     private int _lengthInSeconds;
@@ -31,9 +31,6 @@ public class Video
     {
         Console.WriteLine($" {_title}, by {_author} is{_lengthInSeconds} seconds long and has {GetNumberOfComments()} comments.");
     }
-    //       Inside this method, loop through the comment list and display each comment.
-    public void DisplayComments()
-    {
-        
-    }
-    }
+ 
+}
+    //https://byui-cse.github.io/cse210-course-2023/unit02/prepare.html
