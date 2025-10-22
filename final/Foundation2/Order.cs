@@ -5,7 +5,21 @@ This company is based in the USA. If the customer lives in the USA, then the shi
 A packing label should list the name and product id of each product in the order.
 A shipping label should list the name and address of the customer
 */
-public class order
+public class Order //so glad I did so much reading yesterday and today on encapsulation..
 {
-    
+    private List<Product> _products;
+    private string _customer;
+    public Order(List<Product> products, string customer)
+    {
+        _products = products;
+        _customer = customer;
+    }
+    public List<Product> GetProducts()
+    {
+        return _products;
+    }
+    public void SetProductId(List<Product> products)
+    {
+        _products = products;
+    }
 }
