@@ -7,8 +7,8 @@ class Program
     {
         Console.Write("Time to see the Order information");
           // TODO: Create at least two Address objects (USA and non-USA).
-          Address address1 = new Address("825 e 12500 s, Draper, UT,84020, USA");
-          Address address2 = new Address("320 w 500 s, Lindon, UT,84042, Canada");
+          Address address1 = new Address("825 E 12500 S", "Draper", "UT",84020, "USA");
+          Address address2 = new Address("320 W 500 S", "Lindon", "UT",84042, "Canada");//oops
           
         // TODO: Create at least two Customer objects using those addresses.
         Customer customer1 = new Customer("Pierce Morgan", address1);
@@ -29,7 +29,7 @@ class Program
         order2.AddProduct(product4);
         order2.AddProduct(product5);
         // TODO: Add products to each order via AddProduct().
-        
+
         
             // TODO: For each order, display:
             //       - Packing Label (GetPackingLabel())
