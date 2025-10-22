@@ -16,8 +16,11 @@ public class Video
         _lengthInSeconds = lengthInSeconds;
         _comments = new List<Comment>();
     }
-
-        // TODO: Create a method to add a Comment to the list.
+    // TODO: Create a method to add a Comment to the list.
+    public void AddComment(Comment comment)
+    {
+        _comments.Add(comment);
+    }
 
         // TODO: Create a method to return the number of comments.
 
