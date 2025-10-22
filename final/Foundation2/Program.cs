@@ -31,9 +31,11 @@ class Program
         // TODO: Add products to each order via AddProduct().
         Console.WriteLine(order1.GetPackingLabel());
         Console.WriteLine(order1.GetShippingLabel());
+        Console.WriteLine($"Total:{order1.GetTotalCost()}");
 
         Console.WriteLine(order2.GetPackingLabel());
         Console.WriteLine(order2.GetShippingLabel());
+        Console.WriteLine($"Total: {order2.GetTotalCost}");
         
             // TODO: For each order, display:
             //       - Packing Label (GetPackingLabel())
