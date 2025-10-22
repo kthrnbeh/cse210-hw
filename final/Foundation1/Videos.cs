@@ -26,7 +26,14 @@ public class Video
     {
         return _comments.Count;
     }
-
-        // TODO: Create a method to display the video’s details (title, author, length, number of comments).
-        //       Inside this method, loop through the comment list and display each comment.
+    // TODO: Create a method to display the video’s details (title, author, length, number of comments).
+    public void DisplayVideoDetails()
+    {
+        Console.WriteLine($" {_title}, by {_author} is{_lengthInSeconds} seconds long and has {GetNumberOfComments()} comments.");
+    }
+    //       Inside this method, loop through the comment list and display each comment.
+    public void DisplayComments()
+    {
+        
+    }
     }
