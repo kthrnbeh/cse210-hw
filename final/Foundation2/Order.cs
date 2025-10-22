@@ -22,4 +22,13 @@ public class Order //so glad I did so much reading yesterday and today on encaps
     {
         _products = products;
     }
+    public string GetCustomer()
+    {
+        return _customer;
+    }
+    public void SetCustomer(string customer)
+    {
+        _customer = customer;
+    }
+    
 }
