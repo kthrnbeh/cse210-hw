@@ -2,14 +2,20 @@ using YouTubeVideos;
 
 public class Video
 {
+     // TODO: Create private fields to store title, author, and length (in seconds).
+        // TODO: Create a private List<Comment> to store all comments for this video.
     private string _title;
     private string _author;
-    private int _legthInSeconds;
+    private int _lengthInSeconds;
     private List<Comment> _comments;
-        // TODO: Create private fields to store title, author, and length (in seconds).
-        // TODO: Create a private List<Comment> to store all comments for this video.
-
-        // TODO: Create a constructor to set the video’s title, author, and length.
+    // TODO: Create a constructor to set the video’s title, author, and length.
+    public Video(string title, string author, int lengthInSeconds)
+    {
+        _title = title;
+        _author = author;
+        _lengthInSeconds = lengthInSeconds;
+        _comments = new List<Comment>();
+    }
 
         // TODO: Create a method to add a Comment to the list.
 
