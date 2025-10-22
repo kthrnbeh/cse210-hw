@@ -5,5 +5,14 @@ If the price per unit was $3 and they bought 5, the product total cost would be 
 */
 public class Product
 {
+    private string _name;
+    private string _productId;
+    private double _pricePerUnit;
+    private int _quantity;
+
+    public Product()
+    {
+
+    }
     
 }
