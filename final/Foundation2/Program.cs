@@ -29,7 +29,7 @@ class Program
         order2.AddProduct(product4);
         order2.AddProduct(product5);
         // TODO: Add products to each order via AddProduct().
-        Console.WriteLine(order1.GetPackingLabel());
+        Console.Write(order1.GetPackingLabel());
         Console.WriteLine(order1.GetShippingLabel());
         Console.WriteLine($"Total:{order1.GetTotalCost()}");
 
