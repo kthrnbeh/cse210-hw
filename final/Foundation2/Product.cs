@@ -37,6 +37,10 @@ public class Product
     }
     public double GetPricePerUnit()
     {
-        
+        return _pricePerUnit;
+    }
+    public void SetPricePerUnit(double pricePerUnit)
+    {
+        _pricePerUnit = pricePerUnit;
     }
 }
