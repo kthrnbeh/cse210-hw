@@ -56,7 +56,10 @@ public class Order //so glad I did so much reading yesterday and today on encaps
     public string GetPackingLabel()
     {
         string packingLabel = "";
-        foreach (Product)
+        foreach (Product product in _products)
+        {
+            packingLabel +=$"{product.GetName()}"
+        }
     }
 
     
