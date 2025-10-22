@@ -53,6 +53,6 @@ public class Product
     }
     public double GetTotalCost()
     {
-        
+        return _pricePerUnit * _quantity;
     }
 }
