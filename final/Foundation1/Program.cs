@@ -23,7 +23,6 @@ public class Program
         // TODO: Loop through the list and call the display method for each video to show details and comments.
         foreach(Video video in videos)
         {//TODO:Display all the Comments for each video
-            video._comments.DisplayComments();
             video.DisplayVideoDetails();
         }
     }

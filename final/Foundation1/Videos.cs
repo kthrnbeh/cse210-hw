@@ -35,6 +35,10 @@ public class Video
     public void DisplayVideoDetails()
     {
         Console.WriteLine($" {_title}, by {_author} is{_lengthInSeconds} seconds long and has {GetNumberOfComments()} comments.");
+        foreach (Comment comment in _comments)
+        {
+            comment.DisplayComments();
+        }
     }
 
  
