@@ -5,6 +5,8 @@ public class Program
     public static void Main(string[] args)
     {
         // TODO: Create a list to hold multiple Video objects.
+        List<Video> videos = new List<Video>();
+        videos.Add(new Video("He'll be there","Connor Austin",144))
 
         // TODO: Create 3–4 Video objects, each with unique title, author, and length.
 

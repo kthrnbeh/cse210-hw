@@ -6,7 +6,7 @@ public class Video
     // TODO: Create a private List<Comment> to store all comments for this video.
     private string _title;
     private string _author;
-    private int _lengthInSeconds;
+    private double _lengthInSeconds;
     private List<Comment> _comments;
     // TODO: Create a constructor to set the video’s title, author, and length.
     public Video(string title, string author, int lengthInSeconds)
