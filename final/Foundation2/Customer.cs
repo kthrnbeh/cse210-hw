@@ -21,7 +21,7 @@ public class Customer
     {
         _name = name;
     }
-    public int GetAddress()
+    public Address GetAddress()
     {
         return _address;
     }
@@ -31,7 +31,8 @@ public class Customer
     }
     public bool LivesInUSA()
     {
-        return true;
+        return _address.IsInUSA();
     }
+    
     
 }
