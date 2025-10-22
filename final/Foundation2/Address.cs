@@ -64,7 +64,10 @@ public class Address
     {
         return _country == "USA";
     }
-    
+    public string GetFullAddress()
+    {
+        return $"{_streetAddress}\n {_city},{_stateProvince} {_zipCode}\n {_country}";
+    }
 
 
 }
