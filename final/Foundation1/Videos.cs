@@ -9,7 +9,7 @@ public class Video
     private double _lengthInSeconds;
     private List<Comment> _comments;
     // TODO: Create a constructor to set the video’s title, author, and length.
-    public Video(string title, string author, int lengthInSeconds)
+    public Video(string title, string author, double lengthInSeconds)
     {
         _title = title;
         _author = author;
