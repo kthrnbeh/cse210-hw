@@ -5,7 +5,7 @@ class Program
 {//Encapsulation Part 2
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Foundation2 World!");
+        Console.Write("Time to see the Order information");
           // TODO: Create at least two Address objects (USA and non-USA).
           Address address1 = new Address("825 e 12500 s, Draper, UT,84020, USA");
           Address address2 = new Address("320 w 500 s, Lindon, UT,84042, Canada");
