@@ -58,8 +58,14 @@ public class Order //so glad I did so much reading yesterday and today on encaps
         string packingLabel = "";
         foreach (Product product in _products)
         {
-            packingLabel +=$"{product.GetName()}"
+            packingLabel += $"{product.GetName()},{product.GetProductId()}";
         }
+        return packingLabel;
+    }
+    public string GetShippingLabel()
+    {
+        string shippingLabel = $"{_customer} {_address}";
+        return shippingLabel;
     }
 
     
