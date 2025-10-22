@@ -21,4 +21,13 @@ public class Customer
     {
         _name = name;
     }
+    public int GetAddress()
+    {
+        return _address;
+    }
+    public void SetAddress(int address)
+    {
+        _address = address;
+    }
+    
 }
