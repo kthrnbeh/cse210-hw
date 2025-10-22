@@ -10,9 +10,13 @@ public class Product
     private double _pricePerUnit;
     private int _quantity;
 
-    public Product()
+    public Product(string name, string productId, double pricePerUnit, int quantity)
     {
-
+        _name = name;
+        _productId = productId;
+        _pricePerUnit = pricePerUnit;
+        _quantity = quantity;
+        
     }
     
 }
