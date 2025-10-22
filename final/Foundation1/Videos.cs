@@ -21,8 +21,11 @@ public class Video
     {
         _comments.Add(comment);
     }
-
-        // TODO: Create a method to return the number of comments.
+    // TODO: Create a method to return the number of comments.
+    public int GetNumberOfComments()
+    {
+        return _comments.Count;
+    }
 
         // TODO: Create a method to display the video’s details (title, author, length, number of comments).
         //       Inside this method, loop through the comment list and display each comment.
