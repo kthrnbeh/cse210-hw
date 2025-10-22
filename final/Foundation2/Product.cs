@@ -31,5 +31,12 @@ public class Product
     {
         return _productId;
     }
-    
+    public void SetProductId(string productId)
+    {
+        _productId = productId;
+    }
+    public double GetPricePerUnit()
+    {
+        
+    }
 }
