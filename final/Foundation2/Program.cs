@@ -18,10 +18,12 @@ class Program
         Product product2 = new Product("Sketch Pad", "SP002", 3.99, 1);
         Product product3 = new Product("Drawing Pencils", "DP003", 11.99, 1);
         Product product4 = new Product("Water Colors", "WC004", 2.99, 1);
-        
+        Product product5 = new Product("Paint Brushes", "PB005", 3.99, 5);
+
         // TODO: Create at least two Order objects with different customers.
         Order order1 = new Order(customer1);
-        order1.AddProduct(product1);
+        order1.GetProducts(product1);
+        order1.AddProd
 
             // TODO: Add products to each order via AddProduct().
         

@@ -12,16 +12,15 @@ A shipping label should list the name and address of the customer
 public class Order //so glad I did so much reading yesterday and today on encapsulation..
 {
     private List<Product> _products = new List<Product>();
-    private string _customer;
+    private Customer _customer;
     private string _address;
-    public Order(List<Product> products, string customer)
+    public Order( Customer customer)
     {
-        _products = products;
         _customer = customer;
     }
-    public List<Product> GetProducts()
+    public void AddProduct(Product product)
     {
-        return _products;
+        _products.Add(product);
     }
     public void SetProductId(List<Product> products)
     {
@@ -31,7 +30,7 @@ public class Order //so glad I did so much reading yesterday and today on encaps
     {
         return _customer;
     }
-    public void SetCustomer(string customer)
+    public void SetCustomer(Customer customer)
     {
         _customer = customer;
     }
