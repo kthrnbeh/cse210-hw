@@ -15,7 +15,7 @@ namespace YouTubeVideos
             _text = text;
         }
         // TODO: (Optional) Create public getters or a method to display the comment details.
-        public void DisplayComment()
+        public void DisplayComments()
         {
             Console.WriteLine($"{_name} by{_text}");
         }

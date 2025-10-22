@@ -15,11 +15,15 @@ public class Program
         // TODO: For each video, add 3–4 Comment objects (name + text).
         Comment comment1 = new Comment("@JabsMorjis", "Connor is aggressively sure about what he's saying. Absolutely love the tone of this song");
         Comment comment2 = new Comment("@WitVerdico", "Cool! I wish the youth leaders would share the youth music more often to the youth");
-        Comment comment3 =
-
-
+        Comment comment3 = new Comment("@KatherineMagistri", "I Love this music, it brings the spirit.");
         // TODO: Add each video to the main video list.
-
+        videos[0].AddComment(comment1);
+        videos[1].AddComment(comment2);
+        videos[2].AddComment(comment3);
         // TODO: Loop through the list and call the display method for each video to show details and comments.
+        foreach(Video video in videos)
+        {
+            video.DisplayVideoDetails();
+        }
     }
 }
