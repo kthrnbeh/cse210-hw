@@ -17,10 +17,14 @@ class Program
         Product product1 = new Product("Coloring Book", "CB001", 2.99, 2);
         Product product2 = new Product("Sketch Pad", "SP002", 3.99, 1);
         Product product3 = new Product("Drawing Pencils", "DP003", 11.99, 1);
+        Product product4 = new Product("Water Colors", "WC004", 2.99, 1);
+        
         // TODO: Create at least two Order objects with different customers.
-        Order order1 = new Order( product1, customer1);
-        Order order 2 new Order(product2, customer2);
+        Order order1 = new Order(customer1);
+        order1.AddProduct(product1);
+
             // TODO: Add products to each order via AddProduct().
+        
             // TODO: For each order, display:
             //       - Packing Label (GetPackingLabel())
             //       - Shipping Label (GetShippingLabel())
