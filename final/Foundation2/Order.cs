@@ -5,3 +5,7 @@ This company is based in the USA. If the customer lives in the USA, then the shi
 A packing label should list the name and product id of each product in the order.
 A shipping label should list the name and address of the customer
 */
+public class order
+{
+    
+}
