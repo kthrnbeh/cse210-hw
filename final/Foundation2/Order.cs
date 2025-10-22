@@ -36,7 +36,7 @@ public class Order // so glad I did so much reading yesterday and today on encap
 
         double shippingCost = 0;
 
-        if (_customer.LivesInUSA()) // could use IndexOf instead but decided its better in case its lowercase
+        if (_customer.LivesInUSA()) //I can just use the method
         {
             shippingCost = 5;
         }
