@@ -1,5 +1,3 @@
-using System.Net.Mail;
-
 public abstract class Events
 {
     protected string _title;
@@ -13,6 +11,7 @@ public abstract class Events
         _title = title;
         _description = description;
         _date = date;
+        _time = time;
         _address = address;
     }
      public string GetTitle()
@@ -83,9 +82,9 @@ public abstract class Events
         // 3. Use _address.ToString() (Address class handles formatting)
         // 4. Combine and return all parts:
         //    Title, Description, Date, Time, Address (each on its own line)
-        _date.ToString("MM/dd/yyyy");
-        DateTime.Today.Add(_time).ToString("h:mm tt"); //I always forget "" then it won't work and I get frustrated...
-        _address.ToString();
+        string date =_date.ToString("MM/dd/yyyy");
+        string time =DateTime.Today.Add(_time).ToString("h:mm tt"); //I always forget "" then it won't work and I get frustrated...
+        string address=_address.ToString();
         return $"""{_title}\n{ _description}\n {_date}\n {_time}\n {_address}"""; //looking up how to put them on their own line... 
         //oh yes \n
     }
@@ -97,8 +96,8 @@ public abstract class Events
         // 2. Append "\nType: " + this.GetType().Name // I have no idea what this is so I looked it up... https://www.geeksforgeeks.org/c-sharp/c-sharp-this-keyword/
         // 3. Derived classes (Lecture, Reception, OutdoorGathering) will override this
         //    and add their unique fields (Speaker, RSVP, Weather)
-        GetStandardDetails();
-        return $"{_title}\n {_description} \n{GetType()}";
+       
+        return $"{ GetStandardDetails()} \n{GetType()}";
     }
 
     public string GetShortDescription()
