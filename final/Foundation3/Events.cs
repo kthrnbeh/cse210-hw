@@ -13,4 +13,8 @@ public class Events
         _date = date;
         _address = address;
     }
+    public string Title()
+    {
+        return "";
+    }
 }
