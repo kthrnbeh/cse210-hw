@@ -14,7 +14,34 @@ public class Address : Events
     private string _city;
     private string _state;
     private string _zipcode;
-    
+    public Address()
+    {
+        
+    }
+    public string GetStreet();{
+
+    }
+    public void Set();{
+
+}
+     public string Get();{
+
+    }
+    public void Set();{
+
+}
+     public string Get();{
+
+    }
+    public void Set();{
+
+}
+     public string Get();{
+
+    }
+    public void Set();{
+        
+    }
 
 
 }
