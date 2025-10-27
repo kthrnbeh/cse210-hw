@@ -1,4 +1,4 @@
-public class Events
+public abstract class Events
 {
     protected string _title;
     protected string _description;
