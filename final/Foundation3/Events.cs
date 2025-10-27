@@ -101,8 +101,8 @@ public abstract class Events
         return "Type: " + _type + "\n"
              + "Title: " + _title + "\n"
              + "Description: " + _description + "\n"
-             + "Date: " + _date + "\n"
-             + "Time: " + _time + "\n"
+             + "Date: " + date + "\n"
+             + "Time: " + time + "\n"
              + "Address: " + _address; //looking up how to put them on their own line... This was my hardest part! What the beans.
         //oh yes \n
     }
