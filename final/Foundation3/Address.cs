@@ -10,4 +10,10 @@ public class Address : Events
     // TODO: private fields: street, city, state/province, postalCode
     // TODO: constructor to set all fields
     // TODO: public override string ToString() to return "Street, City, ST ZIP"
+    private string _street;
+    private string _city;
+    private string _state;
+    private string _zipcode;
+    
+
 }
