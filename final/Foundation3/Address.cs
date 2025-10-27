@@ -65,9 +65,13 @@ public class Address
         _country = country;
     }
 
-    public override ToString() 
+    public override ToString()
     {
-        return _street +" "+ _city +" "+ _stateOrProvince+ " " +_zipcode _country; //tried to just change zipcode but lets see if changing all works
+        return _street + " " + _city + " " + _stateOrProvince + " " + _zipcode + "  " + _country; //tried to just change zipcode but lets see if changing all works
+    }
+    public string GetFullAddress()
+    {
+        return ToString();
     }
     
 
