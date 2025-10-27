@@ -15,12 +15,13 @@ public class Address : Events
     private string _stateOrProvince;
     private string _country;
     private int _zipcode;
-    public Address(string street, string city, string stateOrProvince, int zipcode)
+    public Address(string street, string city, string country, string stateOrProvince, int zipcode)
     {
         _street = street;
         _city = city;
         _stateOrProvince = stateOrProvince;
         _zipcode = zipcode;
+        _country = country;
     }
     public string GetStreet()
     {
@@ -65,7 +66,7 @@ public class Address : Events
     }
     public string GetFullAddress()
     {
-    return $"{_street},{_city},{_stateOrProvince},{_country}, {_zipcode}";
+    return $"{_street},{_city},{_stateOrProvince},{_country}, {_zipcode},{_country}";
     }
     
 
