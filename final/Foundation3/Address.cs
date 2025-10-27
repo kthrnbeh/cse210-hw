@@ -12,14 +12,14 @@ public class Address : Events
     // TODO: public override string ToString() to return "Street, City, ST ZIP"
     private string _street;
     private string _city;
-    private string _state;
+    private string _stateOrProvince;
     private string _country;
     private int _zipcode;
-    public Address(string street, string city, string state, int zipcode)
+    public Address(string street, string city, string stateOrProvince, int zipcode)
     {
         _street = street;
         _city = city;
-        _state = state;
+        _stateOrProvince = stateOrProvince;
         _zipcode = zipcode;
     }
     public string GetStreet()
@@ -39,13 +39,13 @@ public class Address : Events
     {
         _city = city;
     }
-     public string GetState()
+     public string GetStateOrProvince()
     {
-         return _state;
+         return _stateOrProvince;
     }
-    public void SetState(string state)
+    public void SetStateOrProvince(string stateOrProvince)
     {
-        _state = state;
+        _stateOrProvince = stateOrProvince;
     }
     public string GetCountry()
     {
@@ -62,6 +62,10 @@ public class Address : Events
     public void SetZipcode(int zipcode)
     {
         _zipcode = zipcode;
+    }
+    public string GetFullAddress()
+    {
+    return $"{_street},{_city},{_stateOrProvince},{_country}, {_zipcode}";
     }
     
 
