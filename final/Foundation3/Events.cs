@@ -1,21 +1,23 @@
 public abstract class Events
 {
-    protected string _title;
-    protected string _description;
-    protected DateTime _date;
-    protected TimeSpan _time;
-    protected Address _address; //because of the file I need to get it from
-    protected string _type;
+    // Private fields (encapsulation)
+    private string _type;
+    private string _title;
+    private string _description;
+    private DateTime _date;
+    private TimeSpan _time;
+    private Address _address;
 
     public Events(string type, string title, string description, DateTime date, TimeSpan time, Address address)
     {
+        _type = type;
         _title = title;
         _description = description;
         _date = date;
         _time = time;
         _address = address;
-        _type = type;
     }
+
     public string GetType(); //realized I needed this
     {
         return $"{_type }";
