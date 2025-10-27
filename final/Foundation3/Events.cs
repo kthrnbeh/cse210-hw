@@ -115,7 +115,7 @@ public abstract class Events
         // 3. Derived classes (Lecture, Reception, OutdoorGathering) will override this
         //    and add their unique fields (Speaker, RSVP, Weather)
        
-        return $"{ GetStandardDetails()}";
+        return $"{ GetStandardDetails()} ";
     }
 
     public string GetShortDescription()

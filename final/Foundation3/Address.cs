@@ -65,9 +65,9 @@ public class Address
         _country = country;
     }
 
-    public string GetFullAddress()
+    public override string ToString()
     {
-        return $"{_street},{_city},{_stateOrProvince},{_zipcode},{_country}";
+        return $"{_street},{_city},{_stateOrProvince},{_zipcode}{_country}";
     }
     
 
