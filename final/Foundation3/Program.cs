@@ -19,8 +19,8 @@ class Program
         // Address address1 = new Address("123 Main St", "Draper", "UT", "84020", "USA");
         // Address address2 = new Address(...);
         // Address address3 = new Address(...);
-        Address address1 = new Address("825 E 12500 S", "Draper", "UT",84020, "USA");
-        Address address2 = new Address("500 E 81 N", "Monticello", "UT",);
+        Address address1 = new Address("825 E 12500 S", "Draper", "UT","USA",84020);
+        Address address2 = new Address("500 E 81 N", "Monticello", "UT","USA",84535);
         Address address3 = new Address("");
 
 

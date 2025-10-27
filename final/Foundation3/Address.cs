@@ -48,6 +48,14 @@ public class Address
     {
         _stateOrProvince = stateOrProvince;
     }
+      public int GetZipcode()
+    {
+         return _zipcode;
+    }
+    public void SetZipcode(int zipcode)
+    {
+        _zipcode = zipcode;
+    }
     public string GetCountry()
     {
         return _country;
@@ -56,14 +64,7 @@ public class Address
     {
         _country = country;
     }
-     public int GetZipcode()
-    {
-         return _zipcode;
-    }
-    public void SetZipcode(int zipcode)
-    {
-        _zipcode = zipcode;
-    }
+
     public string GetFullAddress()
     {
         return $"{_street},{_city},{_stateOrProvince},{_zipcode},{_country}";
