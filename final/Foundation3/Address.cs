@@ -21,30 +21,36 @@ public class Address : Events
         _state = state;
         _zipcode = zipcode;
     }
-    public string GetStreet();{
-
+    public string GetStreet()
+    {
+        return"";
 
     }
     public void Set(string street)
     {
-
-}
-     public string Get(){
+    }
+     public string Get()
+    {
+         return"";
+    }
+    public void Set()
+    {
 
     }
-    public void Set(){
-
-}
-     public string Get(){
+     public string Get()
+    {
+         return"";
+    }
+    public void Set()
+    {
 
     }
-    public void Set(){
-
-}
-     public string Get(){
-
+     public int Get()
+    {
+         return"";
     }
-    public void Set(){
+    public void Set()
+    {
         
     }
 
