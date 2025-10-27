@@ -103,7 +103,7 @@ public abstract class Events
              + "Description: " + _description + "\n"
              + "Date: " + date + "\n"
              + "Time: " + time + "\n"
-             + "Address: " + _address; //looking up how to put them on their own line... This was my hardest part! What the beans.
+             + "Address: " + address; //looking up how to put them on their own line... This was my hardest part! What the beans.
         //oh yes \n
     }
 
