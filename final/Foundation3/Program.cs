@@ -69,11 +69,16 @@ class Program
         new TimeSpan(3, 0, 0),
         address2,
         "To Mary at 801-384-5453"
-        
+        );
+        Receptions receptions3 = new Receptions(
+        "Moody & Judy",
+        "Reception",
+        new DateTime(2025, 8, 15),
+        new TimeSpan(2, 0, 0),
+        address3,
+        "To John at 803-385-5400"
         );
 
-        
-        Receptions receptions3 = new Receptions();
          // OutdoorGathering picnic = new OutdoorGathering("Community Picnic", "Outdoor family event", new DateTime(2025, 8, 5), new TimeSpan(12, 0, 0), address3, "Sunny with light breeze");
         Outdoor outdoor1 = new Outdoor();
         Outdoor outdoor2 = new Outdoor();
