@@ -18,7 +18,7 @@ public abstract class Events
     }
     public string GetType(); //realized I needed this
     {
-        return _type;
+        return $"{_type }";
     }
     public void setType(string type)
     {
