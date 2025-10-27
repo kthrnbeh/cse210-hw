@@ -86,7 +86,8 @@ public abstract class Events
         _date.ToString("MM/dd/yyyy");
         DateTime.Today.Add(_time).ToString("h:mm tt"); //I always forget "" then it won't work and I get frustrated...
         _address.ToString();
-        return "";
+        return $"""{_title}\n{ _description}\n {_date}\n {_time}\n {_address}"""; //looking up how to put them on their own line... 
+        //oh yes \n
     }
 
     public virtual string GetAllDetails()
