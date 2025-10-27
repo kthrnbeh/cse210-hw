@@ -28,23 +28,25 @@ public abstract class Events
     public string GetDescription()
     {
         // TODO: return the _description
-        return "";
+        return $"{_description}";
     }
 
     public void SetDescription(string description)
     {
         // TODO: set _description = description
+        _description = description;
     }
 
     public DateTime GetDate()
     {
         // TODO: return the _date
-        return default;
+        return _date;
     }
 
     public void SetDate(DateTime date)
     {
         // TODO: set _date = date
+        _date = date;
     }
 
     public TimeSpan GetTime()
