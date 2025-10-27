@@ -80,9 +80,31 @@ class Program
         );
 
          // OutdoorGathering picnic = new OutdoorGathering("Community Picnic", "Outdoor family event", new DateTime(2025, 8, 5), new TimeSpan(12, 0, 0), address3, "Sunny with light breeze");
-        Outdoor outdoor1 = new Outdoor();
-        Outdoor outdoor2 = new Outdoor();
-        Outdoor outdoor3 = new Outdoor();
+        Outdoor outdoor1 = new Outdoor(
+        "Community Sport",
+        "Soccer Game",
+        new DateTime(1989, 10, 10),
+        new TimeSpan(6, 0, 1),
+        address1,
+        "Rainy, Wear a coat."
+        );
+        Outdoor outdoor2 = new Outdoor(
+        "Community Sport",
+        "Baseball",
+        new DateTime(2026, 03, 10),
+        new TimeSpan(6, 0, 1),
+        address1,
+        "Sunny."
+        );
+        Outdoor outdoor3 = new Outdoor(
+
+        "Community picnic",
+        "Make new friends in your community!",
+        new DateTime(2025, 05, 1),
+        new TimeSpan(6, 0, 1),
+        address1,
+        "Sunny, and breezy. Bring a kite!"
+        );
        
         
 
