@@ -105,14 +105,16 @@ class Program
         address1,
         "Sunny, and breezy. Bring a kite!"
         );
-       
-        
+
+
 
         // TODO: display details for each event
         // Console.WriteLine(lecture.GetStandardDetails());
         // Console.WriteLine(lecture.GetFullDetails());
         // Console.WriteLine(lecture.GetShortDescription());
         // Console.WriteLine();
+        Console.Write(lecture1.GetStandardDetails());
+        
 
         // Console.WriteLine(reception.GetStandardDetails());
         // Console.WriteLine(reception.GetFullDetails());
