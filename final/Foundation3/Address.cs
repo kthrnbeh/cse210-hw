@@ -5,7 +5,7 @@ In addition, your program must:
 Use inheritance to avoid duplicating shared attributes and methods.
 Use an address class for the addresses.
 Follow the principles of encapsulation, making sure each member variable is private.*/
-public class Address : Events
+public class Address
 {
     // TODO: private fields: street, city, state/province, postalCode
     // TODO: constructor to set all fields
@@ -66,7 +66,7 @@ public class Address : Events
     }
     public string GetFullAddress()
     {
-    return $"{_street},{_city},{_stateOrProvince},{_country}, {_zipcode},{_country}";
+        return $"{_street},{_city},{_stateOrProvince},{_zipcode},{_country}";
     }
     
 
