@@ -24,7 +24,7 @@ public class Address : Events
     }
     public string GetStreet()
     {
-        return"";
+        return _street;
 
     }
     public void SetStreet(string street)
@@ -33,7 +33,7 @@ public class Address : Events
     }
      public string GetCity()
     {
-         return"";
+         return _city;
     }
     public void SetCity(string city)
     {
@@ -41,7 +41,7 @@ public class Address : Events
     }
      public string GetState()
     {
-         return"";
+         return _state;
     }
     public void SetState(string state)
     {
@@ -49,7 +49,7 @@ public class Address : Events
     }
     public string GetCountry()
     {
-        return "";
+        return _country;
     }
     public void SetCountry(string country)
     {
@@ -57,7 +57,7 @@ public class Address : Events
     }
      public int GetZipcode()
     {
-         return 0;
+         return _zipcode;
     }
     public void SetZipcode(int zipcode)
     {
