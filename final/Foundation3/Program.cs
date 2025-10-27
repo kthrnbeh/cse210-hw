@@ -128,7 +128,14 @@ class Program
         Console.Write(receptions1.GetStandardDetails());
         Console.Write(receptions1.GetAllDetails());
         Console.Write(receptions1.GetShortDescription());
-        
+        Console.Write(receptions2.GetStandardDetails());
+        Console.Write(receptions2.GetAllDetails());
+        Console.Write(receptions2.GetShortDescription());
+        Console.Write(receptions3.GetStandardDetails());
+        Console.Write(receptions3.GetAllDetails());
+        Console.Write(receptions3.GetShortDescription());
+        Console.WriteLine();
+
         // Console.WriteLine(reception.GetStandardDetails());
         // Console.WriteLine(reception.GetFullDetails());
         // Console.WriteLine(reception.GetShortDescription());
