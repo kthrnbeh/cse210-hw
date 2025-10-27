@@ -145,11 +145,15 @@ class Program
         Console.WriteLine(receptions1.GetShortDescription());
         Console.WriteLine();
         Console.WriteLine(receptions2.GetStandardDetails());
+        Console.WriteLine();
         Console.WriteLine(receptions2.GetAllDetails());
+        Console.WriteLine();
         Console.WriteLine(receptions2.GetShortDescription());
         Console.WriteLine();
         Console.WriteLine(receptions3.GetStandardDetails());
+        Console.WriteLine();
         Console.WriteLine(receptions3.GetAllDetails());
+        Console.WriteLine();
         Console.WriteLine(receptions3.GetShortDescription());
         Console.WriteLine();
 
