@@ -52,23 +52,25 @@ public abstract class Events
     public TimeSpan GetTime()
     {
         // TODO: return the _time
-        return default;
+        return _time;
     }
 
     public void SetTime(TimeSpan time)
     {
         // TODO: set _time = time
+        _time = time;
     }
 
     public Address GetAddress()
     {
         // TODO: return the _address
-        return null;
+        return _address;
     }
 
     public void SetAddress(Address address)
     {
         // TODO: set _address = address
+        _address = address;
     }
 
     public string GetStandardDetails()
