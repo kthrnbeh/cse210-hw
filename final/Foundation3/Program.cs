@@ -125,6 +125,7 @@ class Program
         Console.WriteLine(lecture1.GetStandardDetails());
         Console.WriteLine(lecture1.GetAllDetails());
         Console.WriteLine(lecture1.GetShortDescription());
+        Console.WriteLine(lecture1.GetFullAddress());
         Console.WriteLine(lecture2.GetStandardDetails());
         Console.WriteLine(lecture2.GetAllDetails());
         Console.WriteLine(lecture2.GetShortDescription());
