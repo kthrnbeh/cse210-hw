@@ -2,7 +2,7 @@ public class Lectures : Events
 {
     private string _speakerName;
     private int _capacity;
-    public Lectures(string speakerName, string title, string description, DateTime date, TimeSpan time, string address,int capacity) : base(title, description, date, time, address)
+    public Lectures(string speakerName, string title, string description, DateTime date, TimeSpan time, Address address,int capacity) : base(title, description, date, time, address)
     {
         _speakerName = speakerName;
         _capacity = capacity;
@@ -23,8 +23,5 @@ public class Lectures : Events
     {
         _capacity = capacity;
     }
-    public string GetAllDetails()
-    {
-        return $"{_speakerName},{_title},{_description},{_date},{_time}, {_capacity}";
-    }
+  
 }
