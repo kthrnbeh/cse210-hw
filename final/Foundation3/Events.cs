@@ -108,15 +108,16 @@ public abstract class Events
         // 2. Get type name: this.GetType().Name
         // 3. Return something like:
         //    $"{this.GetType().Name}: {_title} — {_date.ToString("MM/dd/yyyy")}"
-        return "";
+        
+
+        return $"{GetType()}{_title} {_date.ToString("MM/dd/yyyy")}";
     }
 
     // OPTIONAL helper if you want to identify type separately (not required)
     public string EventType()
     {
         // TODO: Return the event’s runtime type name
-        // Example: return this.GetType().Name;
-        return "";
+        return $"{EventType()}";
     }
 
 }
