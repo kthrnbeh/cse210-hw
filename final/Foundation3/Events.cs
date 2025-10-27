@@ -1,3 +1,5 @@
+using System.Net.Mail;
+
 public abstract class Events
 {
     protected string _title;
@@ -82,7 +84,8 @@ public abstract class Events
         // 4. Combine and return all parts:
         //    Title, Description, Date, Time, Address (each on its own line)
         _date.ToString("MM/dd/yyyy");
-        
+        DateTime.Today.Add(_time).ToString("h:mm tt"); //I always forget "" then it won't work and I get frustrated...
+        _address.ToString();
         return "";
     }
 
