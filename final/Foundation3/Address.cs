@@ -65,9 +65,9 @@ public class Address
         _country = country;
     }
 
-    public override string ToString()
+    public override string ToString() 
     {
-        return $"{_street},{_city},{_stateOrProvince},{_zipcode}{_country}";
+        return $"{_street},{_city},{_stateOrProvince},{_zipcode}{_country}"; //tried to just change zipcode but lets see if changing all works
     }
     
 
