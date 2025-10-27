@@ -69,7 +69,7 @@ public class Address
     {
         return $"{_street},{_city},{_stateOrProvince},{_zipcode},{_country}"; //tried to just change zipcode but lets see if changing all works
     }
-    
+    //wait I tried it the other way and it didn't work then I did put it in and it did... so confusing Ill try it again. 
 
-
+ // I had address working on some and then I messed it up and now I don't know what I did .... 
 }
