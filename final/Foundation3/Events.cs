@@ -18,13 +18,14 @@ public abstract class Events
         _address = address;
     }
 
-    public string GetType(); //realized I needed this
+    public string GetEventType() //needed to get type
     {
-        return $"{_type }";
+        return _type;
     }
-    public void setType(string type)
+
+    public void SetEventType(string type)
     {
-            _type=type;
+        _type = type;
     }
      public string GetTitle()
     {
