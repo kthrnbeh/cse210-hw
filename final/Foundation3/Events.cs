@@ -94,10 +94,11 @@ public abstract class Events
     {
         // TODO:
         // 1. Start with GetStandardDetails()
-        // 2. Append "\nType: " + this.GetType().Name
+        // 2. Append "\nType: " + this.GetType().Name // I have no idea what this is so I looked it up... https://www.geeksforgeeks.org/c-sharp/c-sharp-this-keyword/
         // 3. Derived classes (Lecture, Reception, OutdoorGathering) will override this
         //    and add their unique fields (Speaker, RSVP, Weather)
-        return "";
+        GetStandardDetails();
+        return $"{_title}\n {_description} \n{GetType()}";
     }
 
     public string GetShortDescription()
