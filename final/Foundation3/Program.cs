@@ -5,7 +5,6 @@ among these classes. With that in mind, you do not need to
 create a menu system or a user interface. Instead, your Program.cs 
 file can create the required objects, set their values, and display them as specified, 
 without any user interaction.*/
-
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -18,9 +17,9 @@ class Program
         // Address address1 = new Address("123 Main St", "Draper", "UT", "84020", "USA");
         // Address address2 = new Address(...);
         // Address address3 = new Address(...);
-        Address address1 = new Address("825 E 12500 S", "Draper", "UT","84020","USA");
-        Address address2 = new Address("500 E 81 N", "Monticello", "UT","84035","USA");
-        Address address3 = new Address("123 Mabini Street", "Quezon City", "Manila","1101", "Philippines");
+        Address address1 = new Address("825 E 12500 S", "Draper", "UT",84020,"USA");
+        Address address2 = new Address("500 E 81 N", "Monticello", "UT",84035,"USA");
+        Address address3 = new Address("123 Mabini Street", "Quezon City", "Manila", 1101, "Philippines");
 
 
         // TODO: create one Lecture, one Reception, one OutdoorGathering
@@ -48,7 +47,7 @@ class Program
         Lectures lecture3 = new Lectures(
         "Lecture",
         "Barbies a Girls Best Friend",
-        "How dolls help girls",
+        "how dolls help girls",
         new DateTime(2025, 4, 8),
         new TimeSpan(3, 0, 0),
         address3,
@@ -124,7 +123,7 @@ class Program
         Console.WriteLine(lecture1.GetStandardDetails());
         Console.WriteLine(lecture1.GetAllDetails());
         Console.WriteLine(lecture1.GetShortDescription());
-    
+        
         Console.WriteLine(lecture2.GetStandardDetails());
         Console.WriteLine(lecture2.GetAllDetails());
         Console.WriteLine(lecture2.GetShortDescription());

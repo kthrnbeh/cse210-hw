@@ -14,8 +14,8 @@ public class Address
     private string _city;
     private string _stateOrProvince;
     private string _country;
-    private string _zipcode;
-    public Address(string street, string city, string stateOrProvince, string zipcode,string country)//this is the order of the program printing
+    private int _zipcode;
+    public Address(string street, string city, string stateOrProvince, int zipcode,string country)//this is the order of the program printing
     {
         _street = street;
         _city = city;
@@ -48,11 +48,11 @@ public class Address
     {
         _stateOrProvince = stateOrProvince;
     }
-      public string GetZipcode()
+      public int GetZipcode()
     {
          return _zipcode;
     }
-    public void SetZipcode(string zipcode)
+    public void SetZipcode(int zipcode)
     {
         _zipcode = zipcode;
     }
@@ -66,8 +66,8 @@ public class Address
     }
 
     public string GetFullAddress() 
-    { 
-        return $"{_street}, {_city}, {_stateOrProvince}, {_zipcode}.ToString   {_country}"; //tried to just change zipcode but lets see if changing all works
+    {
+        return $"{_street},{_city},{_stateOrProvince},{_zipcode}.ToString {_country}"; //tried to just change zipcode but lets see if changing all works
     }
     
 
