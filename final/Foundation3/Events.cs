@@ -81,6 +81,8 @@ public abstract class Events
         // 3. Use _address.ToString() (Address class handles formatting)
         // 4. Combine and return all parts:
         //    Title, Description, Date, Time, Address (each on its own line)
+        _date.ToString("MM/dd/yyyy");
+        
         return "";
     }
 
