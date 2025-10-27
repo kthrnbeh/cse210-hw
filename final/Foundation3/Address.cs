@@ -13,33 +13,38 @@ public class Address : Events
     private string _street;
     private string _city;
     private string _state;
-    private string _zipcode;
-    public Address()
+    private int _zipcode;
+    public Address(string street, string city, string state, int zipcode)
     {
-        
+        _street = street;
+        _city = city;
+        _state = state;
+        _zipcode = zipcode;
     }
     public string GetStreet();{
 
+
     }
-    public void Set();{
+    public void Set(string street)
+    {
 
 }
-     public string Get();{
+     public string Get(){
 
     }
-    public void Set();{
+    public void Set(){
 
 }
-     public string Get();{
+     public string Get(){
 
     }
-    public void Set();{
+    public void Set(){
 
 }
-     public string Get();{
+     public string Get(){
 
     }
-    public void Set();{
+    public void Set(){
         
     }
 
