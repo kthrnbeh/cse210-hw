@@ -25,18 +25,61 @@ class Program
 
 
         // TODO: create one Lecture, one Reception, one OutdoorGathering
-        Lectures lecture1 = new Lectures();
-        Lectures lecture2 = new Lectures();
-        Lectures lecture3 = new Lectures();
-        Receptions receptions1 = new Receptions();
-        Receptions receptions2 = new Receptions();
+         // Lecture lecture = new Lecture("AI Summit", "Tech conference", new DateTime(2025, 6, 10), new TimeSpan(10, 0, 0), address1, "Dr. Adams", 200);
+        Lectures lecture1 = new Lectures(
+        "Coding Meeting",
+         "C#",
+         new DateTime(2025, 10, 10),
+         new TimeSpan(10, 0, 0),
+         address1,
+         "Speaker Kevin James",
+         300
+         );
+        Lectures lecture2 = new Lectures(
+        "Love YourSelf",
+        "Self Help class",
+        new DateTime(2025, 12, 15),
+        new TimeSpan(7, 0, 0),
+        address2,
+        "Speaker Joy Ruma",
+        200
+        );
+        Lectures lecture3 = new Lectures(
+        "Barbies a Girls Best Friend",
+        "how dolls help girls",
+        new DateTime(2025, 4, 8),
+        new TimeSpan(3, 0, 0),
+        address3,
+        "Speaker Dolly Parton",
+        40
+        );
+        // Reception reception = new Reception("Networking Night", "Meet industry professionals", new DateTime(2025, 7, 15), new TimeSpan(18, 0, 0), address2, "rsvp@events.com");
+        Receptions receptions1 = new Receptions(
+        "Berry & Garry",
+        "Reception",
+        new DateTime(2025, 12, 12),
+        new TimeSpan(8, 0, 0),
+        address1,
+        "To Kristen at 802-387-5433"
+        );
+        Receptions receptions2 = new Receptions(
+        "Penut & Jam",
+        "Reception",
+        new DateTime(2025, 10, 13),
+        new TimeSpan(3, 0, 0),
+        address2,
+        "To Mary at 801-384-5453"
+        
+        );
+
+        
         Receptions receptions3 = new Receptions();
+         // OutdoorGathering picnic = new OutdoorGathering("Community Picnic", "Outdoor family event", new DateTime(2025, 8, 5), new TimeSpan(12, 0, 0), address3, "Sunny with light breeze");
         Outdoor outdoor1 = new Outdoor();
         Outdoor outdoor2 = new Outdoor();
         Outdoor outdoor3 = new Outdoor();
-        // Lecture lecture = new Lecture("AI Summit", "Tech conference", new DateTime(2025, 6, 10), new TimeSpan(10, 0, 0), address1, "Dr. Adams", 200);
-        // Reception reception = new Reception("Networking Night", "Meet industry professionals", new DateTime(2025, 7, 15), new TimeSpan(18, 0, 0), address2, "rsvp@events.com");
-        // OutdoorGathering picnic = new OutdoorGathering("Community Picnic", "Outdoor family event", new DateTime(2025, 8, 5), new TimeSpan(12, 0, 0), address3, "Sunny with light breeze");
+       
+        
 
         // TODO: display details for each event
         // Console.WriteLine(lecture.GetStandardDetails());
