@@ -6,6 +6,8 @@ create a menu system or a user interface. Instead, your Program.cs
 file can create the required objects, set their values, and display them as specified, 
 without any user interaction.*/
 using System;
+using System.Collections.Generic;
+using System.IO;
 
 class Program
 {
