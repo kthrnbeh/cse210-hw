@@ -2,7 +2,7 @@ public class Receptions : Events
 {
     private string _RSVP;
 
-    public Receptions(string RSVP,string title, string description, DateTime date, TimeSpan time,Address address):base(title,description,date,time,address)
+    public Receptions(string title, string description, DateTime date, TimeSpan time,Address address,string RSVP):base(title,description,date,time,address)
     {
         _RSVP = RSVP;
 
