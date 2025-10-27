@@ -13,8 +13,62 @@ public class Events
         _date = date;
         _address = address;
     }
-    public string Title()
+    public string GetTitle()
     {
         return "";
     }
+    public void SetTitle()
+    {
+
+    }
+    public string GetDescription()
+    {
+        return "";
+    }
+    public void SetDescription()
+    {
+
+    }
+    public DateTime GetDateTime()
+    {
+        return "";
+    }
+    public void SetDateTime()
+    {
+
+    }
+    public TimeSpan GetTime()
+    {
+        return "";
+    }
+    public void SetTime()
+    {
+
+    }
+    public int GetAddress()
+    {
+        return 0;
+    }
+    public void SetAddress()
+    {
+
+    }
+
+    public string SetStandardDetails()
+    {
+        return "";
+    }
+    public string GetAllDetails()
+    {
+        return "";
+    }
+    public string ShortDescription()
+    {
+        return "";
+    }
+    public string EventType()
+    {
+        return "";
+    }
+
 }
