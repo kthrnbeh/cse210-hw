@@ -147,9 +147,14 @@ class Program
         Console.Write(outdoor1.GetStandardDetails());
         Console.Write(outdoor1.GetAllDetails());
         Console.Write(outdoor1.GetShortDescription());
+        Console.WriteLine();
         Console.Write(outdoor2.GetStandardDetails());
         Console.Write(outdoor2.GetAllDetails());
         Console.Write(outdoor2.GetShortDescription());
+        Console.WriteLine();
+        Console.WriteLine(outdoor3.GetStandardDetails());
+        Console.WriteLine(outdoor3.GetAllDetails());
+        Console.WriteLine(outdoor3.GetShortDescription());
     }
 }
 
