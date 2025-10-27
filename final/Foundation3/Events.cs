@@ -104,7 +104,7 @@ public abstract class Events
              + "Date: " + date + "\n"
              + "Time: " + time + "\n"
              + "Address: " + address; //looking up how to put them on their own line... This was my hardest part! What the beans.
-        //oh yes \n
+        //oh yes \n /what! it was simply just not having _date and changing it to date.... whyyy 
     }
 
     public virtual string GetAllDetails()
