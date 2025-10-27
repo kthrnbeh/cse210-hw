@@ -144,6 +144,9 @@ class Program
         // Console.WriteLine(picnic.GetStandardDetails());
         // Console.WriteLine(picnic.GetFullDetails());
         // Console.WriteLine(picnic.GetShortDescription());
+        Console.Write(outdoor1.GetStandardDetails());
+        Console.Write(outdoor1.GetAllDetails());
+        Console.Write(outdoor1.GetShortDescription());
     }
 }
 
