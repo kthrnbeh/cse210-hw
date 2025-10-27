@@ -88,6 +88,7 @@ public abstract class Events
     }
 
     public string GetStandardDetails()
+    //Standard details - Lists the title, description, date, time, and address.
     {
         // TODO:
         // 1. Format date: _date.ToString("MM/dd/yyyy")
@@ -98,8 +99,7 @@ public abstract class Events
         string date =_date.ToString("MM/dd/yyyy");
         string time =DateTime.Today.Add(_time).ToString("h:mm tt"); //I always forget "" then it won't work and I get frustrated...
         string address=_address.ToString(); // the issue arises here
-        return "Type: " + _type + "\n"
-             + "Title: " + _title + "\n"
+        return "Title: " + _title + "\n"
              + "Description: " + _description + "\n"
              + "Date: " + _date + "\n"
              + "Time: " + _time + "\n"
@@ -109,11 +109,10 @@ public abstract class Events
 
     public virtual string GetAllDetails()
     {
-        // TODO:
-        // 1. Start with GetStandardDetails()
-        // 2. Append "\nType: " + this.GetType().Name // I have no idea what this is so I looked it up... https://www.geeksforgeeks.org/c-sharp/c-sharp-this-keyword/
-        // 3. Derived classes (Lecture, Reception, OutdoorGathering) will override this
-        //    and add their unique fields (Speaker, RSVP, Weather)
+        //Full details - Lists all of the above, plus type of event 
+        // and information specific to that event type. For lectures, 
+        // this includes the speaker name and capacity. For receptions this includes an email for RSVP.
+        //  For outdoor gatherings, this includes a statement of the weather.
        
         return $"{ GetStandardDetails()} ";
     }
