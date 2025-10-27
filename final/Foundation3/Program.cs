@@ -121,7 +121,9 @@ class Program
         // Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine(lecture1.GetStandardDetails());
+        Console.WriteLine();
         Console.WriteLine(lecture1.GetAllDetails());
+        Console.WriteLine();
         Console.WriteLine(lecture1.GetShortDescription());
         Console.WriteLine();
 
