@@ -29,7 +29,7 @@ class Program
         "Coding Meeting",
          "C#",
          new DateTime(2025, 10, 10),
-         new TimeSpan(10, 0, 0),
+         new TimeSpan(10),
          address1,
          "Speaker Kevin James",
          300
@@ -39,7 +39,7 @@ class Program
         "Love YourSelf",
         "Self Help class",
         new DateTime(2025, 12, 15),
-        new TimeSpan(7, 0, 0),
+        new TimeSpan(7),
         address2,
         "Speaker Joy Ruma",
         200
@@ -49,7 +49,7 @@ class Program
         "Barbies a Girls Best Friend",
         "how dolls help girls",
         new DateTime(2025, 4, 8),
-        new TimeSpan(3, 0, 0),
+        new TimeSpan(3),
         address3,
         "Speaker Dolly Parton",
         40
@@ -60,7 +60,7 @@ class Program
         "Berry & Garry",
         "Marriage Celebration",
         new DateTime(2025, 12, 12),
-        new TimeSpan(8, 0, 0),
+        new TimeSpan(8),
         address1,
         "To Kristen at 802-387-5433"
         );
@@ -69,7 +69,7 @@ class Program
         "Penut & Jam",
         "After Marriage Party",
         new DateTime(2025, 10, 13),
-        new TimeSpan(3, 0, 0),
+        new TimeSpan(14,6,0), //if you delete all the numbers it messes up the whole time... weird
         address2,
         "To Mary at 801-384-5453"
         );
@@ -78,7 +78,7 @@ class Program
         "Moody & Judy",
         "Love Party",
         new DateTime(2025, 8, 15),
-        new TimeSpan(2, 0, 0),
+        new TimeSpan(2),
         address3,
         "To John at 803-385-5400"
         );
@@ -89,7 +89,7 @@ class Program
         "Community Sport",
         "Soccer Game",
         new DateTime(1989, 10, 10),
-        new TimeSpan(6, 0, 1),
+        new TimeSpan(6),
         address1,
         "Rainy, Wear a coat."
         );
@@ -98,7 +98,7 @@ class Program
         "Community Sport",
         "Baseball",
         new DateTime(2026, 03, 10),
-        new TimeSpan(6, 0, 1),
+        new TimeSpan(6),
         address1,
         "Sunny."
         );
@@ -107,7 +107,7 @@ class Program
         "Community picnic",
         "Make new friends in your community!",
         new DateTime(2025, 05, 1),
-        new TimeSpan(6, 0, 1),
+        new TimeSpan(6),
         address1,
         "Sunny, and breezy. Bring a kite!"
         );
