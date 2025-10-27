@@ -28,30 +28,31 @@ public class Address : Events
     }
     public void SetStreet(string street)
     {
+        _street = street;
     }
      public string GetCity()
     {
          return"";
     }
-    public void SetCity()
+    public void SetCity(string city)
     {
-
+        _city = city;
     }
      public string GetState()
     {
          return"";
     }
-    public void SetState()
+    public void SetState(string state)
     {
-
+        _state = state;
     }
      public int GetZipcode()
     {
          return 0;
     }
-    public void SetZipcode()
+    public void SetZipcode(int zipcode)
     {
-        
+        _zipcode = zipcode;
     }
 
 
