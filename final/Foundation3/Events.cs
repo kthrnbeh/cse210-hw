@@ -16,12 +16,13 @@ public abstract class Events
      public string GetTitle()
     {
         // TODO: return the _title
-        return "";
+        return $"{_title}";
     }
 
     public void SetTitle(string title)
     {
         // TODO: set _title = title
+        _title = title;
     }
 
     public string GetDescription()
