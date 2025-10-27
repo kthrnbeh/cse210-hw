@@ -29,7 +29,7 @@ class Program
         "Coding Meeting",
          "C#",
          new DateTime(2025, 10, 10),
-         new TimeSpan(10),
+         new TimeSpan(15, 30, 0),
          address1,
          "Speaker Kevin James",
          300
@@ -39,7 +39,7 @@ class Program
         "Love YourSelf",
         "Self Help class",
         new DateTime(2025, 12, 15),
-        new TimeSpan(7),
+        new TimeSpan(16, 30, 0),
         address2,
         "Speaker Joy Ruma",
         200
@@ -49,7 +49,7 @@ class Program
         "Barbies a Girls Best Friend",
         "how dolls help girls",
         new DateTime(2025, 4, 8),
-        new TimeSpan(3),
+        new TimeSpan(15, 30, 0),
         address3,
         "Speaker Dolly Parton",
         40
@@ -60,7 +60,7 @@ class Program
         "Berry & Garry",
         "Marriage Celebration",
         new DateTime(2025, 12, 12),
-        new TimeSpan(8),
+        new TimeSpan(15, 30, 0),
         address1,
         "To Kristen at 802-387-5433"
         );
@@ -78,7 +78,7 @@ class Program
         "Moody & Judy",
         "Love Party",
         new DateTime(2025, 8, 15),
-        new TimeSpan(2),
+        new TimeSpan(18, 30, 0),
         address3,
         "To John at 803-385-5400"
         );
@@ -89,7 +89,7 @@ class Program
         "Community Sport",
         "Soccer Game",
         new DateTime(1989, 10, 10),
-        new TimeSpan(6),
+        new TimeSpan(11, 30, 0),
         address1,
         "Rainy, Wear a coat."
         );
@@ -98,7 +98,7 @@ class Program
         "Community Sport",
         "Baseball",
         new DateTime(2026, 03, 10),
-        new TimeSpan(6),
+        new TimeSpan(10, 30, 0),
         address1,
         "Sunny."
         );
@@ -107,7 +107,7 @@ class Program
         "Community picnic",
         "Make new friends in your community!",
         new DateTime(2025, 05, 1),
-        new TimeSpan(6),
+        new TimeSpan(17, 30, 0),
         address1,
         "Sunny, and breezy. Bring a kite!"
         );
@@ -123,21 +123,31 @@ class Program
         Console.WriteLine(lecture1.GetStandardDetails());
         Console.WriteLine(lecture1.GetAllDetails());
         Console.WriteLine(lecture1.GetShortDescription());
-        
+        Console.WriteLine();
+
         Console.WriteLine(lecture2.GetStandardDetails());
+        Console.WriteLine();
         Console.WriteLine(lecture2.GetAllDetails());
+        Console.WriteLine();
         Console.WriteLine(lecture2.GetShortDescription());
+        Console.WriteLine();
         Console.WriteLine(lecture3.GetStandardDetails());
+        Console.WriteLine();
         Console.WriteLine(lecture3.GetAllDetails());
+        Console.WriteLine();
         Console.WriteLine(lecture3.GetShortDescription());
         Console.WriteLine();
 
         Console.WriteLine(receptions1.GetStandardDetails());
+        Console.WriteLine();
         Console.WriteLine(receptions1.GetAllDetails());
+        Console.WriteLine();
         Console.WriteLine(receptions1.GetShortDescription());
+        Console.WriteLine();
         Console.WriteLine(receptions2.GetStandardDetails());
         Console.WriteLine(receptions2.GetAllDetails());
         Console.WriteLine(receptions2.GetShortDescription());
+        Console.WriteLine();
         Console.WriteLine(receptions3.GetStandardDetails());
         Console.WriteLine(receptions3.GetAllDetails());
         Console.WriteLine(receptions3.GetShortDescription());
