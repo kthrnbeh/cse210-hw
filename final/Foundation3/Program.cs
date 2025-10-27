@@ -19,9 +19,9 @@ class Program
         // Address address1 = new Address("123 Main St", "Draper", "UT", "84020", "USA");
         // Address address2 = new Address(...);
         // Address address3 = new Address(...);
-        Address address1 = new Address("825 E 12500 S", "Draper", "UT",84020,"USA");
-        Address address2 = new Address("500 E 81 N", "Monticello", "UT",84035,"USA");
-        Address address3 = new Address("123 Mabini Street", "Quezon City", "Manila", 1101, "Philippines");
+        Address address1 = new Address("825 E 12500 S", "Draper", "UT","84020","USA");
+        Address address2 = new Address("500 E 81 N", "Monticello", "UT","84035","USA");
+        Address address3 = new Address("123 Mabini Street", "Quezon City", "Manila"," 1101", "Philippines");
 
 
         // TODO: create one Lecture, one Reception, one OutdoorGathering
@@ -125,7 +125,7 @@ class Program
         Console.WriteLine(lecture1.GetStandardDetails());
         Console.WriteLine(lecture1.GetAllDetails());
         Console.WriteLine(lecture1.GetShortDescription());
-        Console.WriteLine(lecture1.GetFullAddress());
+    
         Console.WriteLine(lecture2.GetStandardDetails());
         Console.WriteLine(lecture2.GetAllDetails());
         Console.WriteLine(lecture2.GetShortDescription());
