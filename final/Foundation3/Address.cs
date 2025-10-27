@@ -15,7 +15,7 @@ public class Address
     private string _stateOrProvince;
     private string _country;
     private int _zipcode;
-    public Address(string street, string city, string stateOrProvince, int zipcode,string country)//this is the order of the program printing
+    public Address(string street, string city, string stateOrProvince, int zipcode, string country)//this is the order of the program printing
     {
         _street = street;
         _city = city;
@@ -32,25 +32,25 @@ public class Address
     {
         _street = street;
     }
-     public string GetCity()
+    public string GetCity()
     {
-         return _city;
+        return _city;
     }
     public void SetCity(string city)
     {
         _city = city;
     }
-     public string GetStateOrProvince()
+    public string GetStateOrProvince()
     {
-         return _stateOrProvince;
+        return _stateOrProvince;
     }
     public void SetStateOrProvince(string stateOrProvince)
     {
         _stateOrProvince = stateOrProvince;
     }
-      public int GetZipcode()
+    public int GetZipcode()
     {
-         return _zipcode;
+        return _zipcode;
     }
     public void SetZipcode(int zipcode)
     {
@@ -65,11 +65,16 @@ public class Address
         _country = country;
     }
 
-    public string GetFullAddress() 
+    public string GetFullAddress()
     {
-        return $"{_street},{_city},{_stateOrProvince},{_zipcode},{_country}"; //tried to just change zipcode but lets see if changing all works
+        return ToString(); //tried to just change zipcode but lets see if changing all works
     }
+    public override string ToString()
+    {
+        return _street +" , " + _city +", " + _stateOrProvince + "  " +_zipcode + ", " + _country;
+    }  //well this was the one that i undid accidently and now I put it back and it works so now I save it. 
+   
     //wait I tried it the other way and it didn't work then I did put it in and it did... so confusing Ill try it again. 
 
- // I had address working on some and then I messed it up and now I don't know what I did .... 
+    // I had address working on some and then I messed it up and now I don't know what I did .... 
 }
