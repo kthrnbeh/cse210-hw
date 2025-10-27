@@ -13,6 +13,7 @@ public class Address : Events
     private string _street;
     private string _city;
     private string _state;
+    private string _country;
     private int _zipcode;
     public Address(string street, string city, string state, int zipcode)
     {
@@ -46,6 +47,14 @@ public class Address : Events
     {
         _state = state;
     }
+    public string GetCountry()
+    {
+        return "";
+    }
+    public void SetCountry(string country)
+    {
+        _country = country;
+    }
      public int GetZipcode()
     {
          return 0;
@@ -54,6 +63,7 @@ public class Address : Events
     {
         _zipcode = zipcode;
     }
+    
 
 
 }
