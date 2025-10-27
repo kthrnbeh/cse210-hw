@@ -116,7 +116,7 @@ public abstract class Events
     public string EventType()
     {
         // TODO: Return the event’s runtime type name
-        return $"{EventType()}";
+        return "";
     }
 
 }
