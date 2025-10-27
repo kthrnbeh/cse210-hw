@@ -5,3 +5,9 @@ In addition, your program must:
 Use inheritance to avoid duplicating shared attributes and methods.
 Use an address class for the addresses.
 Follow the principles of encapsulation, making sure each member variable is private.*/
+public class Address : Events
+{
+    // TODO: private fields: street, city, state/province, postalCode
+    // TODO: constructor to set all fields
+    // TODO: public override string ToString() to return "Street, City, ST ZIP"
+}
