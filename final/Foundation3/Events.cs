@@ -97,7 +97,7 @@ public abstract class Events
         //    Title, Description, Date, Time, Address (each on its own line)
         string date =_date.ToString("MM/dd/yyyy");
         string time =DateTime.Today.Add(_time).ToString("h:mm tt"); //I always forget "" then it won't work and I get frustrated...
-        string address=_address.ToString();
+        string address=_address.ToString(); // the issue arises here ahhhh 
         return "Type: " + _type + "\n"
              + "Title: " + _title + "\n"
              + "Description: " + _description + "\n"

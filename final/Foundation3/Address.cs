@@ -66,8 +66,8 @@ public class Address
     }
 
     public string GetFullAddress() 
-    {
-        return $"{_street},{_city},{_stateOrProvince},{_zipcode}.ToString {_country}"; //tried to just change zipcode but lets see if changing all works
+    { 
+        return $"{_street}, {_city}, {_stateOrProvince}, {_zipcode}.ToString   {_country}"; //tried to just change zipcode but lets see if changing all works
     }
     
 
