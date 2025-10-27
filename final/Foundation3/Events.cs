@@ -98,7 +98,12 @@ public abstract class Events
         string date =_date.ToString("MM/dd/yyyy");
         string time =DateTime.Today.Add(_time).ToString("h:mm tt"); //I always forget "" then it won't work and I get frustrated...
         string address=_address.ToString();
-        return $" { _type}{ _title}  { _description} {_date} {_time} {_address}"; //looking up how to put them on their own line... 
+        return "Type: " + _type + "\n"
+             + "Title: " + _title + "\n"
+             + "Description: " + _description + "\n"
+             + "Date: " + _date + "\n"
+             + "Time: " + _time + "\n"
+             + "Address: " + _address; //looking up how to put them on their own line... This was my hardest part! What the beans.
         //oh yes \n
     }
 
