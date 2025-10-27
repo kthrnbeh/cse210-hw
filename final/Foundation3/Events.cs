@@ -22,7 +22,7 @@ public abstract class Events
     }
     public void setType(string type)
     {
-        _type=Type;
+            _type=type;
     }
      public string GetTitle()
     {
@@ -95,7 +95,7 @@ public abstract class Events
         string date =_date.ToString("MM/dd/yyyy");
         string time =DateTime.Today.Add(_time).ToString("h:mm tt"); //I always forget "" then it won't work and I get frustrated...
         string address=_address.ToString();
-        return $"""{_title}\n{ _description}\n {_date}\n {_time}\n {_address}"""; //looking up how to put them on their own line... 
+        return $"""{_type}{_title}\n{ _description}\n {_date}\n {_time}\n {_address}"""; //looking up how to put them on their own line... 
         //oh yes \n
     }
 
@@ -107,7 +107,7 @@ public abstract class Events
         // 3. Derived classes (Lecture, Reception, OutdoorGathering) will override this
         //    and add their unique fields (Speaker, RSVP, Weather)
        
-        return $"{ GetStandardDetails()} \n{GetType()}";
+        return $"{ GetStandardDetails()}";
     }
 
     public string GetShortDescription()
