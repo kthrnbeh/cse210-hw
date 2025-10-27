@@ -3,7 +3,7 @@ public class Outdoor : Events
 {
     private string _weatherForcast;
      // OutdoorGathering picnic = new OutdoorGathering("Community Picnic", "Outdoor family event", new DateTime(2025, 8, 5), new TimeSpan(12, 0, 0), address3, "Sunny with light breeze");
-    public Outdoor(string title, string description, DateTime date, TimeSpan time, Address address, string weatherForcast) : base(title, description, date, time, address)
+    public Outdoor(string type,string title, string description, DateTime date, TimeSpan time, Address address, string weatherForcast) : base(type,title, description, date, time, address)
     {
         _weatherForcast = weatherForcast;
     }

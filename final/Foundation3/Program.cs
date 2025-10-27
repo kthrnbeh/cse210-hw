@@ -27,6 +27,7 @@ class Program
         // TODO: create one Lecture, one Reception, one OutdoorGathering
          // Lecture lecture = new Lecture("AI Summit", "Tech conference", new DateTime(2025, 6, 10), new TimeSpan(10, 0, 0), address1, "Dr. Adams", 200);
         Lectures lecture1 = new Lectures(
+        "Lecture",
         "Coding Meeting",
          "C#",
          new DateTime(2025, 10, 10),
@@ -36,6 +37,7 @@ class Program
          300
          );
         Lectures lecture2 = new Lectures(
+        "Lecture",
         "Love YourSelf",
         "Self Help class",
         new DateTime(2025, 12, 15),
@@ -45,6 +47,7 @@ class Program
         200
         );
         Lectures lecture3 = new Lectures(
+        "Lecture",
         "Barbies a Girls Best Friend",
         "how dolls help girls",
         new DateTime(2025, 4, 8),
@@ -55,32 +58,36 @@ class Program
         );
         // Reception reception = new Reception("Networking Night", "Meet industry professionals", new DateTime(2025, 7, 15), new TimeSpan(18, 0, 0), address2, "rsvp@events.com");
         Receptions receptions1 = new Receptions(
-        "Berry & Garry",
         "Reception",
+        "Berry & Garry",
+        "Marriage Celebration",
         new DateTime(2025, 12, 12),
         new TimeSpan(8, 0, 0),
         address1,
         "To Kristen at 802-387-5433"
         );
         Receptions receptions2 = new Receptions(
-        "Penut & Jam",
         "Reception",
+        "Penut & Jam",
+        "After Marriage Party",
         new DateTime(2025, 10, 13),
         new TimeSpan(3, 0, 0),
         address2,
         "To Mary at 801-384-5453"
         );
         Receptions receptions3 = new Receptions(
-        "Moody & Judy",
         "Reception",
+        "Moody & Judy",
+        "Love Party",
         new DateTime(2025, 8, 15),
         new TimeSpan(2, 0, 0),
         address3,
         "To John at 803-385-5400"
         );
 
-         // OutdoorGathering picnic = new OutdoorGathering("Community Picnic", "Outdoor family event", new DateTime(2025, 8, 5), new TimeSpan(12, 0, 0), address3, "Sunny with light breeze");
+        // OutdoorGathering picnic = new OutdoorGathering("Community Picnic", "Outdoor family event", new DateTime(2025, 8, 5), new TimeSpan(12, 0, 0), address3, "Sunny with light breeze");
         Outdoor outdoor1 = new Outdoor(
+        "OutDoor",
         "Community Sport",
         "Soccer Game",
         new DateTime(1989, 10, 10),
@@ -89,6 +96,7 @@ class Program
         "Rainy, Wear a coat."
         );
         Outdoor outdoor2 = new Outdoor(
+        "OutDoor",
         "Community Sport",
         "Baseball",
         new DateTime(2026, 03, 10),
@@ -97,7 +105,7 @@ class Program
         "Sunny."
         );
         Outdoor outdoor3 = new Outdoor(
-
+        "OutDoor",
         "Community picnic",
         "Make new friends in your community!",
         new DateTime(2025, 05, 1),

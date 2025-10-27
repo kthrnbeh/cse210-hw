@@ -5,14 +5,24 @@ public abstract class Events
     protected DateTime _date;
     protected TimeSpan _time;
     protected Address _address; //because of the file I need to get it from
+    protected string _type;
 
-    public Events(string title, string description, DateTime date, TimeSpan time, Address address)
+    public Events(string type, string title, string description, DateTime date, TimeSpan time, Address address)
     {
         _title = title;
         _description = description;
         _date = date;
         _time = time;
         _address = address;
+        _type = type;
+    }
+    public string GetType(); //realized I needed this
+    {
+        return _type;
+    }
+    public void setType(string type)
+    {
+        _type=Type;
     }
      public string GetTitle()
     {
@@ -109,14 +119,10 @@ public abstract class Events
         //    $"{this.GetType().Name}: {_title} — {_date.ToString("MM/dd/yyyy")}"
         
 
-        return $"{GetType()}{_title} {_date.ToString("MM/dd/yyyy")}";
+        return $"{_type} {_title} {_date.ToString("MM/dd/yyyy")}";
     }
 
-    // OPTIONAL helper if you want to identify type separately (not required)
-    public string EventType()
-    {
-        // TODO: Return the event’s runtime type name
-        return "";
-    }
+    
+   
 
 }
