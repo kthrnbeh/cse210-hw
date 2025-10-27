@@ -113,9 +113,22 @@ class Program
         // Console.WriteLine(lecture.GetFullDetails());
         // Console.WriteLine(lecture.GetShortDescription());
         // Console.WriteLine();
+        Console.WriteLine();
         Console.Write(lecture1.GetStandardDetails());
-        
+        Console.Write(lecture1.GetAllDetails());
+        Console.Write(lecture1.GetShortDescription());
+        Console.Write(lecture2.GetStandardDetails());
+        Console.Write(lecture2.GetAllDetails());
+        Console.Write(lecture2.GetShortDescription());
+        Console.Write(lecture3.GetStandardDetails());
+        Console.Write(lecture3.GetAllDetails());
+        Console.Write(lecture3.GetShortDescription());
+        Console.WriteLine();
 
+        Console.Write(receptions1.GetStandardDetails());
+        Console.Write(receptions1.GetAllDetails());
+        Console.Write(receptions1.GetShortDescription());
+        
         // Console.WriteLine(reception.GetStandardDetails());
         // Console.WriteLine(reception.GetFullDetails());
         // Console.WriteLine(reception.GetShortDescription());
