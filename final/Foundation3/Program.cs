@@ -21,10 +21,19 @@ class Program
         // Address address3 = new Address(...);
         Address address1 = new Address("825 E 12500 S", "Draper", "UT",84020,"USA");
         Address address2 = new Address("500 E 81 N", "Monticello", "UT",84035,"USA");
-        Address address3 = new Address("123 Mabini Street","Quezon City","Manila",1101,"Philippines");
+        Address address3 = new Address("123 Mabini Street", "Quezon City", "Manila", 1101, "Philippines");
 
 
         // TODO: create one Lecture, one Reception, one OutdoorGathering
+        Lectures lecture1 = new Lectures();
+        Lectures lecture2 = new Lectures();
+        Lectures lecture3 = new Lectures();
+        Receptions receptions1 = new Receptions();
+        Receptions receptions2 = new Receptions();
+        Receptions receptions3 = new Receptions();
+        Outdoor outdoor1 = new Outdoor();
+        Outdoor outdoor2 = new Outdoor();
+        Outdoor outdoor3 = new Outdoor();
         // Lecture lecture = new Lecture("AI Summit", "Tech conference", new DateTime(2025, 6, 10), new TimeSpan(10, 0, 0), address1, "Dr. Adams", 200);
         // Reception reception = new Reception("Networking Night", "Meet industry professionals", new DateTime(2025, 7, 15), new TimeSpan(18, 0, 0), address2, "rsvp@events.com");
         // OutdoorGathering picnic = new OutdoorGathering("Community Picnic", "Outdoor family event", new DateTime(2025, 8, 5), new TimeSpan(12, 0, 0), address3, "Sunny with light breeze");
