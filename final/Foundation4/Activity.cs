@@ -1,7 +1,7 @@
 public abstract class Activity
 {
-    protected DateTime _date;
-    protected int _minutes;
+    protected DateTime _date; //changed so I can use it througout all the program
+    protected int _minutes; //changed because it wasn't letting me use it. 
     public Activity(DateTime date, int minutes)
     {
         _date = date;
