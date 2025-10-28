@@ -1,7 +1,7 @@
 public abstract class Activity
 {
-    private DateTime _date;
-    private int _minutes;
+    protected DateTime _date;
+    protected int _minutes;
     public Activity(DateTime date, int minutes)
     {
         _date = date;
@@ -25,7 +25,7 @@ public abstract class Activity
     }
     public abstract double GetDistance();
     public abstract double GetSpeed();
-     public abstract double GetSpace();
+     public abstract double GetPace();
     public string GetSummary()
     {
         return $"{_date} {_minutes}"; //placeholder (distance, speed, pace)

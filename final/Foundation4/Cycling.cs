@@ -15,15 +15,15 @@ public class Cycling : Activity
     }
     public override double GetDistance()
     {
-        return 0;
+        return (_avgSpeed * _minutes) /60;
     }
-    public override double GetSpace()
+    public override double GetPace()
     {
-        return 0;
+        return 60/_avgSpeed;
     }
     public override double GetSpeed()
     {
-        return 0;
+        return _avgSpeed;
     }
 
 }
