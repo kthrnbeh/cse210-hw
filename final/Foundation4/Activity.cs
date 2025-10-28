@@ -2,8 +2,8 @@ public abstract class Activity
 {
     protected DateTime _date; //changed so I can use it througout all the program
     protected string _activity;
-    protected double _minutes; //changed because it wasn't letting me use it. 
-    public Activity(DateTime date, string activity,double minutes)
+    protected int _minutes; //changed because it wasn't letting me use it. 
+    public Activity(DateTime date, string activity,int minutes)
     {
         _date = date;
         _activity = activity;
@@ -29,7 +29,7 @@ public abstract class Activity
     {
         return _minutes;
     }
-    public void SetMinutes(double minutes)
+    public void SetMinutes(int minutes)
     {
         _minutes = minutes;
     }
