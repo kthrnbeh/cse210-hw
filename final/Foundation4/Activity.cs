@@ -42,7 +42,8 @@ public abstract class Activity
         double distance = GetDistance();
         double speed = GetSpeed();
         double pace = GetPace();
-        return $"{_date.ToShortDateString()} {_activity} ({_minutes}min) - Distance {distance} miles, Speed {speed)} mph, Pace {pace} min per mile"; //placeholder (distance, speed, pace)
+        string summary = $"{_date.ToShortDateString()} {_activity} ({_minutes}min) - Distance {distance} miles, Speed {speed} mph, Pace {pace} min per mile"; //placeholder (distance, speed, pace)
+        return summary;
     }
         
 
