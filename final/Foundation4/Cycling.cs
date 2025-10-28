@@ -1,7 +1,7 @@
 public class Cycling : Activity
 {
     private double _avgSpeed;
-    public Cycling(DateTime date, int minutes, double avgSpeed) : base(date, minutes)
+    public Cycling(DateTime date,string activity, int minutes, double avgSpeed) :base(date, activity, minutes)
     {
         _avgSpeed = avgSpeed;
     }
