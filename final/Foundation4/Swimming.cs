@@ -1,15 +1,15 @@
 public class Swimming : Activity
 {
-    private int _laps;
-    public Swimming(DateTime date,string activity, int minutes, int laps) : base(date,activity, minutes)
+    private double _laps;
+    public Swimming(DateTime date,string activity, double minutes, double laps) : base(date,activity, minutes)
     {
         _laps = laps;
     }
-    public int GetLaps()
+    public double GetLaps()
     {
         return _laps;
     }
-    public void SetLaps(int laps)
+    public void SetLaps(double laps)
     {
         _laps = laps;
     }

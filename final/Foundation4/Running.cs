@@ -1,7 +1,7 @@
 public class Running : Activity
 {
     private double _distanceMiles;
-    public Running(DateTime date, string activity, int minutes, double distanceMiles) : base(date, activity, minutes)
+    public Running(DateTime date, string activity, double minutes, double distanceMiles) : base(date, activity, minutes)
     {
         _distanceMiles = distanceMiles;
     }
