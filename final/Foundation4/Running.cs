@@ -19,7 +19,7 @@ public class Running : Activity
     }
     public override double GetPace()
     {
-        return ;
+        return _minutes / _distanceMiles;
     }
     public override double GetSpeed()
     {
