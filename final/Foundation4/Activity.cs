@@ -29,6 +29,7 @@ public abstract class Activity
     public string GetSummary()
     {
         return $"{_date} {_minutes}"; //placeholder (distance, speed, pace)
+    }
         
 
 }
