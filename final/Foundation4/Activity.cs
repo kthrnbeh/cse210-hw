@@ -45,7 +45,7 @@ public abstract class Activity
         string date = _date.ToString("dd MMM  yyyy");
         //why are they always formated this way its so interesting. 
         return $"{date} {_activity} ({_minutes}) min-" + 
-        $"Distance{distance} miles {speed} mph Pace{pace}min per mile";
+        $"Distance {distance:F2} miles {speed:F2} mph Pace: {pace:F2} min per mile";
     }
         
 
