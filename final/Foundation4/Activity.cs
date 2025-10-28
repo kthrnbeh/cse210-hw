@@ -1,11 +1,19 @@
 public abstract class Activity
 {
     private DateTime _date;
-    private int _time;
-    public Activity(DateTime date, int time)
+    private int _minutes;
+    public Activity(DateTime date, int minutes)
     {
         _date = date;
-        _time = time;
+        _minutes = minutes;
     }
-    
+    public DateTime GetDate()
+    {
+        return _date;
+    }
+    pubic void SetDate(DateTime date)
+    {
+        _date = date;
+    }
+
 }
