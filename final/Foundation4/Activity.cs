@@ -23,5 +23,9 @@ public abstract class Activity
     {
         _minutes = minutes;
     }
+    public string GetSummary()
+    {
+        return""; //placeholder
+    }
 
 }
