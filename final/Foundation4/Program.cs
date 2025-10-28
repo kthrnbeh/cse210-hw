@@ -22,18 +22,23 @@ class Program
         // activities.Add(ride);
         // activities.Add(swim);
         List<Activity> activity = new List<Activity>();
+        activity.Add(cycling1);
+        activity.Add(cycling2);
+        activity.Add(cycling3);
         activity.Add(running1);
         activity.Add(running2);
         activity.Add(running3);
+        activity.Add(swimming1);
+        activity.Add(swimming2);
+        activity.Add(swimming3);
+        foreach(Activity active in activity)
+        {
+            Console.WriteLine(active.GetSummary());
+        }
 
-        // ----------------------------
-        // DISPLAY EACH SUMMARY
-        // ----------------------------
-        // foreach (Activity a in activities)
-        // {
-        //     Console.WriteLine(a.GetSummary());
-        // }
 
+        
+       
 
 
     }
