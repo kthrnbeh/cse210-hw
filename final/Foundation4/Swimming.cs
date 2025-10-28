@@ -15,14 +15,17 @@ public class Swimming : Activity
     }
     public override double GetDistance()
     {
-        return (_laps*50)/1000;
+        double distance = (_laps * 50) / 1000;
+        return distance;
     }
     public override double GetPace()
     {
-        return (_minutes/GetDistance()); //have to get the distance first to calculate this
+        double pace = _minutes / miles;
+        return pace; //have to get the distance first to calculate this
     }
     public override double GetSpeed()
     {
-        return (GetDistance()/_minutes)* 60;//and this
+        double miles = GetDistance();
+        return
     }
 }
