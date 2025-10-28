@@ -15,15 +15,15 @@ public class Cycling : Activity
     }
     public override double GetDistance()
     {
-
+        return 0;
     }
     public override double GetSpace()
     {
-
+        return 0;
     }
     public override double GetSpeed()
     {
-        
+        return 0;
     }
 
 }
