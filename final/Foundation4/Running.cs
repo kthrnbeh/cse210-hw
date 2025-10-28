@@ -1,17 +1,17 @@
 public class Running : Activity
 {
-    private double _distance;
-    public Running(DateTime date, int minutes, double distance) : base(date, minutes)
+    private double _distanceMiles;
+    public Running(DateTime date, int minutes, double distanceMiles) : base(date, minutes)
     {
-        _distance = distance;
+        _distanceMiles = distanceMiles;
     }
-    public double GetDistance()//I really know how to do this part now. 
+    public double GetDistanceMiles()//I really know how to do this part now. 
     {
-        return _distance;
+        return _distanceMiles;
     }
-    public void SetDistance(double distance)
+    public void SetDistanceMiles(double distanceMiles)
     {
-        _distance = distance;
+        _distanceMiles = distanceMiles;
     }
     public override double GetDistance()
     {
