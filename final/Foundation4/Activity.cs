@@ -28,7 +28,7 @@ public abstract class Activity
      public abstract double GetSpace();
     public string GetSummary()
     {
-        return""; //placeholder
-    }
+        return $"{_date} {_minutes}"; //placeholder (distance, speed, pace)
+        
 
 }
