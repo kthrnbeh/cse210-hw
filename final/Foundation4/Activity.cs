@@ -23,6 +23,9 @@ public abstract class Activity
     {
         _minutes = minutes;
     }
+    public abstract double GetDistance();
+    public abstract double();
+     public abstract double();
     public string GetSummary()
     {
         return""; //placeholder
