@@ -13,5 +13,17 @@ public class Cycling : Activity
     {
         _avgSpeed = avgSpeed;
     }
+    public override double GetDistance()
+    {
+
+    }
+    public override double GetSpace()
+    {
+
+    }
+    public override double GetSpeed()
+    {
+        
+    }
 
 }
