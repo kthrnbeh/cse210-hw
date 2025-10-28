@@ -15,7 +15,25 @@ class Program
         Running running3 = new Running(DateTime.Now,"Running",55,6.7);
         Swimming swimming1 = new Swimming(DateTime.Now,"Swimming",79,6.8);
         Swimming swimming2 = new Swimming(DateTime.Now,"Swimming",18,1.9);
-        Swimming swimming3 = new Swimming(DateTime.Now,"Swimming",19,2.8);
+        Swimming swimming3 = new Swimming(DateTime.Now, "Swimming", 19, 2.8);
+
+        // List<Activity> activities = new List<Activity>();
+        // activities.Add(run);
+        // activities.Add(ride);
+        // activities.Add(swim);
+        List<Activity> activity = new List<Activity>();
+        activity.Add(running1);
+        activity.Add(running2);
+        activity.Add(running3);
+
+        // ----------------------------
+        // DISPLAY EACH SUMMARY
+        // ----------------------------
+        // foreach (Activity a in activities)
+        // {
+        //     Console.WriteLine(a.GetSummary());
+        // }
+
 
 
     }
