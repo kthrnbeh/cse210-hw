@@ -42,8 +42,10 @@ public abstract class Activity
         double distance = GetDistance();
         double speed = GetSpeed();
         double pace = GetPace();
-        string summary = $"{_date.ToShortDateString()} {_activity} ({_minutes}min) - Distance {distance} miles, Speed {speed} mph, Pace {pace} min per mile"; //placeholder (distance, speed, pace)
-        return summary;
+        string date = _date.ToString("dd MMM  yyyy");
+        //why are they always formated this way its so interesting. 
+        return $"{date} {_activity} ({_minutes}) min-" + 
+        $"Distance{distance} miles {speed} mph Pace{pace}min per mile";
     }
         
 
