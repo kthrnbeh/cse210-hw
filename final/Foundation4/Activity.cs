@@ -15,5 +15,13 @@ public abstract class Activity
     {
         _date = date;
     }
+    public int GetMinutes()
+    {
+        return _minutes;
+    }
+    public void SetMinutes(int minutes)
+    {
+        _minutes = minutes;
+    }
 
 }
