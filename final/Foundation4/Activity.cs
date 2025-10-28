@@ -39,7 +39,10 @@ public abstract class Activity
     public string GetSummary()
     {  //got to add a datetime thing like last time. 
         //03 Nov 2022 Running (30 min)- Distance 3.0 miles, Speed 6.0 mph, Pace: 10.0 min per mile
-        return $"{_date.ToShortDateString()} {_activity} ({_minutes}min) - Distance {GetDistance()} miles, Speed {GetSpeed()} mph, Pace {GetPace()} min per mile"; //placeholder (distance, speed, pace)
+        double distance = GetDistance();
+        double speed = GetSpeed();
+        double pace = GetPace();
+        return $"{_date.ToShortDateString()} {_activity} ({_minutes}min) - Distance {distance} miles, Speed {speed)} mph, Pace {pace} min per mile"; //placeholder (distance, speed, pace)
     }
         
 
