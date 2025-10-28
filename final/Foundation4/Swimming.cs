@@ -26,6 +26,7 @@ public class Swimming : Activity
     public override double GetSpeed()
     {
         double miles = GetDistance();
-        return
+        double speed = (miles / _minutes) * 60.0;
+        return speed;
     }
 }
