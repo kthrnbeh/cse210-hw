@@ -11,7 +11,7 @@ public abstract class Activity
     {
         return _date;
     }
-    pubic void SetDate(DateTime date)
+    public void SetDate(DateTime date)
     {
         _date = date;
     }
